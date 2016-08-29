@@ -84,7 +84,7 @@
 
 > 如果你只需要设置年份范围，不需要精确到后面的时间单位。
 
-> 这时候,请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/Desert-or-Ocean/tree/master/AppianZ/productions/DateSelectorSimple)
+> 这时候,请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorSimple)
 
 > 一定让您满意！
 
