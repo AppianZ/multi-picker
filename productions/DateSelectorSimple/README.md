@@ -74,7 +74,7 @@
 
 > 还要在2016-12-12 12:12的时候结束我的活动!其他时间点不可选!!!必须这样!!
 
-> 这时候,请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/Desert-or-Ocean/tree/master/AppianZ/productions/DateSelectorPro)
+> 这时候,请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorPro)
 
 > 一定让您满意！
 
