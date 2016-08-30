@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>DateSelector by AppianZ</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/AppianZ/DateSelector">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>DateSelector</h1>
+            <h2></h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/AppianZ/DateSelector/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/AppianZ/DateSelector/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>
+<a id="dateselector是自定义的datetimepicker-可自定义时间单位任意设定时间范围" class="anchor" href="#dateselector%E6%98%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84datetimepicker-%E5%8F%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%97%B6%E9%97%B4%E5%8D%95%E4%BD%8D%E4%BB%BB%E6%84%8F%E8%AE%BE%E5%AE%9A%E6%97%B6%E9%97%B4%E8%8C%83%E5%9B%B4" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Dateselector是自定义的DateTimePicker. 可自定义时间单位，任意设定时间范围</strong>
+</h1>
+
+<h1>
+<a id="这框日期选择器主要有两种模式简易日期选择器dateselectorsimple--优质版日期选择器dateselectorpro" class="anchor" href="#%E8%BF%99%E6%A1%86%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8%E4%B8%BB%E8%A6%81%E6%9C%89%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F%E7%AE%80%E6%98%93%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8dateselectorsimple--%E4%BC%98%E8%B4%A8%E7%89%88%E6%97%A5%E6%9C%9F%E9%80%89%E6%8B%A9%E5%99%A8dateselectorpro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>这框日期选择器主要有两种模式：简易日期选择器DateselectorSimple &amp; 优质版日期选择器DateselectorPro</h1>
+
+<blockquote>
+<ul>
+<li><p>两种模式都能够任意的进行【年】【月】【日】【时】【分】的时间单位组合。</p></li>
+<li><p>简易日期选择器的【自定义时间范围】只能精确到【年】，优质版日期选择器的【自定义时间范围】能够精确到【分】。</p></li>
+<li><p>简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。</p></li>
+</ul>
+</blockquote>
+
+<h1>
+<a id="dateselectorpro的演示gif" class="anchor" href="#dateselectorpro%E7%9A%84%E6%BC%94%E7%A4%BAgif" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DateSelectorPro的演示gif</h1>
+
+<p><img src="https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif" alt="gif."></p>
+
+<h1>
+<a id="固定单位为年月日时分的固定样式" class="anchor" href="#%E5%9B%BA%E5%AE%9A%E5%8D%95%E4%BD%8D%E4%B8%BA%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%9A%84%E5%9B%BA%E5%AE%9A%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>固定单位为【年月日时分】的固定样式</h1>
+
+<p><img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector2.png?imageView2/2/w/562/h/452" alt="img1."></p>
+
+<h1>
+<a id="自定义单位为年月日时分的任意组合" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BD%8D%E4%B8%BA%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BB%84%E5%90%88" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自定义单位为【年月日时分】的任意组合</h1>
+
+<p><img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector3.png?imageView2/2/w/186/h/332" alt="img2."></p>
+
+<h1>
+<a id="api说明" class="anchor" href="#api%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>API说明</strong>
+</h1>
+
+<h2>
+<a id="基本格式new-dateselector--" class="anchor" href="#%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8Fnew-dateselector--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>基本格式：new DateSelector({ ... });</strong>
+</h2>
+
+<h2>
+<a id="参数配置" class="anchor" href="#%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>参数配置:</strong>
+</h2>
+
+<blockquote>
+<p>input : {String}，点击触发插件的input框的id</p>
+
+<p>container ： {String}，插件即将插入的容器id</p>
+
+<p>type ：{0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)</p>
+
+<p>param : {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1</p>
+
+<p>range ： array类型，设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效(简易版中使用)</p>
+
+<p>beginTime : {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+
+<p>endTime : {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+
+<p>recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+
+<p>callbackfuc : function(arr){} 回调函数，可以自定义结果格式化</p>
+</blockquote>
+
+<h1>
+<a id="tips" class="anchor" href="#tips" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Tips</strong>
+</h1>
+
+<blockquote>
+<ul>
+<li><p>【年】【月】【日】【时】【分】的时间单位组合，必须是连续单位的组合。</p></li>
+<li><p>“固定样式”是指顶部有切换的tab，可以左右切换【年月日】和【时分】，而“自定义样式”是指不带有tab切换的样式。</p></li>
+<li><p>在优质版日期选择器DateselectorPro中，用正确的数组表示你要设置的时间点。</p></li>
+</ul>
+</blockquote>
+
+<h1>
+<a id="authors-wechat" class="anchor" href="#authors-wechat" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Authors WeChat</strong>
+</h1>
+
+<blockquote>
+<h2>
+<a id="如果你遇到了什么神bug可以通过微信523938480联系我" class="anchor" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E7%A5%9Ebug%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%BE%AE%E4%BF%A1523938480%E8%81%94%E7%B3%BB%E6%88%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>如果你遇到了什么神bug，可以通过微信【523938480】联系我~</h2>
+</blockquote>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/AppianZ">AppianZ</a> can be found on <a href="https://github.com/AppianZ/DateSelector">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
