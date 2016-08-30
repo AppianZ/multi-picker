@@ -1,6 +1,6 @@
 # DateSelector
 
-### DateSelectorPro的自我介绍
+### DateSelector的自我介绍
 
 > * Dateselector是自定义的DateTimePicker. 可自定义时间单位，任意设定时间范围。
 
