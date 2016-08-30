@@ -45,8 +45,8 @@
 > recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)
 
 > callbackfuc : function(arr){} 回调函数，可以自定义结果格式化
-<br/>
 
+<br/>
 
 ### **(ෆ ͒•∘̬• ͒)◞ 下面是Demo & Instructions**
 
