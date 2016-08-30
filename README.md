@@ -12,6 +12,7 @@
 > * 简易日期选择器的【自定义时间范围】只能精确到【年】，优质版日期选择器的【自定义时间范围】能够精确到【分】。
 
 > * 简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。
+
 <br/>
 ### DateSelectorPro的演示gif
  ![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif)
@@ -68,6 +69,7 @@
 > * “固定样式”是指顶部有切换的tab，可以左右切换【年月日】和【时分】，而“自定义样式”是指不带有tab切换的样式。
 
 > * 在优质版日期选择器DateselectorPro中，用正确的数组表示你要设置的时间点。
+
 <br/>
 
 ### **Authors WeChat**
