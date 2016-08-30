@@ -85,19 +85,19 @@
 <blockquote>
 <p><strong>input</strong> : {String}，点击触发插件的input框的id</p>
 
-<p>*<em>container *</em>： {String}，插件即将插入的容器id</p>
+<p><strong>container</strong>： {String}，插件即将插入的容器id</p>
 
-<p>*<em>type *</em>: {0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)</p>
+<p><strong>type</strong>: {0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)</p>
 
-<p>*<em>param *</em>: {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1</p>
+<p><strong>param</strong>: {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1</p>
 
-<p>*<em>range *</em>: array类型，设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效(简易版中使用)</p>
+<p><strong>range</strong>: array类型，设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效(简易版中使用)</p>
 
-<p>*<em>beginTime *</em>: {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+<p><strong>beginTime</strong>: {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
 
-<p>*<em>endTime *</em>: {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+<p><strong>endTime</strong>: {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
 
-<p>*<em>recentTime *</em>: {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
+<p><strong>recentTime</strong>: {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
 
 <p><strong>callbackfuc</strong> : function(arr){} 回调函数，可以自定义结果格式化</p>
 </blockquote>
