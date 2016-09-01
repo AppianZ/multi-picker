@@ -26,7 +26,7 @@
 
 ### **API说明**
 
-**调用html的基本格式：**
+**html的基本格式：**
 ```
 <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
 <body>
