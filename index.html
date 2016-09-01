@@ -46,15 +46,15 @@
 
 
       <section id="main_content">
-        <h3>
-<a id="dateselector的自我介绍" class="anchor" href="#dateselector%E7%9A%84%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DateSelector的自我介绍</h3>
+        <h4>
+<a id="dateselector的自我介绍" class="anchor" href="#dateselector%E7%9A%84%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DateSelector的自我介绍</h4>
 
 <blockquote>
 <ul>
-<li><p>Dateselector是自定义的DateTimePicker. 可自定义时间单位，任意设定时间范围。</p></li>
-<li><p>这框日期选择器主要有两种模式：简易日期选择器DateselectorSimple &amp; 优质版日期选择器DateselectorPro.</p></li>
-<li><p>两种模式都能够任意的进行【年】【月】【日】【时】【分】的时间单位组合。</p></li>
-<li><p>简易日期选择器的【自定义时间范围】只能精确到【年】，优质版日期选择器的【自定义时间范围】能够精确到【分】。</p></li>
+<li><p>Dateselector是自定义的DateTimePicker. 可自定义时间单位，也可任意设定时间范围。</p></li>
+<li><p>这框DateSelector主要有两种版本：简易日期选择器DateselectorSimple &amp; 优质版日期选择器DateselectorPro.</p></li>
+<li><p>两种版本都能够任意的进行【年】【月】【日】【时】【分】的时间单位组合。</p></li>
+<li><p>简易版日期选择器的【自定义时间范围】只能精确到【年】，优质版日期选择器的【自定义时间范围】能够精确到【分】。</p></li>
 <li><p>简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。</p></li>
 </ul>
 </blockquote>
@@ -62,45 +62,129 @@
 <h3>
 <a id="dateselectorpro的演示gif" class="anchor" href="#dateselectorpro%E7%9A%84%E6%BC%94%E7%A4%BAgif" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>DateSelectorPro的演示gif</h3>
 
-<p><img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector1.gif" alt="gif."></p>
+<p>[  <img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector1.gif" alt="gif."> ]</p>
 
 <h3>
 <a id="固定单位为年月日时分的固定样式" class="anchor" href="#%E5%9B%BA%E5%AE%9A%E5%8D%95%E4%BD%8D%E4%B8%BA%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%9A%84%E5%9B%BA%E5%AE%9A%E6%A0%B7%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>固定单位为【年月日时分】的固定样式</h3>
 
-<p><img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector2.png?imageView2/2/w/562/h/452" alt="img1."></p>
+<p>[  <img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg" alt="img1."> ]</p>
 
 <h3>
-<a id="自定义单位为年月日时分的任意组合" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BD%8D%E4%B8%BA%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%9A%84%E4%BB%BB%E6%84%8F%E7%BB%84%E5%90%88" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自定义单位为【年月日时分】的任意组合</h3>
+<a id="自定义单位为年月日时分的自定义任意组合" class="anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%95%E4%BD%8D%E4%B8%BA%E5%B9%B4%E6%9C%88%E6%97%A5%E6%97%B6%E5%88%86%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BB%BB%E6%84%8F%E7%BB%84%E5%90%88" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>自定义单位为【年月日时分】的自定义任意组合</h3>
 
-<p><img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector3.png?imageView2/2/w/186/h/332" alt="img2."></p>
+<p>[  <img src="http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg" alt="img2."> ]</p>
 
 <h3>
 <a id="api说明" class="anchor" href="#api%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>API说明</strong>
 </h3>
 
-<p><strong>基本格式：new DateSelector({ ... });</strong></p>
+<p><strong>html的基本格式：</strong></p>
+
+<pre><code>&lt;link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/&gt;
+&lt;body&gt;
+    &lt;input id="date-selector-input" type="text" readonly/&gt;
+    &lt;div id="targetContainer"&gt;&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p><strong>调用js的基本格式：</strong></p>
+
+<pre><code>&lt;script src="./DateSelectorPro.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    new DateSelector({ ... });
+&lt;/script&gt;
+</code></pre>
 
 <p><strong>参数配置:</strong></p>
 
-<blockquote>
-<p><strong>input</strong> : {String}，点击触发插件的input框的id</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>版本</th>
+<th>字符类型</th>
+<th>取值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>input</strong></td>
+<td>Simple &amp;&amp; Pro</td>
+<td>{String}</td>
+<td><em>eg:'date-selector-input'</em></td>
+<td>点击触发插件的input框的id</td>
+</tr>
+<tr>
+<td><strong>container</strong></td>
+<td>Simple &amp;&amp; Pro</td>
+<td>{String}</td>
+<td><em>eg:'targetContainers'</em></td>
+<td>插件即将插入的容器id</td>
+</tr>
+<tr>
+<td><strong>type</strong></td>
+<td>Simple &amp;&amp; Pro</td>
+<td>{Number}</td>
+<td>0 或 1</td>
+<td>0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)</td>
+</tr>
+<tr>
+<td><strong>param</strong></td>
+<td>Simple &amp;&amp; Pro</td>
+<td>{Array}</td>
+<td><em>eg:[1,1,0,0,0]</em></td>
+<td>设置单位，元素分别对应设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1</td>
+</tr>
+<tr>
+<td><strong>range</strong></td>
+<td>Simple</td>
+<td>{Array}</td>
+<td><em>eg:[1990,2020]      1990年~2020年</em></td>
+<td>设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效</td>
+</tr>
+<tr>
+<td><strong>beginTime</strong></td>
+<td>Pro</td>
+<td>{Array}</td>
+<td><em>eg:[2011,3,27,12,12]      2011年3月27日12点12分</em></td>
+<td>设置开始时间点,空数组默认设置成1970年1月1日0时0分开始，数组的值对应param参数的对应值。</td>
+</tr>
+<tr>
+<td><strong>endTime</strong></td>
+<td>Pro</td>
+<td>{Array}</td>
+<td>同beginTime</td>
+<td>设置结束时间点,空数组默认设置成次年12月31日23时59分结束，数组的值对应param参数的对应值。</td>
+</tr>
+<tr>
+<td><strong>recentTime</strong></td>
+<td>Pro</td>
+<td>{Array}</td>
+<td>同beginTime</td>
+<td>设置当前时间点,空数组默认设置为系统当前时间，数组的值对应param参数的对应值。</td>
+</tr>
+<tr>
+<td><strong>callbackfuc</strong></td>
+<td>Simple &amp;&amp; Pro</td>
+<td>{function}</td>
+<td><em>function(arr){alert(arr)}</em></td>
+<td>function(arr){} 回调函数，可以自定义结果格式化</td>
+</tr>
+</tbody>
+</table>
 
-<p><strong>container</strong>： {String}，插件即将插入的容器id</p>
+<h3>
+<a id="demo--instructions" class="anchor" href="#demo--instructions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Demo &amp; Instructions</strong>
+</h3>
 
-<p><strong>type</strong>: {0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)</p>
-
-<p><strong>param</strong>: {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1</p>
-
-<p><strong>range</strong>: array类型，设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效(简易版中使用)</p>
-
-<p><strong>beginTime</strong>: {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
-
-<p><strong>endTime</strong>: {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
-
-<p><strong>recentTime</strong>: {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。(优质版中使用)</p>
-
-<p><strong>callbackfuc</strong> : function(arr){} 回调函数，可以自定义结果格式化</p>
-</blockquote>
+<ul>
+<li><p><a href="https://appianz.github.io/DateSelector/DateSelectorSimple.html">简易版日期选择器 DateSelectorSimple.Demo.</a> </p></li>
+<li><p><a href="https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorSimple">简易版日期选择器说明书 DateSelectorSimple. Instructions.</a>
+<br></p></li>
+<li><p><a href="https://appianz.github.io/DateSelector/DateSelectorPro.html">优质版日期选择器 DateSelectorPro.Demo.</a></p></li>
+<li><p><a href="https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorPro">优质版日期选择器说明书 DateSelectorPro. Instructions.</a></p></li>
+</ul>
 
 <h3>
 <a id="tips" class="anchor" href="#tips" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Tips</strong>
@@ -108,8 +192,8 @@
 
 <blockquote>
 <ul>
-<li><p>【年】【月】【日】【时】【分】的时间单位组合，必须是连续单位的组合。</p></li>
-<li><p>“固定样式”是指顶部有切换的tab，可以左右切换【年月日】和【时分】，而“自定义样式”是指不带有tab切换的样式。</p></li>
+<li><p>【年】【月】【日】【时】【分】的时间单位排列组合，必须是连续单位的组合（如不连续，则会校正为连续单位）。</p></li>
+<li><p>“固定样式”是指已经固定单位为【年、月、日、时、分】的场景，顶部有切换的tab，且可以左右切换【年月日】和【时分】，而“自定义样式”是指不带有tab切换的样式。</p></li>
 <li><p>在优质版日期选择器DateselectorPro中，用正确的数组表示你要设置的时间点。</p></li>
 </ul>
 </blockquote>
@@ -119,8 +203,7 @@
 </h3>
 
 <blockquote>
-<h4>
-<a id="如果你遇到了什么神bug可以通过微信523938480联系我" class="anchor" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E9%81%87%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88%E7%A5%9Ebug%E5%8F%AF%E4%BB%A5%E9%80%9A%E8%BF%87%E5%BE%AE%E4%BF%A1523938480%E8%81%94%E7%B3%BB%E6%88%91" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>如果你遇到了什么神bug，可以通过微信【523938480】联系我~</h4>
+<p>如果你遇到了什么神bug，可以通过微信【523938480】联系我 ~</p>
 </blockquote>
       </section>
 
