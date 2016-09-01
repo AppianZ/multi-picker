@@ -13,14 +13,15 @@
 
 > * 简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。
 
+
 ### DateSelectorPro的演示gif
-[  ![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) ]
+![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) 
  
 ### 固定单位为【年月日时分】的固定样式
-[  ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) ]
+![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
  
 ### 自定义单位为【年月日时分】的自定义任意组合
-[  ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) ]
+![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
  
 
 ### **API说明**
