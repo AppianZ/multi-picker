@@ -13,6 +13,8 @@
 
 > * 简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。
 
+> * [查 看 首 页](https://appianz.github.io/DateSelector/) 
+
 
 ### DateSelectorPro的演示gif
 ![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) 
