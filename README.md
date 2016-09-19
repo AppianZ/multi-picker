@@ -82,6 +82,6 @@
 
 
 
-### **Authors WeChat**
+### **Authors**
 
 >  如果你遇到了什么神bug，请发起issue联系我 ~
