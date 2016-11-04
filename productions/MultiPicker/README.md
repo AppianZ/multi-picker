@@ -11,7 +11,7 @@
 
 
 ### 0.示例演示
- ![img1.]() 
+ ![img1.](https://github.com/AppianZ/DateSelector/blob/master/productions/MultiPicker.gif) 
 
 ### 1.如何引用css和js文件
 
