@@ -31,7 +31,7 @@
 ### **API说明**
 
 **html的基本格式：**
-```
+```html
 <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
 <body>
     <input id="date-selector-input" type="text" readonly/>
@@ -40,7 +40,7 @@
 ```
 
 **调用js的基本格式：**
-```
+```js
 <script src="./DateSelectorPro.js"></script>
 <script>
     new DateSelector({ ... });
