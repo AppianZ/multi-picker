@@ -18,19 +18,23 @@
 > * [查 看 首 页](https://appianz.github.io/DateSelector/) 
 
 ### DateSelectorPro的演示gif
-![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) 
+![gif1.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) 
  
+
 ### 固定单位为【年月日时分】的固定样式
 ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
  
 ### 自定义单位为【年月日时分】的自定义任意组合
 ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
  
+ 
+### MultiPicker的演示gif
+ ![gif2.](https://github.com/AppianZ/DateSelector/blob/master/productions/MultiPicker.gif) 
 
 ### **API说明**
 
 **html的基本格式：**
-```
+```html
 <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
 <body>
     <input id="date-selector-input" type="text" readonly/>
@@ -39,7 +43,7 @@
 ```
 
 **调用js的基本格式：**
-```
+```js
 <script src="./DateSelectorPro.js"></script>
 <script>
     new DateSelector({ ... });
