@@ -1,5 +1,5 @@
 
-# DateSelector
+# multi-picker
 
 ### DateSelector的自我介绍
 
@@ -15,12 +15,15 @@
 
 > * 目前已有超过**2W**的实际用户，并有良好的兼容性。
 
-> * [查 看 首 页](https://appianz.github.io/DateSelector/) 
+> * [查 看 首 页](https://appianz.github.io/multi-picker/) 
 
+### MultiPicker的演示gif
+ ![gif2.](https://github.com/AppianZ/multi-picker/blob/master/productions/MultiPicker.gif) 
 
 ### DateSelectorPro的演示gif
-![gif.](https://github.com/AppianZ/DateSelector/blob/master/productions/DateSelector1.gif) 
+![gif1.](https://github.com/AppianZ/multi-picker/blob/master/productions/DateSelector1.gif) 
  
+
 ### 固定单位为【年月日时分】的固定样式
 ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
  
@@ -31,7 +34,7 @@
 ### **API说明**
 
 **html的基本格式：**
-```
+```html
 <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
 <body>
     <input id="date-selector-input" type="text" readonly/>
@@ -40,7 +43,7 @@
 ```
 
 **调用js的基本格式：**
-```
+```js
 <script src="./DateSelectorPro.js"></script>
 <script>
     new DateSelector({ ... });
@@ -63,14 +66,18 @@
 
 ### **Demo & Instructions**
 
-* [简易版日期选择器 DateSelectorSimple.Demo.](https://appianz.github.io/DateSelector/DateSelectorSimple.html) 
+* [自定义多级联动 DateSelectorPro.Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
 
-* [简易版日期选择器说明书 DateSelectorSimple. Instructions.](https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorSimple)
+* [自定义多级联动说明书 DateSelectorPro. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
+
+* [简易版日期选择器 DateSelectorSimple.Demo.](https://appianz.github.io/multi-picker/DateSelectorSimple.html) 
+
+* [简易版日期选择器说明书 DateSelectorSimple. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorSimple)
 <br/>
 
-* [优质版日期选择器 DateSelectorPro.Demo.](https://appianz.github.io/DateSelector/DateSelectorPro.html)
+* [优质版日期选择器 DateSelectorPro.Demo.](https://appianz.github.io/multi-picker/DateSelectorPro.html)
 
-* [优质版日期选择器说明书 DateSelectorPro. Instructions.](https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorPro)
+* [优质版日期选择器说明书 DateSelectorPro. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro)
 
 
 
