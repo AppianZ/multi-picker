@@ -73,6 +73,7 @@
 		},
 		checkArrDeep: function (parent) {//需要改变
 			var _this = this;
+			console.log(parent);
 			if ('child' in parent) {
 				//初始化jsonArr。每一个ul对应的数组并迭代
 				_this.jsonArr.push(_this.generateArrData(parent.child));

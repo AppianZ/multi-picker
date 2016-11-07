@@ -1,6 +1,33 @@
 
 # multi-picker
 
+### MultiPicker的自我介绍
+
+> * 一个能接受自定义json的多级联动, 一个能接受不同联动下限的多级联动。
+
+> * MultiPicker能接受符合格式规定的json, 基本形式:[{"id": 001, "value" : "xxx", "child": []}]
+
+> * MultiPicker能接受不定联动下限的json, 已城市联动为例:
+
+> 【2级联动:北京市 > 东城区】
+
+
+
+### DateSelector的自我介绍
+
+> * Dateselector是自定义的DateTimePicker. 可自定义时间单位，也可任意设定时间范围。
+
+> * 这框DateSelector主要有两种版本：简易日期选择器DateselectorSimple & 优质版日期选择器DateselectorPro.
+
+> * 两种版本都能够任意的进行【年】【月】【日】【时】【分】的时间单位组合。
+
+> * 简易版日期选择器的【自定义时间范围】只能精确到【年】，优质版日期选择器的【自定义时间范围】能够精确到【分】。
+
+> * 简洁实用的api，强大的合法性检测，能够根据实际情况【自定义时间格式】，满足产品需求。
+
+> * 目前已有超过**2W**的实际用户，并有良好的兼容性。
+
+
 ### DateSelector的自我介绍
 
 > * Dateselector是自定义的DateTimePicker. 可自定义时间单位，也可任意设定时间范围。
