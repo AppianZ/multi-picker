@@ -74,7 +74,7 @@
 		checkArrDeep: function (parent) {//需要改变
 			var _this = this;
 			console.log(parent);
-			if ('child' in parent) {
+			if ('child' in parent && parent.child.length > 0) {
 				//初始化jsonArr。每一个ul对应的数组并迭代
 				_this.jsonArr.push(_this.generateArrData(parent.child));
 				_this.checkArrDeep(parent.child[0]);
@@ -168,8 +168,8 @@
 				$class('multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
 				_this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).offsetHeight);
 				_this.resultArr.push({
-					"id": _this.jsonArr[i][_this.distance[i] / 40 + 2].id,
-					"value": _this.jsonArr[i][_this.distance[i] / 40 + 2].value,
+					"id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
+					"value": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].value,
 				});
 			});
 			_this.ulCount = _this.idxArr.length;
@@ -210,7 +210,7 @@
 			var tempObj   = _this.jsonData;
 			var targetIdx = 0;
 			loop(0, idx + 1, function (i) {
-				targetIdx = _this.distance[i] / 40;
+				targetIdx = _this.distance[i] / _this.liHeight;
 				tempObj   = i == 0 ? tempObj[targetIdx] : tempObj.child[targetIdx];
 			});
 			_this.initReady(idx, tempObj);
