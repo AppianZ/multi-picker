@@ -1,7 +1,7 @@
 /**
  * Created by appian on 2016/11/7.
  */
-var $data = [
+var $city = [
 	{
 		"value": "北京",
 		"child": [
