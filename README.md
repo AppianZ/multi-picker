@@ -1,6 +1,14 @@
 
 # multi-picker
 
+### MultiPicker的自我介绍
+> MultiPicker是一个能够自定义数据的任意联动级数的多级联动, 它的`任意联动级数` (建议 ≤ 5级) ，是指一个联动弹层中可以同时存在二级联动或三级联动。
+
+> 只要传入符合规范的 json ，就能自适应渲染多级联动的联动级数。
+
+> 适合自定义json，如需要时间联动则使用[DateSelector](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro)系列多级联动
+<br/>
+
 ### DateSelector的自我介绍
 
 > * Dateselector是自定义的DateTimePicker. 可自定义时间单位，也可任意设定时间范围。
@@ -15,7 +23,6 @@
 
 > * 目前已有超过**2W**的实际用户，并有良好的兼容性。
 
-> * [查 看 首 页](https://appianz.github.io/multi-picker/) 
 
 ### MultiPicker的演示gif
  ![gif2.](https://github.com/AppianZ/multi-picker/blob/master/productions/MultiPicker.gif) 
@@ -33,7 +40,7 @@
 
 ### **API说明**
 
-**html的基本格式：**
+**DateSelector的html的基本格式：**
 ```html
 <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
 <body>
