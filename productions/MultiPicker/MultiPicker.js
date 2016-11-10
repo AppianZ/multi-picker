@@ -238,7 +238,7 @@
 			}
 			if ((variance / arr.length).toFixed(2) > .1) { //如果方差的结果大于.1 用来控制速度变化幅度
 				rate = max > this.liHeight * 15 ? dir * 2 : 0; //如果数组长度是大于15的才会有加速度出现
-				this.initPosition(this.distance[idx] + rate, max - 200, idx);
+				this.initPosition(this.distance[idx] + rate, max - this.liHeight * 5, idx);
 				this.move.speed[0] = .2;
 			} else {
 				this.initPosition(this.distance[idx], max, idx);
@@ -263,7 +263,7 @@
 					that.end.Y         = Math.abs(event.changedTouches[0].clientY);
 					var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
 					var temp           = that.distance[idx];
-					that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] - 200 ? tempDis : that.maxHeight[idx] - 200);
+					that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] - this.liHeight * 5 ? tempDis : that.maxHeight[idx] - this.liHeight * 5);
 					that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
 					
 					$picker.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
