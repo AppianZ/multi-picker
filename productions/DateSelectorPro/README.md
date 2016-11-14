@@ -1,7 +1,6 @@
 ## DateSelectorPro - 日期选择器优质版
 
 #### 优质的主要表现在:
-
 > 优化版的自定义功能不仅是【单位】自定义
 
 > 【时间范围】也可以自定义,自定义的时间可以精确到分钟，并尽可能的进行数据合法性校正
@@ -9,9 +8,8 @@
 > 例如可以设置【2011年13月(-27)日 102时12分 ~ 2020年10月21日 20时20分】的效果
 
 <br/>
-### 0.[在移动端下打开demo](https://appianz.github.io/DateSelector/DateSelectorPro.html)
-<br/>
-### 1.如何引用css和js文件
+### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelectorPro.html)
+### 1.如何引用
 
 > sass文件:引用productions/DateSelectorPro/DateSelectorPro.scss
 
@@ -19,9 +17,7 @@
 
 > js文件:引用productions/DateSelectorPro/DateSelectorPro.js
 
-<br/>
-
-### 2.如何调用构造函数
+### 2.如何使用
 
 **html的基本格式：**
 ```html
@@ -33,14 +29,14 @@
 ```
 
 **调用js的基本格式：**
-```js
+```html
 <script src="./DateSelectorPro.js"></script>
 <script>
     new DateSelector({ ... });
 </script>
 ```
 
-**参数配置:**
+**参数配置：**
 
 | 参数 | 字符类型  |  取值  | 说明 | 
 | -----| -----| -----| -----|
@@ -52,55 +48,34 @@
 |  **endTime** |  {Array} |同beginTime| 设置结束时间点,空数组默认设置成次年12月31日23时59分结束，数组的值对应param参数的对应值。 |
 |  **recentTime**  |  {Array} |同beginTime| 设置当前时间点,空数组默认设置为系统当前时间，数组的值对应param参数的对应值。 |
 |  **callbackfuc**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
-<br/>
 
 ### 3.有什么优越性？
 
 带有加速度的滑动 (•‿•)
 
-能够动态设置任意开始和结束【时间点】 (•‿•)
+能够动态设置任意开始和结束【时!间!点!】 (•‿•)
 
-> 是的,你可以设置任何尴尬的时间了!
-
-> 【2016-11-11 11:11 ~ 2016-12-12 12:12】
+> 是的,你可以设置任何尴尬的时间了~ 比如:【2016-11-11 11:11 ~ 2016-12-12 12:12】
 
 能够任意设置时间单位的组合 (•‿•) 
 
-> 有时候需要"年月日",
-
-> 有时候需要"月日时分",
-
-> 有时候又需要"年月日时分"!
+> "年月日"  OR  "月日时分"  OR  "年月日时分"
 
 能够切换固定样式和自定义样式,简化参数 (•‿•)
 
-> 小清新的样式一定能够打动你冰封的心!
+能利用我的模型处理更多、更自由的联动 (•‿•)
 
-能利用我的模型处理更多联动 (•‿•)
+> 比如城市多级联动，请移步[自定义json选择器 - MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
 
-> 比如城市三级联动,但是有待开发喔!
-
-#### Trust Me.
-<br/>
+#### Trust Me. 
 
 ### 4.有什么局限性？
 
-> 样式主题可能和你的产品不符 >.<
+> 样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<
 
-> 在实际开发过程中,改变主题颜色只能靠自己了~
+> 如果你只需要设置年份范围，不需要精确到后面的时间单位，请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorSimple)
 
-> 你可以选择改变css或改变sass的全局变量后重新编译
-
-> 如果你只需要设置年份范围，不需要精确到后面的时间单位。
-
-> 这时候,请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/DateSelector/tree/master/productions/DateSelectorSimple)
-
-> 一定让您满意！
-
-> 如果遇到什么神bug,不要着急
-
-> 这时候,请发起issue
-
+> 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 
 #### Trust Me. Again.
 

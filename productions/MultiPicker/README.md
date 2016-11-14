@@ -21,7 +21,7 @@
 
 > js文件: productions/MultiPicker/MultiPicker.js
 
-> json文件 (js类型) ：productions/MultiPicker/json.js
+> json文件 (js类型) ：productions/MultiPicker/city.js
 <br/>
 
 ### 2.如何调用构造函数
