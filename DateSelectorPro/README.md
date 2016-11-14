@@ -11,11 +11,11 @@
 ### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelectorPro.html)
 ### 1.如何引用
 
-> sass文件:引用productions/DateSelectorPro/DateSelectorPro.scss
+> sass文件:引用DateSelectorPro/DateSelectorPro.scss
 
-> css文件:引用productions/DateSelectorPro/DateSelectorPro.css
+> css文件:引用DateSelectorPro/DateSelectorPro.css
 
-> js文件:引用productions/DateSelectorPro/DateSelectorPro.js
+> js文件:引用DateSelectorPro/DateSelectorPro.js
 
 ### 2.如何使用
 
@@ -65,7 +65,7 @@
 
 能利用我的模型处理更多、更自由的联动 (•‿•)
 
-> 比如城市多级联动，请移步[自定义json选择器 - MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
+> 比如城市多级联动，请移步[自定义json选择器 - MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
 #### Trust Me. 
 
@@ -73,7 +73,7 @@
 
 > 样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<
 
-> 如果你只需要设置年份范围，不需要精确到后面的时间单位，请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorSimple)
+> 如果你只需要设置年份范围，不需要精确到后面的时间单位，请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorSimple)
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 

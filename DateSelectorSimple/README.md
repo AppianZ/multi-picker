@@ -8,11 +8,11 @@
 <br/>
 ### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelectorSimple.html)
 ### 1.如何引用
-> sass文件:引用productions/DateSelectorSimple/DateSelectorSimple.scss
+> sass文件:引用DateSelectorSimple/DateSelectorSimple.scss
 
-> css文件:引用productions/DateSelectorSimple/DateSelectorSimple.css
+> css文件:引用DateSelectorSimple/DateSelectorSimple.css
 
-> js文件:productions/DateSelectorSimple/DateSelectorSimple.js
+> js文件:引用DateSelectorSimple/DateSelectorSimple.js
 
 ### 2.如何使用
 
@@ -57,14 +57,14 @@
 能够切换固定样式和自定义样式,简化参数 (•‿•)
 
 能利用我的模型处理更多、更自由的联动 (•‿•)
-> 比如城市多级联动，请移步[自定义json选择器 - MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
+> 比如城市多级联动，请移步[自定义json选择器 - MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
 #### Trust Me.
 
 ### 4.有什么局限性？
 > 样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<
 
-> 只能动态控制年份范围 >.<  在实际开发过程中,产品总会告诉你,我要从2016-11-11 11:11开始! 还要在2016-12-12 12:12的时候结束! 必须这样!!  这时候,请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro)
+> 只能动态控制年份范围 >.<  在实际开发过程中,产品总会告诉你,我要从2016-11-11 11:11开始! 还要在2016-12-12 12:12的时候结束! 必须这样!!  这时候,请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro)
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 

@@ -2,26 +2,26 @@
 MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有超过**3w**的实际用户正在使用。
 
 MultiPicker主要是由`两个部分`组成，
-一个部分是 [日期选择器 - DateSelector](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro) 。
-![gif2.](https://github.com/AppianZ/multi-picker/blob/master/productions/DateSelectorPro/DateSelector1.gif) 
+* 一个部分是 [日期选择器 - DateSelector](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro) 
+![gif2.](https://github.com/AppianZ/multi-picker/blob/master/DateSelectorPro/DateSelector1.gif) 
 
-另一个部分是 [自定义json选择器 - MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker) ； 
-![gif1.](https://github.com/AppianZ/multi-picker/blob/master/productions/MultiPicker/MultiPicker.gif) 
+* 另一个部分是 [自定义json选择器 - MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
+![gif1.](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/MultiPicker.gif) 
 
 ### **Demo & Instructions**
 #### 日期选择器 - DateSelector
 * [优质版日期选择器-DateSelectorPro.Demo.](https://appianz.github.io/multi-picker/DateSelectorPro.html)
 
-* [优质版日期选择器说明书-DateSelectorPro. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro)
+* [优质版日期选择器说明书-DateSelectorPro. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro)
 <br/>
 * [简易版日期选择器-DateSelectorSimple.Demo.](https://appianz.github.io/multi-picker/DateSelectorSimple.html) 
 
-* [简易版日期选择器说明书-DateSelectorSimple. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorSimple)
+* [简易版日期选择器说明书-DateSelectorSimple. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorSimple)
 
 #### 自定义json选择器 - MultiPicker
 * [自定义json选择器-MultiPicker.Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
 
-* [自定义json选择器说明书-MultiPicker. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
+* [自定义json选择器说明书-MultiPicker. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
 ### **Tips**
 > * 可以充分利用callback，对返回的结果执行相应操作，比如：拼接出期望的字符串，或构造后台期望的存储对象。
