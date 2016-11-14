@@ -1,5 +1,5 @@
 ## MultiPicker - 自定义多级联动
-MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有超过**3w**的实际用户正在使用。
+MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有超过 **3w** 的实际用户正在使用。
 
 MultiPicker主要是由`两个部分`组成，
 * 一个部分是 [日期选择器 - DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro) <br/>
