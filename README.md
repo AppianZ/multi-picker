@@ -30,7 +30,6 @@
 ### DateSelectorPro的演示gif
 ![gif1.](https://github.com/AppianZ/multi-picker/blob/master/productions/DateSelector1.gif) 
  
-
 ### 固定单位为【年月日时分】的固定样式
 ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
  
@@ -80,7 +79,6 @@
 * [简易版日期选择器 DateSelectorSimple.Demo.](https://appianz.github.io/multi-picker/DateSelectorSimple.html) 
 
 * [简易版日期选择器说明书 DateSelectorSimple. Instructions.](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorSimple)
-<br/>
 
 * [优质版日期选择器 DateSelectorPro.Demo.](https://appianz.github.io/multi-picker/DateSelectorPro.html)
 

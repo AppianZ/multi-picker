@@ -10,11 +10,13 @@
         * {
             padding: 0;
             margin: 0;
-            font-weight: 400; }
+            font-weight: 400;
+        }
 
         .multi-picker-locked {
             height: 100% !important;
-            overflow: hidden !important; }
+            overflow: hidden !important;
+        }
 
         .multi-picker-bg {
             position: fixed;
@@ -26,11 +28,13 @@
             overflow: hidden;
             transition: all .3s ease;
             -webkit-transition: all .3s ease;
-            z-index: -1; }
+            z-index: -1;
+        }
 
         .multi-picker-bg-up {
             z-index: 999 !important;
-            background: rgba(75, 75, 75, 0.65) !important; }
+            background: rgba(75, 75, 75, 0.65) !important;
+        }
 
         .multi-picker-container {
             width: 100%;
@@ -43,11 +47,13 @@
             background-color: #FFF;
             transition: transform .3s ease;
             -webkit-transition: -webkit-transform .3s ease;
-            z-index: -1; }
+            z-index: -1;
+        }
 
         .multi-picker-container-up {
             transform: translate3d(0, 0, 0) !important;
-            -webkit-transform: translate3d(0, 0, 0) !important; }
+            -webkit-transform: translate3d(0, 0, 0) !important;
+        }
 
         .multi-picker-btn-box {
             display: block;
@@ -57,16 +63,21 @@
             height: 50px;
             line-height: 50px;
             background: #40CCC0;
-            z-index: 10; }
+            z-index: 10;
+        }
+
         .multi-picker-btn-box .multi-picker-btn {
             position: absolute;
             display: inline-block;
             margin: 0 20px;
             color: #fff;
-            right: 0; }
+            right: 0;
+        }
+
         .multi-picker-btn-box .multi-picker-btn:nth-child(1) {
             left: 0;
-            right: initial; }
+            right: initial;
+        }
 
         .multi-picker-content {
             position: absolute;
@@ -78,7 +89,9 @@
             transform: translate3d(0, 0, 0);
             -webkit-transform: translate3d(0, 0, 0);
             transition: transform .3s ease;
-            -webkit-transition: -webkit-transform .3s ease; }
+            -webkit-transition: -webkit-transform .3s ease;
+        }
+
         .multi-picker-content .multi-picker {
             display: inline-block;
             height: 200px;
@@ -86,9 +99,13 @@
             position: relative;
             z-index: -1;
             transition: width .3s ease;
-            vertical-align: top; }
+            vertical-align: top;
+        }
+
         .multi-picker-content ul::-webkit-scrollbar {
-            display: none; }
+            display: none;
+        }
+
         .multi-picker-content li {
             height: 40px;
             text-align: center;
@@ -98,20 +115,28 @@
             color: #333;
             overflow: hidden;
             text-overflow: ellipsis;
-            white-space: nowrap; }
+            white-space: nowrap;
+        }
+
         .multi-picker-content .multi-picker-up-shadow, .multi-picker-content .multi-picker-down-shadow {
             position: absolute;
             width: 100%;
             height: 80px;
-            pointer-events: none; }
+            pointer-events: none;
+        }
+
         .multi-picker-content .multi-picker-up-shadow {
             top: 0;
             background-image: linear-gradient(to bottom, #FFF, rgba(255, 255, 255, 0));
-            z-index: 50; }
+            z-index: 50;
+        }
+
         .multi-picker-content .multi-picker-down-shadow {
             bottom: -200px;
             z-index: 50;
-            background-image: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0)); }
+            background-image: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0));
+        }
+
         .multi-picker-content .multi-picker-line {
             width: 95%;
             height: 40px;
@@ -123,13 +148,15 @@
             border-top: 1px solid #DCDCDC;
             border-bottom: 1px solid #DCDCDC;
             transform: translate3d(-50%, 0, 0);
-            -webkit-transform: translate3d(-50%, 0, 0); }
+            -webkit-transform: translate3d(-50%, 0, 0);
+        }
 
         /*# sourceMappingURL=index.css.map */
 
         body {
             background: #fefefe;
         }
+
         h3 {
             position: relative;
             width: 100%;
@@ -138,6 +165,7 @@
             text-align: center;
             color: #555;
         }
+
         h3:after {
             content: '';
             position: absolute;
@@ -149,24 +177,28 @@
             background: #ddd;
             border-radius: 10px;
         }
+
         article {
             color: #333;
             line-height: 1.3;
             padding: 0 30px;
             margin: 20px 0;
         }
+
         p {
             color: #777;
             font-size: 14px;
             margin: 5px 0 0 0;
         }
+
         .block {
-            background : rgb(241,241,241);
-            border-left : 8px solid #D6DBDF;
+            background: rgb(241, 241, 241);
+            border-left: 8px solid #D6DBDF;
             padding: 10px 12px;
             margin: 0 0 15px 0;
             overflow: auto;
         }
+
         input {
             display: block;
             width: 200px;
@@ -180,589 +212,589 @@
 
 
 <body>
-    <h3>MultiPicker.</h3>
-    <article>
-        <p>0.请在移动端下打开~~</p>
-        <p>1.点击下面的输入演示样式</p>
-        <input id="multiPickerInput" type="text" placeholder="点我~~看固定效果" readonly/>
-        <div class="block">
-            自定义json<br/><br/>
-            可以执行不同的深度等级<br/><br/>
-            如果想要效果,点击input<br/><br/>
-        </div>
-        <p>2.最终选择的json:</p>
-        <div class="block" id="showBlock" style="line-height: 1.5;">
-            这里会显示最终的结果
-        </div>
-    </article>
+<h3>MultiPicker.</h3>
+<article>
+    <p>0.请在移动端下打开~~</p>
+    <p>1.点击下面的输入演示样式</p>
+    <input id="multiPickerInput" type="text" placeholder="点我~~看固定效果" readonly/>
+    <div class="block">
+        自定义json<br/><br/>
+        可以执行不同的深度等级<br/><br/>
+        如果想要效果,点击input<br/><br/>
+    </div>
+    <p>2.最终选择的json:</p>
+    <div class="block" id="showBlock" style="line-height: 1.5;">
+        这里会显示最终的结果
+    </div>
+</article>
 
-    <div id="targetContainer"></div>
+<div id="targetContainer"></div>
 
 
-    <script>
-        var $data = [{
-            "id": "1201",
-            "value": "北京市",
+<script>
+    var $data = [{
+        "id": "1201",
+        "value": "北京市",
+        "child": [{
+            "id": "001",
+            "value": "东城区",//【2级联动:北京市 > 东城区】
+        },
+            {
+                "id": "002",
+                "value": "西城区",//【3级联动:北京市 > 西城区 > aaa街道】
+                "child": [{
+                    "id": "a",
+                    "value": "aaa街道"
+                }, {
+                    "id": "b",
+                    "value": "bbb街道"
+                }, {
+                    "id": "c",
+                    "value": "ccc街道"
+                }]
+            }]
+    },
+        {
+            "id": "1203",
+            "value": "福建省",
             "child": [{
                 "id": "001",
-                "value": "东城区",//【2级联动:北京市 > 东城区】
+                "value": "福州市",//【4级联动:福建省 > 福州市 > 晋安区 > a 街道】
+                "child": [{
+                    "id": "a1",
+                    "value": "晋安区",
+                    "child": [{
+                        "id": "aaa",
+                        "value": "a街道"
+                    }, {
+                        "id": "bbb",
+                        "value": "b街道"
+                    }, {
+                        "id": "ccc",
+                        "value": "c街道"
+                    }, {
+                        "id": "ddd",
+                        "value": "d街道"
+                    }, {
+                        "id": "eee",
+                        "value": "e街道"
+                    }, {
+                        "id": "fff",
+                        "value": "f街道"
+                    }, {
+                        "id": "ggg",
+                        "value": "g街道"
+                    }, {
+                        "id": "hhh",
+                        "value": "h街道"
+                    }, {
+                        "id": "iii",
+                        "value": "i街道"
+                    }, {
+                        "id": "jjj",
+                        "value": "j街道"
+                    }, {
+                        "id": "kkk",
+                        "value": "k街道"
+                    }]
+                },
+                    {
+                        "id": "b1",
+                        "value": "鼓楼区",
+                        "child": [{
+                            "id": "a",
+                            "value": "a道"
+                        }, {
+                            "id": "b",
+                            "value": "b道"
+                        }, {
+                            "id": "c",
+                            "value": "c道"
+                        }, {
+                            "id": "d",
+                            "value": "d道"
+                        }, {
+                            "id": "e",
+                            "value": "e道"
+                        }, {
+                            "id": "f",
+                            "value": "f道"
+                        }, {
+                            "id": "g",
+                            "value": "g道"
+                        }, {
+                            "id": "h",
+                            "value": "h道"
+                        }, {
+                            "id": "i",
+                            "value": "i道"
+                        }, {
+                            "id": "j",
+                            "value": "j道"
+                        }, {
+                            "id": "k",
+                            "value": "k道"
+                        }]
+                    }]
             },
                 {
                     "id": "002",
-                    "value": "西城区",//【3级联动:北京市 > 西城区 > aaa街道】
+                    "value": "厦门市",
                     "child": [{
-                        "id": "a",
-                        "value": "aaa街道"
-                    },{
-                        "id": "b",
-                        "value": "bbb街道"
-                    },{
-                        "id": "c",
-                        "value": "ccc街道"
-                    }]
-                }]
-        },
-            {
-                "id": "1203",
-                "value": "福建省",
-                "child": [{
-                    "id": "001",
-                    "value": "福州市",//【4级联动:福建省 > 福州市 > 晋安区 > a 街道】
-                    "child": [{
-                        "id": "a1",
-                        "value": "晋安区",
+                        "id": "2a",
+                        "value": "集美区",//【5级联动:福建省 > 厦门市 > 集美区 > aaa街道 > a1街道】
                         "child": [{
-                            "id": "aaa",
-                            "value": "a街道"
-                        },{
-                            "id": "bbb",
-                            "value": "b街道"
-                        },{
-                            "id": "ccc",
-                            "value": "c街道"
-                        },{
-                            "id": "ddd",
-                            "value": "d街道"
-                        },{
-                            "id": "eee",
-                            "value": "e街道"
-                        },{
-                            "id": "fff",
-                            "value": "f街道"
-                        },{
-                            "id": "ggg",
-                            "value": "g街道"
-                        },{
-                            "id": "hhh",
-                            "value": "h街道"
-                        },{
-                            "id": "iii",
-                            "value": "i街道"
-                        },{
-                            "id": "jjj",
-                            "value": "j街道"
-                        },{
-                            "id": "kkk",
-                            "value": "k街道"
+                            "id": "a",
+                            "value": "aaa街道",
+                            "child": [{
+                                "id": "aaa-1",
+                                "value": "a1街道",
+                            }, {
+                                "id": "aaa-2",
+                                "value": "a2街道",
+                            }]
+                        }, {
+                            "id": "b",
+                            "value": "bbb街道"
+                        }, {
+                            "id": "c",
+                            "value": "ccc街道"
+                        }, {
+                            "id": "d",
+                            "value": "ddd街道"
+                        }, {
+                            "id": "e",
+                            "value": "eee街道"
+                        }, {
+                            "id": "f",
+                            "value": "fff街道"
+                        }, {
+                            "id": "g",
+                            "value": "ggg街道"
+                        }, {
+                            "id": "h",
+                            "value": "hhh街道"
+                        }, {
+                            "id": "i",
+                            "value": "iii街道"
+                        }, {
+                            "id": "j",
+                            "value": "jjj街道"
+                        }, {
+                            "id": "k",
+                            "value": "kkk街道"
+                        }, {
+                            "id": "l",
+                            "value": "lll街道"
+                        }, {
+                            "id": "m",
+                            "value": "mmm街道"
+                        }, {
+                            "id": "n",
+                            "value": "nnn街道"
+                        }, {
+                            "id": "o",
+                            "value": "ooo街道"
+                        }, {
+                            "id": "p",
+                            "value": "ppp街道"
+                        }, {
+                            "id": "q",
+                            "value": "qqq街道"
+                        }, {
+                            "id": "r",
+                            "value": "rrr街道"
+                        }, {
+                            "id": "s",
+                            "value": "sss街道"
+                        }, {
+                            "id": "t",
+                            "value": "ttt街道"
                         }]
                     },
                         {
-                            "id": "b1",
-                            "value": "鼓楼区",
+                            "id": "2b",
+                            "value": "湖里区",
                             "child": [{
                                 "id": "a",
-                                "value": "a道"
-                            },{
-                                "id": "b",
-                                "value": "b道"
-                            },{
-                                "id": "c",
-                                "value": "c道"
-                            },{
-                                "id": "d",
-                                "value": "d道"
-                            },{
-                                "id": "e",
-                                "value": "e道"
-                            },{
-                                "id": "f",
-                                "value": "f道"
-                            },{
-                                "id": "g",
-                                "value": "g道"
-                            },{
-                                "id": "h",
-                                "value": "h道"
-                            },{
-                                "id": "i",
-                                "value": "i道"
-                            },{
-                                "id": "j",
-                                "value": "j道"
-                            },{
-                                "id": "k",
-                                "value": "k道"
-                            }]
-                        }]
-                },
-                    {
-                        "id": "002",
-                        "value": "厦门市",
-                        "child": [{
-                            "id": "2a",
-                            "value": "集美区",//【5级联动:福建省 > 厦门市 > 集美区 > aaa街道 > a1街道】
-                            "child": [{
-                                "id": "a",
-                                "value": "aaa街道",
-                                "child" : [{
-                                    "id": "aaa-1",
-                                    "value": "a1街道",
-                                },{
-                                    "id": "aaa-2",
-                                    "value": "a2街道",
-                                }]
-                            },{
+                                "value": "aaa街道"
+                            }, {
                                 "id": "b",
                                 "value": "bbb街道"
-                            },{
+                            }, {
                                 "id": "c",
                                 "value": "ccc街道"
-                            },{
+                            }, {
                                 "id": "d",
                                 "value": "ddd街道"
-                            },{
+                            }, {
                                 "id": "e",
                                 "value": "eee街道"
-                            },{
+                            }, {
                                 "id": "f",
                                 "value": "fff街道"
-                            },{
+                            }, {
                                 "id": "g",
                                 "value": "ggg街道"
-                            },{
+                            }, {
                                 "id": "h",
                                 "value": "hhh街道"
-                            },{
+                            }, {
                                 "id": "i",
                                 "value": "iii街道"
-                            },{
+                            }, {
                                 "id": "j",
                                 "value": "jjj街道"
-                            },{
+                            }, {
                                 "id": "k",
                                 "value": "kkk街道"
-                            },{
+                            }, {
                                 "id": "l",
                                 "value": "lll街道"
-                            },{
+                            }, {
                                 "id": "m",
                                 "value": "mmm街道"
-                            },{
-                                "id": "n",
-                                "value": "nnn街道"
-                            },{
-                                "id": "o",
-                                "value": "ooo街道"
-                            },{
-                                "id": "p",
-                                "value": "ppp街道"
-                            },{
-                                "id": "q",
-                                "value": "qqq街道"
-                            },{
-                                "id": "r",
-                                "value": "rrr街道"
-                            },{
-                                "id": "s",
-                                "value": "sss街道"
-                            },{
-                                "id": "t",
-                                "value": "ttt街道"
                             }]
                         },
-                            {
-                                "id": "2b",
-                                "value": "湖里区",
-                                "child": [{
-                                    "id": "a",
-                                    "value": "aaa街道"
-                                },{
-                                    "id": "b",
-                                    "value": "bbb街道"
-                                },{
-                                    "id": "c",
-                                    "value": "ccc街道"
-                                },{
-                                    "id": "d",
-                                    "value": "ddd街道"
-                                },{
-                                    "id": "e",
-                                    "value": "eee街道"
-                                },{
-                                    "id": "f",
-                                    "value": "fff街道"
-                                },{
-                                    "id": "g",
-                                    "value": "ggg街道"
-                                },{
-                                    "id": "h",
-                                    "value": "hhh街道"
-                                },{
-                                    "id": "i",
-                                    "value": "iii街道"
-                                },{
-                                    "id": "j",
-                                    "value": "jjj街道"
-                                },{
-                                    "id": "k",
-                                    "value": "kkk街道"
-                                },{
-                                    "id": "l",
-                                    "value": "lll街道"
-                                },{
-                                    "id": "m",
-                                    "value": "mmm街道"
-                                }]
-                            },
-                            {
-                                "id": "2c",
-                                "value": "思明区",
-                            },
-                            {
-                                "id": "2d",
-                                "value": "同安区",
-                                "child": [{
-                                    "id": "a",
-                                    "value": "aaa街道"
-                                },{
-                                    "id": "b",
-                                    "value": "bbb街道"
-                                },{
-                                    "id": "c",
-                                    "value": "ccc街道"
-                                }]
+                        {
+                            "id": "2c",
+                            "value": "思明区",
+                        },
+                        {
+                            "id": "2d",
+                            "value": "同安区",
+                            "child": [{
+                                "id": "a",
+                                "value": "aaa街道"
+                            }, {
+                                "id": "b",
+                                "value": "bbb街道"
+                            }, {
+                                "id": "c",
+                                "value": "ccc街道"
                             }]
-                    }]
+                        }]
+                }]
+        }
+    ];
+
+</script>
+<script src="city.js"></script>
+<script>
+    /**
+     * Created by appian on 16/10/17.
+     */
+    (function (wid, dcm) {
+        var win = wid;
+        var doc = dcm;
+
+        function $id(id) {
+            return doc.getElementById(id);
+        }
+
+        function $class(name) {
+            return doc.getElementsByClassName(name);
+        }
+
+        function loop(begin, length, fuc) {
+            for ( var i = begin; i < length; i++ ) {
+                if (fuc(i)) break;
             }
-        ];
+        }
 
-    </script>
-    <script src="city.js"></script>
-    <script>
-        /**
-         * Created by appian on 16/10/17.
-         */
-        (function (wid, dcm) {
-            var win = wid;
-            var doc = dcm;
-
-            function $id(id) {
-                return doc.getElementById(id);
-            }
-
-            function $class(name) {
-                return doc.getElementsByClassName(name);
-            }
-
-            function loop(begin, length, fuc) {
-                for ( var i = begin; i < length; i++ ) {
-                    if (fuc(i)) break;
+        function on(action, selector, callback) {
+            doc.addEventListener(action, function (e) {
+                if (selector == e.target.tagName.toLowerCase() || selector == e.target.className || selector == e.target.id) {
+                    callback(e);
                 }
-            }
+            })
+        }
 
-            function on(action, selector, callback) {
-                doc.addEventListener(action, function (e) {
-                    if (selector == e.target.tagName.toLowerCase() || selector == e.target.className || selector == e.target.id) {
-                        callback(e);
-                    }
-                })
-            }
+        function MultiPicker(config) {
+            this.input       = config.input;
+            this.container   = config.container;
+            this.jsonData    = config.jsonData;
+            this.callbackFuc = config.callbackFuc;
 
-            function MultiPicker(config) {
-                this.input       = config.input;
-                this.container   = config.container;
-                this.jsonData    = config.jsonData;
-                this.callbackFuc = config.callbackFuc;
-
-                this.ulCount   = 0; //记录上一次的
-                this.ulIdx     = 0; //ul下标计数器,前一次的计数器
-                this.ulDomArr  = [];//ul的dom元素,【a】
-                this.idxArr    = [];//更新后的ul的下标 【a】
-                this.jsonArr   = [];//用来存储每个ul的li中显示的arr【a】
-                this.liHeight  = 40;
-                this.maxHeight = [];//每个ul的最大高度【a】
-                this.distance  = [];//transition的移动位置【a】
-                this.start     = {
-                    Y: 0,
-                    time: ''
-                };
-                this.move      = {
-                    Y: 0,
-                    speed: []
-                };
-                this.end       = {
-                    Y: 0,
-                    status: true,
-                };
-                this.resultArr = [];
-                this.initDomFuc();
-                this.initReady(0, this.jsonData[0]);
-                this.initBinding();
-            }
-
-            MultiPicker.prototype = {
-                constructor: MultiPicker,
-                generateArrData: function (targetArr) {
-                    var tempArr = [];
-                    loop(0, targetArr.length, function (i) {
-                        tempArr.push({
-                            "id": targetArr[i].id,
-                            "value": targetArr[i].value
-                        })
-                    });
-                    return tempArr;
-                },
-                checkArrDeep: function (parent) {//需要改变
-                    var _this = this;
-                    if ('child' in parent && parent.child.length > 0) {
-                        //初始化jsonArr。每一个ul对应的数组并迭代
-                        _this.jsonArr.push(_this.generateArrData(parent.child));
-                        _this.checkArrDeep(parent.child[0]);
-                    }
-                    _this.idxArr.push(this.ulIdx++);
-                },
-                insertLiArr: function (targetUl, arr) {
-                    var html    = '';
-                    var nullObj = {
-                        id: '-99',
-                        value: '',
-                    };
-                    arr.unshift(nullObj, nullObj);
-                    arr.push(nullObj, nullObj);
-                    loop(0, arr.length, function (i) {
-                        html += '<li data-id="' + arr[i].id + '">' + arr[i].value + '</li>';
-                    });
-                    targetUl.innerHTML = html;
-                },
-                initDomFuc: function () {
-                    var _this                      = this;
-                    var html                       = '';
-                    html += '<div class="multi-picker-bg" id="multi-picker-bg-' + _this.container + '">'
-                            + '<div  class="multi-picker-container" id="multi-picker-container-' + _this.container + '">'
-                            + '<div class="multi-picker-btn-box">'
-                            + '<div class="multi-picker-btn" id="multi-picker-btn-cancel">返回</div>'
-                            + '<div class="multi-picker-btn" id="multi-picker-btn-save-' + _this.container + '">提交</div>'
-                            + '</div>'
-                            + '<div class="multi-picker-content">'
-                            + '<div class="multi-picker-up-shadow"></div>'
-                            + '<div class="multi-picker-down-shadow"></div>'
-                            + '<div class="multi-picker-line"></div>'
-                            + '</div></div></div>';
-                    $id(_this.container).innerHTML = html;
-                    _this.jsonArr.push(_this.generateArrData(_this.jsonData));
-                },
-                initReady: function (idx, target) {
-                    var _this            = this;
-                    this.ulIdx           = 0;
-                    this.idxArr.length   = idx;
-                    _this.jsonArr.length = idx + 1;
-                    _this.checkArrDeep(target);//查看某【对象】的深度
-                    //取到class='multi-picker-content',可以在里面插入ul
-                    var parentNode = $id('multi-picker-container-' + _this.container).children[1];
-                    var tempMax    = _this.ulCount <= _this.idxArr.length ? _this.ulCount : _this.idxArr.length;
-                    loop(idx + 1, tempMax, function (i) {
-                        var $picker = $id('multi-picker-' + _this.container + '-' + i);
-                        _this.insertLiArr($picker, _this.jsonArr[i]);
-                        _this.distance[i]             = 0;
-                        $picker.style.transform       = 'translate3d(0, 0, 0)';
-                        $picker.style.webkitTransform = 'translate3d(0, 0, 0)';
-                    });
-                    if (_this.ulCount <= _this.idxArr.length) {
-                        // 如果不足,则插入ul,从0开始计数
-                        loop(_this.ulCount, _this.idxArr.length, function (i) {
-                            var newPickerDiv = document.createElement('div');
-                            newPickerDiv.setAttribute('class', 'multi-picker');
-                            newPickerDiv.innerHTML = '<ul id="multi-picker-' + _this.container + '-' + i + '"></ul>';
-                            parentNode.insertBefore(newPickerDiv, parentNode.children[parentNode.children.length - 3]);
-                            var tempDomUl = $id('multi-picker-' + _this.container + '-' + i);
-                            _this.ulDomArr.push(tempDomUl);
-                            _this.distance.push(0);
-                            //插入li
-                            _this.insertLiArr(tempDomUl, _this.jsonArr[i]);
-
-                            //绑定事件
-                            var tempArray = _this.jsonArr[i];
-                            tempDomUl.addEventListener('touchstart', function () {
-                                _this.touch(event, _this, tempDomUl, tempArray, i);
-                            }, false);
-                            tempDomUl.addEventListener('touchmove', function () {
-                                _this.touch(event, _this, tempDomUl, tempArray, i);
-                            }, false);
-                            tempDomUl.addEventListener('touchend', function () {
-                                _this.touch(event, _this, tempDomUl, tempArray, i);
-                            }, false);
-                        });
-                    } else { // 当上一次的ulCount 比当前ul的总数来的大的时候要清除子dom
-                        for ( var j = _this.ulCount - 1; j > _this.idxArr.length - 1; j-- ) {
-                            var oldPicker = $class('multi-picker')[j];
-                            oldPicker.parentNode.removeChild(oldPicker);
-                            _this.ulDomArr.pop();
-                            _this.distance.pop();
-                        }
-                    }
-
-                    //统一重新设置宽度和ul的maxHeight
-                    _this.maxHeight.length = 0;
-                    _this.resultArr.length = 0;
-                    loop(0, _this.idxArr.length, function (i) {
-                        $class('multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
-                        _this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).offsetHeight);
-                        _this.resultArr.push({
-                            "id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
-                            "value": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].value,
-                        });
-                    });
-                    _this.ulCount = _this.idxArr.length;
-                    console.log(_this.resultArr);
-                },
-                initBinding: function () {
-                    var _this     = this;
-                    var bg        = $id('multi-picker-bg-' + _this.container);
-                    var container = $id('multi-picker-container-' + _this.container);
-                    var body      = doc.body;
-                    on('touchstart', _this.input, function () {
-                        bg.classList.add('multi-picker-bg-up');
-                        container.classList.add('multi-picker-container-up');
-                        body.classList.add('multi-picker-locked');
-                    }, false);
-
-                    on('touchstart', 'multi-picker-btn-save-' + _this.container, function () {
-                        _this.callbackFuc(_this.resultArr);
-                        bg.classList.remove('multi-picker-bg-up');
-                        container.classList.remove('multi-picker-container-up');
-                        body.classList.remove('multi-picker-locked');
-                    }, false);
-
-                    on('touchstart', 'multi-picker-bg-' + _this.container, function () {
-                        bg.classList.remove('multi-picker-bg-up');
-                        container.classList.remove('multi-picker-container-up');
-                        body.classList.remove('multi-picker-locked');
-                    }, false);
-
-                    on('touchstart', 'multi-picker-btn-cancel', function () {
-                        bg.classList.remove('multi-picker-bg-up');
-                        container.classList.remove('multi-picker-container-up');
-                        body.classList.remove('multi-picker-locked');
-                    }, false);
-                },
-                checkRange: function (idx) {
-                    var _this     = this;
-                    var tempObj   = _this.jsonData;
-                    var targetIdx = 0;
-                    loop(0, idx + 1, function (i) {
-                        targetIdx = _this.distance[i] / _this.liHeight;
-                        tempObj   = i == 0 ? tempObj[targetIdx] : tempObj.child[targetIdx];
-                    });
-                    _this.initReady(idx, tempObj);
-                },
-                initPosition: function (dis, max, idx) {
-                    dis     = dis < 0 ? 0 : dis;
-                    dis     = dis > max ? max : dis;
-                    var sub = dis % this.liHeight;
-                    if (sub < this.liHeight / 2) {
-                        this.distance[idx] = dis - sub;
-                    } else {
-                        this.distance[idx] = dis + (this.liHeight - sub);
-                    }
-                    return this;
-                },
-                initSpeed: function (arr, dir, max, idx) {
-                    var variance = 0;//求方差
-                    var sum      = 0;
-                    var rate     = 0;
-                    for ( var i in arr ) {
-                        sum += arr[i] - 0;
-                    }
-                    for ( var j in arr ) {
-                        variance += (arr[j] - (sum / arr.length)) * (arr[j] - (sum / arr.length));
-                    }
-                    if ((variance / arr.length).toFixed(2) > .1) { //如果方差的结果大于.1 用来控制速度变化幅度
-                        rate = max > this.liHeight * 15 ? dir * 2 : 0; //如果数组长度是大于15的才会有加速度出现
-                        this.initPosition(this.distance[idx] + rate, max - this.liHeight * 5, idx);
-                        this.move.speed[0] = .2;
-                    } else {
-                        this.initPosition(this.distance[idx], max, idx);
-                        this.move.speed[0] = this.move.speed[0] > 0.2 ? .2 : this.move.speed[0];
-                    }
-                },
-                touch: function (event, that, $picker, array, idx) {
-                    event = event || window.event;
-                    event.preventDefault();
-                    switch (event.type) {
-                        case "touchstart":
-                            if (that.end.status) {
-                                that.end.status = !that.end.status;
-                                event.preventDefault();
-                                that.move.speed = [];
-                                that.start.Y    = event.touches[0].clientY;
-                                that.start.time = Date.now();
-                            }
-
-                            break;
-                        case "touchend":
-                            that.end.Y         = Math.abs(event.changedTouches[0].clientY);
-                            var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
-                            var temp           = that.distance[idx];
-                            that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] - this.liHeight * 5 ? tempDis : that.maxHeight[idx] - this.liHeight * 5);
-                            that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
-
-                            $picker.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
-                            $picker.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
-                            $picker.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
-                            $picker.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
-                            //设置后续ul;
-                            if (temp != that.distance[idx]) that.checkRange(idx);
-                            setTimeout(function () {
-                                that.end.status = true;
-                            }, that.move.speed[0] * 1000);
-                            break;
-                        case "touchmove":
-                            event.preventDefault();
-                            that.move.Y = event.touches[0].clientY;
-                            var offset  = that.start.Y - that.move.Y;
-                            if (that.distance[idx] == 0 && offset < 0) { //如果滑动move在顶部
-                                $picker.style.transform        = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
-                                $picker.style.webkitTransform  = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
-                                $picker.style.transition       = 'transform 0.2s ease-out';
-                                $picker.style.webkitTransition = '-webkit-transform 0.2s ease-out';
-                            } else {
-                                $picker.style.transform       = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
-                                $picker.style.webkitTransform = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
-                            }
-                            if (Math.abs(offset).toFixed(0) % 5 === 0) {
-                                var time = Date.now();
-                                that.move.speed.push((Math.abs(offset) / (time - that.start.time)).toFixed(2));
-                            }
-                            break;
-                    }
-                }
+            this.ulCount   = 0; //记录上一次的
+            this.ulIdx     = 0; //ul下标计数器,前一次的计数器
+            this.ulDomArr  = [];//ul的dom元素,【a】
+            this.idxArr    = [];//更新后的ul的下标 【a】
+            this.jsonArr   = [];//用来存储每个ul的li中显示的arr【a】
+            this.liHeight  = 40;
+            this.maxHeight = [];//每个ul的最大高度【a】
+            this.distance  = [];//transition的移动位置【a】
+            this.start     = {
+                Y: 0,
+                time: ''
             };
-            win.MultiPicker       = MultiPicker;
-        })(window, document);
+            this.move      = {
+                Y: 0,
+                speed: []
+            };
+            this.end       = {
+                Y: 0,
+                status: true,
+            };
+            this.resultArr = [];
+            this.initDomFuc();
+            this.initReady(0, this.jsonData[0]);
+            this.initBinding();
+        }
+
+        MultiPicker.prototype = {
+            constructor: MultiPicker,
+            generateArrData: function (targetArr) {
+                var tempArr = [];
+                loop(0, targetArr.length, function (i) {
+                    tempArr.push({
+                        "id": targetArr[i].id,
+                        "value": targetArr[i].value
+                    })
+                });
+                return tempArr;
+            },
+            checkArrDeep: function (parent) {//需要改变
+                var _this = this;
+                if ('child' in parent && parent.child.length > 0) {
+                    //初始化jsonArr。每一个ul对应的数组并迭代
+                    _this.jsonArr.push(_this.generateArrData(parent.child));
+                    _this.checkArrDeep(parent.child[0]);
+                }
+                _this.idxArr.push(this.ulIdx++);
+            },
+            insertLiArr: function (targetUl, arr) {
+                var html    = '';
+                var nullObj = {
+                    id: '-99',
+                    value: '',
+                };
+                arr.unshift(nullObj, nullObj);
+                arr.push(nullObj, nullObj);
+                loop(0, arr.length, function (i) {
+                    html += '<li data-id="' + arr[i].id + '">' + arr[i].value + '</li>';
+                });
+                targetUl.innerHTML = html;
+            },
+            initDomFuc: function () {
+                var _this                      = this;
+                var html                       = '';
+                html += '<div class="multi-picker-bg" id="multi-picker-bg-' + _this.container + '">'
+                        + '<div  class="multi-picker-container" id="multi-picker-container-' + _this.container + '">'
+                        + '<div class="multi-picker-btn-box">'
+                        + '<div class="multi-picker-btn" id="multi-picker-btn-cancel">返回</div>'
+                        + '<div class="multi-picker-btn" id="multi-picker-btn-save-' + _this.container + '">提交</div>'
+                        + '</div>'
+                        + '<div class="multi-picker-content">'
+                        + '<div class="multi-picker-up-shadow"></div>'
+                        + '<div class="multi-picker-down-shadow"></div>'
+                        + '<div class="multi-picker-line"></div>'
+                        + '</div></div></div>';
+                $id(_this.container).innerHTML = html;
+                _this.jsonArr.push(_this.generateArrData(_this.jsonData));
+            },
+            initReady: function (idx, target) {
+                var _this            = this;
+                this.ulIdx           = 0;
+                this.idxArr.length   = idx;
+                _this.jsonArr.length = idx + 1;
+                _this.checkArrDeep(target);//查看某【对象】的深度
+                //取到class='multi-picker-content',可以在里面插入ul
+                var parentNode = $id('multi-picker-container-' + _this.container).children[1];
+                var tempMax    = _this.ulCount <= _this.idxArr.length ? _this.ulCount : _this.idxArr.length;
+                loop(idx + 1, tempMax, function (i) {
+                    var $picker = $id('multi-picker-' + _this.container + '-' + i);
+                    _this.insertLiArr($picker, _this.jsonArr[i]);
+                    _this.distance[i]             = 0;
+                    $picker.style.transform       = 'translate3d(0, 0, 0)';
+                    $picker.style.webkitTransform = 'translate3d(0, 0, 0)';
+                });
+                if (_this.ulCount <= _this.idxArr.length) {
+                    // 如果不足,则插入ul,从0开始计数
+                    loop(_this.ulCount, _this.idxArr.length, function (i) {
+                        var newPickerDiv = document.createElement('div');
+                        newPickerDiv.setAttribute('class', 'multi-picker');
+                        newPickerDiv.innerHTML = '<ul id="multi-picker-' + _this.container + '-' + i + '"></ul>';
+                        parentNode.insertBefore(newPickerDiv, parentNode.children[parentNode.children.length - 3]);
+                        var tempDomUl = $id('multi-picker-' + _this.container + '-' + i);
+                        _this.ulDomArr.push(tempDomUl);
+                        _this.distance.push(0);
+                        //插入li
+                        _this.insertLiArr(tempDomUl, _this.jsonArr[i]);
+
+                        //绑定事件
+                        var tempArray = _this.jsonArr[i];
+                        tempDomUl.addEventListener('touchstart', function () {
+                            _this.touch(event, _this, tempDomUl, tempArray, i);
+                        }, false);
+                        tempDomUl.addEventListener('touchmove', function () {
+                            _this.touch(event, _this, tempDomUl, tempArray, i);
+                        }, false);
+                        tempDomUl.addEventListener('touchend', function () {
+                            _this.touch(event, _this, tempDomUl, tempArray, i);
+                        }, false);
+                    });
+                } else { // 当上一次的ulCount 比当前ul的总数来的大的时候要清除子dom
+                    for ( var j = _this.ulCount - 1; j > _this.idxArr.length - 1; j-- ) {
+                        var oldPicker = $class('multi-picker')[j];
+                        oldPicker.parentNode.removeChild(oldPicker);
+                        _this.ulDomArr.pop();
+                        _this.distance.pop();
+                    }
+                }
+
+                //统一重新设置宽度和ul的maxHeight
+                _this.maxHeight.length = 0;
+                _this.resultArr.length = 0;
+                loop(0, _this.idxArr.length, function (i) {
+                    $class('multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
+                    _this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).offsetHeight);
+                    _this.resultArr.push({
+                        "id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
+                        "value": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].value,
+                    });
+                });
+                _this.ulCount = _this.idxArr.length;
+                console.log(_this.resultArr);
+            },
+            initBinding: function () {
+                var _this     = this;
+                var bg        = $id('multi-picker-bg-' + _this.container);
+                var container = $id('multi-picker-container-' + _this.container);
+                var body      = doc.body;
+                on('touchstart', _this.input, function () {
+                    bg.classList.add('multi-picker-bg-up');
+                    container.classList.add('multi-picker-container-up');
+                    body.classList.add('multi-picker-locked');
+                }, false);
+
+                on('touchstart', 'multi-picker-btn-save-' + _this.container, function () {
+                    _this.callbackFuc(_this.resultArr);
+                    bg.classList.remove('multi-picker-bg-up');
+                    container.classList.remove('multi-picker-container-up');
+                    body.classList.remove('multi-picker-locked');
+                }, false);
+
+                on('touchstart', 'multi-picker-bg-' + _this.container, function () {
+                    bg.classList.remove('multi-picker-bg-up');
+                    container.classList.remove('multi-picker-container-up');
+                    body.classList.remove('multi-picker-locked');
+                }, false);
+
+                on('touchstart', 'multi-picker-btn-cancel', function () {
+                    bg.classList.remove('multi-picker-bg-up');
+                    container.classList.remove('multi-picker-container-up');
+                    body.classList.remove('multi-picker-locked');
+                }, false);
+            },
+            checkRange: function (idx) {
+                var _this     = this;
+                var tempObj   = _this.jsonData;
+                var targetIdx = 0;
+                loop(0, idx + 1, function (i) {
+                    targetIdx = _this.distance[i] / _this.liHeight;
+                    tempObj   = i == 0 ? tempObj[targetIdx] : tempObj.child[targetIdx];
+                });
+                _this.initReady(idx, tempObj);
+            },
+            initPosition: function (dis, max, idx) {
+                dis     = dis < 0 ? 0 : dis;
+                dis     = dis > max ? max : dis;
+                var sub = dis % this.liHeight;
+                if (sub < this.liHeight / 2) {
+                    this.distance[idx] = dis - sub;
+                } else {
+                    this.distance[idx] = dis + (this.liHeight - sub);
+                }
+                return this;
+            },
+            initSpeed: function (arr, dir, max, idx) {
+                var variance = 0;//求方差
+                var sum      = 0;
+                var rate     = 0;
+                for ( var i in arr ) {
+                    sum += arr[i] - 0;
+                }
+                for ( var j in arr ) {
+                    variance += (arr[j] - (sum / arr.length)) * (arr[j] - (sum / arr.length));
+                }
+                if ((variance / arr.length).toFixed(2) > .1) { //如果方差的结果大于.1 用来控制速度变化幅度
+                    rate = max > this.liHeight * 15 ? dir * 2 : 0; //如果数组长度是大于15的才会有加速度出现
+                    this.initPosition(this.distance[idx] + rate, max - this.liHeight * 5, idx);
+                    this.move.speed[0] = .2;
+                } else {
+                    this.initPosition(this.distance[idx], max, idx);
+                    this.move.speed[0] = this.move.speed[0] > 0.2 ? .2 : this.move.speed[0];
+                }
+            },
+            touch: function (event, that, $picker, array, idx) {
+                event = event || window.event;
+                event.preventDefault();
+                switch (event.type) {
+                    case "touchstart":
+                        if (that.end.status) {
+                            that.end.status = !that.end.status;
+                            event.preventDefault();
+                            that.move.speed = [];
+                            that.start.Y    = event.touches[0].clientY;
+                            that.start.time = Date.now();
+                        }
+
+                        break;
+                    case "touchend":
+                        that.end.Y         = Math.abs(event.changedTouches[0].clientY);
+                        var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
+                        var temp           = that.distance[idx];
+                        that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] - this.liHeight * 5 ? tempDis : that.maxHeight[idx] - this.liHeight * 5);
+                        that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
+
+                        $picker.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
+                        $picker.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
+                        $picker.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
+                        $picker.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
+                        //设置后续ul;
+                        if (temp != that.distance[idx]) that.checkRange(idx);
+                        setTimeout(function () {
+                            that.end.status = true;
+                        }, that.move.speed[0] * 1000);
+                        break;
+                    case "touchmove":
+                        event.preventDefault();
+                        that.move.Y = event.touches[0].clientY;
+                        var offset  = that.start.Y - that.move.Y;
+                        if (that.distance[idx] == 0 && offset < 0) { //如果滑动move在顶部
+                            $picker.style.transform        = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
+                            $picker.style.webkitTransform  = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
+                            $picker.style.transition       = 'transform 0.2s ease-out';
+                            $picker.style.webkitTransition = '-webkit-transform 0.2s ease-out';
+                        } else {
+                            $picker.style.transform       = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
+                            $picker.style.webkitTransform = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
+                        }
+                        if (Math.abs(offset).toFixed(0) % 5 === 0) {
+                            var time = Date.now();
+                            that.move.speed.push((Math.abs(offset) / (time - that.start.time)).toFixed(2));
+                        }
+                        break;
+                }
+            }
+        };
+        win.MultiPicker       = MultiPicker;
+    })(window, document);
 
 
-        //---------------------函数调用开始---------------------
-        new MultiPicker({
-            input : 'multiPickerInput',//点击触发插件的input框的id
-            container : 'targetContainer',//插件插入的容器id
-            jsonData: $city,
-            callbackFuc : function(arr){
-                alert('页面会显示最终结果');
-                document.getElementById('showBlock').innerHTML = JSON.stringify(arr);
-            }//回调
-        });
-        //---------------------函数调用结束---------------------
-    </script>
+    //---------------------函数调用开始---------------------
+    new MultiPicker({
+        input: 'multiPickerInput',//点击触发插件的input框的id
+        container: 'targetContainer',//插件插入的容器id
+        jsonData: $city,
+        callbackFuc: function (arr) {
+            alert('页面会显示最终结果');
+            document.getElementById('showBlock').innerHTML = JSON.stringify(arr);
+        }//回调
+    });
+    //---------------------函数调用结束---------------------
+</script>
 
 </body>
 </html>
