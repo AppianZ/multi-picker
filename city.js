@@ -1,7 +1,8 @@
 /**
  * Created by appian on 2016/11/7.
  */
-var $city = [
+/* eslint-disable */
+var $city= [
 	{
 		"value": "北京",
 		"child": [
@@ -589,12 +590,10 @@ var $city = [
 			},
 			{
 				"value": "东莞",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "中山",
-				"child": [],
 				"id": 0
 			},
 			{
@@ -2360,22 +2359,18 @@ var $city = [
 			},
 			{
 				"value": "仙桃",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "天门",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "潜江",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "神农架林区",
-				"child": [],
 				"id": 0
 			},
 			{
@@ -11554,82 +11549,66 @@ var $city = [
 			},
 			{
 				"value": "五指山",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "琼海",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "儋州",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "文昌",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "万宁",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "东方",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "澄迈县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "定安县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "屯昌县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "临高县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "白沙黎族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "昌江黎族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "乐东黎族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "陵水黎族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "保亭黎族苗族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "琼中黎族苗族自治县",
-				"child": [],
 				"id": 0
 			},
 			{
@@ -12797,17 +12776,14 @@ var $city = [
 			},
 			{
 				"value": "阿拉尔",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "图木舒克",
-				"child": [],
 				"id": 0
 			},
 			{
 				"value": "五家渠",
-				"child": [],
 				"id": 0
 			},
 			{
