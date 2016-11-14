@@ -6,25 +6,21 @@
 
 > 只要传入符合规范的 json ，就能自适应渲染多级联动
 
-> 适合自定义json的自定义联动，如需要时间联动则使用DateSelector系列多级联动
-<br/>
+> 适合自定义json的自定义联动，如需要时间联动请使用 [日期选择器 DateSelector 系列](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro) 的多级联动
 
+### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/MultiPicker.html) 
 
-### 0.示例演示
- ![img1.](https://github.com/AppianZ/DateSelector/blob/master/productions/MultiPicker.gif) 
+### 1.如何引用
 
-### 1.如何引用css和js文件
+> sass文件: 引用MultiPicker/MultiPicker.scss
 
-> sass文件: 引用productions/MultiPicker/MultiPicker.scss
+> css文件: 引用MultiPicker/MultiPicker.css
 
-> css文件: 引用productions/MultiPicker/MultiPicker.css
+> js文件: 引用MultiPicker/MultiPicker.js
 
-> js文件: productions/MultiPicker/MultiPicker.js
+> json文件 (js类型) ：引用MultiPicker/city.js
 
-> json文件 (js类型) ：productions/MultiPicker/city.js
-<br/>
-
-### 2.如何调用构造函数
+### 2.如何使用
 
 **调用html的基本格式：**
 ```html
@@ -36,7 +32,7 @@
 ```
 
 **调用js的基本格式：**
-```js
+```html
 <script src="./MultiPicker.js"></script>
 <script>
     new MultiPicker({ ... });
@@ -49,44 +45,37 @@
 | -----| -----| -----| -----|
 |  **input**    |  {String} | *eg:'multiPickerInput'* | 点击触发插件的input框的id |
 |  **container**    |  {String} |*eg:'targetContainers'*| 插件即将插入的容器id |
-|  **jsonData**    | {Arrar} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| 传入的json必须要是符合规范的格式，。'id'：为该联动标签的id，'value'为联动上显示的值，如果有下一级则传入一个'child'数组，如果没有继续联动，则不需要'child'这个属性 |
+|  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| 传入的json必须要是符合规范的格式，。'id'：为该联动标签的id，'value'为联动上显示的值，如果有下一级则传入一个'child'数组，如果没有继续联动，则不需要'child'这个属性 |
 |  **callbackfuc**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
-<br/>
 
 **联动json的属性规范:**
-
-` 可以同时存在不同级数的联动，但json规范和属性名要符合要求 `
-
- ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/MultiPicker.png) 
 
 | 属性 | 字符类型 | 说明 | 
 | -----| -----|  -----|
 |  **id**    |  {String} | 该级联动的唯一标识 |
 |  **value**    |  {String} | 该级联动显示的内容  |
-|  **child**    | {Arrar} | 该级联动是否需要子联动，如需要则继续传入数组，如不需要子联动，则不用设置child这个属性 |
-<br/>
+|  **child**    | {Array} | 该级联动是否需要子联动，如需要则继续传入数组，如不需要子联动，则不用设置child这个属性 |
+
+` 可以同时存在不同级数的联动，但json规范和属性名要符合要求, 具体可参考json.js `
+` 同时提供了一份自己整理的城市json -- city.js, 可以试用大部分城市选择的需求。 `
 
 ### 3.有什么优越性？
 
 带有加速度的滑动 (•‿•)
 
-能够动态设置每个子级的联动(•‿•) 
+能够动态自适应每个子级的联动(•‿•) 
 
-能够通过回调函数动态操作联动结果(•‿•)
+能够通过回调函数动态控制联动返回的结果(•‿•)
 
 #### Trust Me.
-<br/>
 
 ### 4.有什么局限性？
 
-> 暂不开放定位功能 >.<
+> 该选择器暂不开放定位功能 >.<
 
-> 一定让您满意！
+> 如果您需要的是时间选择器, 这时候, 请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro)
 
-> 如果遇到什么神bug,不要着急
-
-> 这时候,请加我微信523938480
-<br/>
+> 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 
 #### Trust Me. Again.
    
