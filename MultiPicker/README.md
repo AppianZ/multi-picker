@@ -10,7 +10,7 @@
 
 ### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/MultiPicker.html) 
 
-### 1.如何引用
+### 1.如何引用 
 
 > sass文件: 引用MultiPicker/MultiPicker.scss
 
@@ -56,7 +56,8 @@
 |  **value**    |  {String} | 该级联动显示的内容  |
 |  **child**    | {Array} | 该级联动是否需要子联动，如需要则继续传入数组，如不需要子联动，则不用设置child这个属性 |
 
-` 可以同时存在不同级数的联动，但json规范和属性名要符合要求, 具体可参考json.js `
+` 可以同时存在不同级数的联动，但json规范和属性名要符合要求, 具体可参考json.js ` 
+
 ` 同时提供了一份自己整理的城市json -- city.js, 可以试用大部分城市选择的需求。 `
 
 ### 3.有什么优越性？
