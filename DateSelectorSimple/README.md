@@ -44,6 +44,11 @@
 |  **range**   |  {Array} |*eg:[1990,2020]      1990年~2020年*| 设置年份范围，默认[1950,明年],在设置了需要年份的情况下才生效|
 |  **callbackfuc**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
 
+* type = 0 自定义单位，【年月日时分】的自定义任意组合
+ ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
+
+* type = 1 带tab切换，固定单位【年月日时分】的固定样式
+ ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
 
 ### 3.有什么优越性？
 
