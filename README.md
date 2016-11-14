@@ -3,7 +3,7 @@ MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼�
 
 MultiPicker主要是由`两个部分`组成，
 * 一个部分是 [日期选择器 - DateSelector](https://github.com/AppianZ/multi-picker/tree/master/productions/DateSelectorPro) 
-![gif2.](https://github.com/AppianZ/multi-picker/blob/master/DateSelectorPro/DateSelector1.gif) 
+![gif0.](https://github.com/AppianZ/multi-picker/blob/master/DateSelectorPro/DateSelector1.gif) 
 
 * 另一个部分是 [自定义json选择器 - MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/productions/MultiPicker)
 ![gif1.](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/MultiPicker.gif) 
