@@ -11,6 +11,7 @@
             padding: 0;
             margin: 0;
         }
+
         .date-selector-locked {
             height: 100% !important;
             overflow: hidden !important;
@@ -193,6 +194,7 @@
         body {
             background: #fefefe;
         }
+
         h3 {
             position: relative;
             width: 100%;
@@ -325,6 +327,9 @@
 
 
 <script>
+    /**
+     * Created by appian on 16/8/5.
+     */
     (function (wid, dcm) {
         var win = wid;
         var doc = dcm;
@@ -576,7 +581,7 @@
                             _this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), (i == 0 ? _this.endTime[i] : 12), '月', i);
                             break;
                         case 2:
-                            _this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), (i == 0 ? _this.endTime[i] : 31), '日', i);
+                            _this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate(), '日', i);
                             break;
                         case 3:
                             _this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 0), (i == 0 ? _this.endTime[i] : 23), '时', i);
@@ -692,7 +697,6 @@
                 loop(min, max + 1, function (k) {
                     arr.push(k);
                 });
-
                 var Html = '';
                 arr.unshift('', '');
                 arr.push('', '');
@@ -733,11 +737,14 @@
                         if (_this.distance[n] != 0)needInit = false;
                     });
                 } else if (distance == maxHei) {
-                    loop(0, ulIdx, function (n) {
-                        if (_this.distance[n] != _this.maxHeight[n])needInit = false;
-                    });
+                    if (ulIdx == 0 && _this.distance[0] == _this.maxHeight[0]) {
+                        needInit = false;
+                    } else {
+                        loop(0, ulIdx, function (n) {
+                            if (_this.distance[n] != _this.maxHeight[n])needInit = false;
+                        });
+                    }
                 }
-
                 if (distance == 0 && needInit) {
                     if (ulIdx + 1 == _this.ulCount) {
                         _this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][2];
@@ -841,7 +848,7 @@
                         that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] ? tempDis : that.maxHeight[idx]);
                         // console.log(that.move.speed);
                         that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
-                        var tempRes    = that.distance[idx] / this.liHeight + 2;
+                        var tempRes    = that.distance[idx] / that.liHeight + 2;
                         that.end.index = that.distance[idx] / that.liHeight + 2;
 
                         that.checkRange(idx, tempRes, that.distance[idx], that.maxHeight[idx]);
