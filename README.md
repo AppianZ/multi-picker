@@ -10,10 +10,12 @@ MultiPicker主要是由`两个部分`组成，
 
 `日期选择器有两种样式，一种带tab的固定样式，另一种是不带tab的自定义样式`
 * 自定义单位，【年月日时分】的自定义任意组合
+
  ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
 
 
 * 带tab切换，固定单位【年月日时分】的固定样式
+
  ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
 
 
