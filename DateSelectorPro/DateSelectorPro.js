@@ -436,8 +436,6 @@
 					_this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
 				});
 			} else if (distance == maxHei && needInit) {
-				console.log('needInit' + needInit);
-				
 				var tempIdx = _this['array' + _this.idxArr[ulIdx]].length - 3;
 				if (ulIdx + 1 == _this.ulCount) {
 					_this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][tempIdx];
