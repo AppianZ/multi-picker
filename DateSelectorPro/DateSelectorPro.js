@@ -252,7 +252,7 @@
 						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), (i == 0 ? _this.endTime[i] : 12), '月', i);
 						break;
 					case 2:
-						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), (i == 0 ? _this.endTime[i] : 31), '日', i);
+						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate(), '日', i);
 						break;
 					case 3:
 						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 0), (i == 0 ? _this.endTime[i] : 23), '时', i);
@@ -368,7 +368,6 @@
 			loop(min, max + 1, function (k) {
 				arr.push(k);
 			});
-			
 			var Html = '';
 			arr.unshift('', '');
 			arr.push('', '');
@@ -409,11 +408,14 @@
 					if (_this.distance[n] != 0)needInit = false;
 				});
 			} else if (distance == maxHei) {
-				loop(0, ulIdx, function (n) {
-					if (_this.distance[n] != _this.maxHeight[n])needInit = false;
-				});
+				if (ulIdx == 0 && _this.distance[0] == _this.maxHeight[0]) {
+					needInit = false;
+				} else {
+					loop(0, ulIdx, function (n) {
+						if (_this.distance[n] != _this.maxHeight[n])needInit = false;
+					});
+				}
 			}
-			
 			if (distance == 0 && needInit) {
 				if (ulIdx + 1 == _this.ulCount) {
 					_this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][2];
@@ -434,6 +436,8 @@
 					_this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
 				});
 			} else if (distance == maxHei && needInit) {
+				console.log('needInit' + needInit);
+				
 				var tempIdx = _this['array' + _this.idxArr[ulIdx]].length - 3;
 				if (ulIdx + 1 == _this.ulCount) {
 					_this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][tempIdx];

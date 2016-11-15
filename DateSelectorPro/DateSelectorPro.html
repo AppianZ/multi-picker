@@ -8,6 +8,9 @@
     <title>优质版DateSelector</title>
     <link rel="stylesheet" type="text/css" href="./DateSelectorPro.css?rev=@@hash"/>
     <style>
+        body {
+            background-color: #fafafa;
+        }
         h3 {
             position: relative;
             width: 100%;
@@ -131,7 +134,7 @@
 
 
 
-<script src="./DateSelector.js"></script>
+<script src="./DateSelectorPro.js"></script>
 <script>
     //---------------------函数调用开始---------------------
     new DateSelector({
@@ -156,10 +159,10 @@
         type : 0,
         //0：不需要tab切换，自定义滑动内容，建议小于三个；
         //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
-        param : [1,1,0,1,1],
+        param : [1,1,0,1,0],
         //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
-        beginTime : [2011,13,-27,102,12],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
-        endTime : [2020,10,21,20,20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
+        beginTime : [2011,13,-27,102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
+        endTime : [2020,10,21,20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime : [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
         callbackFuc : function(arr){alert(arr)}//回调
     });
