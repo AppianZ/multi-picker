@@ -8,6 +8,8 @@ MultiPicker主要是由`两个部分`组成，
 * 另一个部分是 [自定义json选择器 - MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker) <br/>
 ![gif1.](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/MultiPicker.gif) 
 
+
+
 `日期选择器有两种样式，一种带tab的固定样式，另一种是不带tab的自定义样式`
 * 自定义单位，【年月日时分】的自定义任意组合
 
