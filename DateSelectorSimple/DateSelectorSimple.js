@@ -83,9 +83,9 @@
 				return true;
 			} else {
 				alert('error,please open the console to see the errmsg');
-				console.log('构造函数的参数param或recentTime设置有误');
-				console.log('param必须是连续的1，recentTime的值必须与param中的值对应');
-				console.log('构造函数调用失败，请重新设置参数');
+				console.warn('构造函数的参数param或recentTime设置有误');
+				console.warn('param必须是连续的1，recentTime的值必须与param中的值对应');
+				console.warn('构造函数调用失败，请重新设置参数');
 				return false;
 			}
 		},
