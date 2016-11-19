@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="screen-orientation" content="portrait">
-    <title>优质版DateSelector</title>
+    <title>successDateSelector</title>
     <style>
         * {
             padding: 0;
@@ -251,7 +251,7 @@
 
 <body>
 
-<h3>DateSelectorPro.</h3>
+<h3>DateSelector.</h3>
 <article>
     <p>0.请在移动端下打开~~</p>
     <p>1.点击下面的输入演示样式</p>
@@ -264,9 +264,9 @@
     <input id="date-selector-inputs" type="text" placeholder="点我~~看自定义效果" readonly/>
     <p>2.如何引用css和js文件？</p>
     <div class="block">
-        sass文件:引用productions/DateSelectorPro/DateSelectorPro.scss<br/><br/>
-        css文件:引用productions/DateSelectorPro/DateSelectorPro.css<br/><br/>
-        js文件:引用productions/DateSelectorPro/DateSelectorPro.js<br/><br/>
+        sass文件:引用DateSelector/DateSelector.scss<br/><br/>
+        css文件:引用DateSelector/DateSelector.css<br/><br/>
+        js文件:引用DateSelector/DateSelector.js<br/><br/>
     </div>
     <p>3.如何调用构造函数？</p>
     <div class="block">
@@ -280,45 +280,31 @@
         beginTime : {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
         endTime : {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
         recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
-        callbackfuc : function(arr){} 回调函数，可以自定义结果格式化
+        success : function(arr){} 回调函数，可以自定义结果格式化
     </div>
     <p>4.有什么优越性？</p>
     <div class="block">
-        带有加速度的滑动 (•‿•) <br/><br/>
+        带有加速度的滑动 (•‿•)<br/><br/>
 
-        能够动态设置任意开始和结束【时间点】 (•‿•) <br/>
-        是的,你可以设置任何尴尬的时间了!<br/>
-        如【2016-11-11 11:11 ~ 2016-12-12 12:12】<br/><br/>
+        能够动态设置任意开始和结束【时!间!点!】 (•‿•)<br/>
+        是的,你可以设置任何尴尬的时间了~ 比如:【2016-11-11 11:11 ~ 2016-12-12 12:12】<br/><br/>
 
-        能够任意设置时间单位的组合 (•‿•) <br/>
-        有时候需要"年月日",<br/>
-        有时候需要"月日时分",<br/>
-        有时候又需要"年月日时分"!<br/><br/>
+        能够任意设置时间单位的组合 (•‿•)<br/>
+        "年月日"  OR  "月日时分"  OR  "年月日时分"<br/><br/>
 
-        能够切换固定样式和自定义样式,简化参数 (•‿•) <br/>
-        小清新的样式一定能够打动你冰封的心!<br/><br/>
+        能够切换固定样式和自定义样式,简化参数 (•‿•)<br/><br/>
 
-        能利用我的模型处理更多联动 (•‿•) <br/>
-        比如城市三级联动,但是有待开发喔!<br/><br/>
+        能利用我的模型处理更多、更自由的联动 (•‿•) <br/>
+        比如城市多级联动，请移步<a href="https://github.com/AppianZ/multi-picker/tree/master/MultiPicker">比如城市多级联动，请移步</a><br/><br/>
 
         Trust Me.
     </div>
     <p>5.有什么局限性？</p>
     <div class="block">
-        样式主题可能和你的产品不符 >.< <br/><br/>
-
-        在实际开发过程中,改变主题颜色只能靠自己了~<br/>
-        你可以选择改变css<br/>
-        或改变sass的全局变量后重新编译<br/><br/>
-
-        如果你只需要设置年份范围，不需要精确到后面的时间单位。<br/>
-        这时候,请移步<a href="http://appianz.github.io/Desert-or-Ocean/DateSelectorSimple.html">DateSelectorSimple.js</a><br/><br/>
-
-
-        如果遇到什么神bug,不要着急<br/>
-        这时候,请发起issue<br/><br/>
-
-        Trust Me. Again.
+        样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<<br/><br/>
+        如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！<br/><br/>
+        我是嘉宝Appian，一个卖萌出家的算法妹纸。<br/><br/>
+        Trust Me Again.
     </div>
 </article>
 
@@ -364,7 +350,7 @@
             this.beginTime   = config.beginTime;
             this.endTime     = config.endTime;
             this.recentTime  = config.recentTime;
-            this.callbackFuc = config.callbackFuc;
+            this.success = config.success;
 
             this.ulCount     = 0;
             this.ulDomArr    = [];
@@ -613,7 +599,7 @@
                 }, false);
 
                 on('touchstart', 'date-selector-btn-save-' + _this.container, function () {
-                    _this.callbackFuc(_this.resultArr);
+                    _this.success(_this.resultArr);
                     bg.classList.remove('date-selector-bg-up');
                     container.classList.remove('date-selector-container-up');
                     body.classList.remove('date-selector-locked');
@@ -901,7 +887,7 @@
         beginTime: [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime: [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        callbackFuc: function (arr) {
+        success: function (arr) {
             alert(arr)
         }//回调
     });
@@ -919,7 +905,7 @@
         beginTime: [2011, 13, -27, 102, 12],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime: [2020, 10, 21, 20, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        callbackFuc: function (arr) {
+        success: function (arr) {
             alert(arr)
         }//回调
     });
