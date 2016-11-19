@@ -1,27 +1,27 @@
-## DateSelectorPro - 日期选择器优质版
+## DateSelector - 日期选择器
 
-#### 优质的主要表现在:
-> 优化版的自定义功能不仅是【单位】自定义
+#### 该日期选择器的优秀主要表现在:
+> 【时间单位】自定义组合, 无论是年月日还是时分都能随心所欲的排列组合
 
-> 【时间范围】也可以自定义,自定义的时间可以精确到分钟，并尽可能的进行数据合法性校正
+> 【时间范围】自定义设置, 自定义的时间可以精确到分钟，并尽可能的进行数据合法性校正
 
 > 例如可以设置【2011年13月(-27)日 102时12分 ~ 2020年10月21日 20时20分】的效果
 
 <br/>
-### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelectorPro.html)
+### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelector.html)
 ### 1.如何引用
 
-> sass文件:引用DateSelectorPro/DateSelectorPro.scss
+> sass文件:引用DateSelector/DateSelector.scss
 
-> css文件:引用DateSelectorPro/DateSelectorPro.css
+> css文件:引用DateSelector/DateSelector.css
 
-> js文件:引用DateSelectorPro/DateSelectorPro.js
+> js文件:引用DateSelector/DateSelector.js
 
 ### 2.如何使用
 
 **html的基本格式：**
 ```html
-<link rel="stylesheet" type="text/css" href="./DateSelectorPro.css"/>
+<link rel="stylesheet" type="text/css" href="./DateSelector.css"/>
 <body>
     <input id="date-selector-input" type="text" readonly/>
     <div id="targetContainer"></div>
@@ -30,7 +30,7 @@
 
 **调用js的基本格式：**
 ```html
-<script src="./DateSelectorPro.js"></script>
+<script src="./DateSelector.js"></script>
 <script>
     new DateSelector({ ... });
 </script>
@@ -47,7 +47,7 @@
 |  **beginTime**   |  {Array} |*eg:[2011,3,27,12,12]      2011年3月27日12点12分*| 设置开始时间点,空数组默认设置成1970年1月1日0时0分开始，数组的值对应param参数的对应值。 |
 |  **endTime** |  {Array} |同beginTime| 设置结束时间点,空数组默认设置成次年12月31日23时59分结束，数组的值对应param参数的对应值。 |
 |  **recentTime**  |  {Array} |同beginTime| 设置当前时间点,空数组默认设置为系统当前时间，数组的值对应param参数的对应值。 |
-|  **callbackfuc**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
 
 * type = 0 自定义单位，【年月日时分】的自定义任意组合
 
@@ -80,8 +80,6 @@
 ### 4.有什么局限性？
 
 > 样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<
-
-> 如果你只需要设置年份范围，不需要精确到后面的时间单位，请移步[日期选择器简易版 DateSelectorSimple.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorSimple)
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 

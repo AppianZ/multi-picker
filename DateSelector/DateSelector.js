@@ -35,7 +35,7 @@
 		this.beginTime   = config.beginTime;
 		this.endTime     = config.endTime;
 		this.recentTime  = config.recentTime;
-		this.callbackFuc = config.callbackFuc;
+		this.success = config.success;
 		
 		this.ulCount     = 0;
 		this.ulDomArr    = [];
@@ -284,7 +284,7 @@
 			}, false);
 			
 			on('touchstart', 'date-selector-btn-save-' + _this.container, function () {
-				_this.callbackFuc(_this.resultArr);
+				_this.success(_this.resultArr);
 				bg.classList.remove('date-selector-bg-up');
 				container.classList.remove('date-selector-container-up');
 				body.classList.remove('date-selector-locked');

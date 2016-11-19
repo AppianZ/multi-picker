@@ -6,7 +6,7 @@
 
 > 只要传入符合规范的 json ，就能自适应渲染多级联动
 
-> 适合自定义json的自定义联动，如需要时间联动请使用 [日期选择器 DateSelector 系列](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro) 的多级联动
+> 适合自定义json的自定义联动，如需要时间联动请使用 [日期选择器 DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector) 的多级联动
 
 ### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/MultiPicker.html) 
 
@@ -46,7 +46,7 @@
 |  **input**    |  {String} | *eg:'multiPickerInput'* | 点击触发插件的input框的id |
 |  **container**    |  {String} |*eg:'targetContainers'*| 插件即将插入的容器id |
 |  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| 传入的json必须要是符合规范的格式，。'id'：为该联动标签的id，'value'为联动上显示的值，如果有下一级则传入一个'child'数组，如果没有继续联动，则不需要'child'这个属性 |
-|  **callbackfuc**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
 
 **联动json的属性规范:**
 
@@ -74,7 +74,7 @@
 
 > 该选择器暂不开放定位功能 >.<
 
-> 如果您需要的是时间选择器, 这时候, 请移步[日期选择器优质版 DateSelectorPro.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelectorPro)
+> 如果您需要的是时间选择器, 这时候, 请移步[日期选择器优质版 DateSelector.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 

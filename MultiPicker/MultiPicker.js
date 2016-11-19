@@ -31,7 +31,7 @@
 		this.input       = config.input;
 		this.container   = config.container;
 		this.jsonData    = config.jsonData;
-		this.callbackFuc = config.callbackFuc;
+		this.success = config.success;
 		
 		this.ulCount   = 0; //记录上一次的
 		this.ulIdx     = 0; //ul下标计数器,前一次的计数器
@@ -73,7 +73,6 @@
 		},
 		checkArrDeep: function (parent) {//需要改变
 			var _this = this;
-			console.log(parent);
 			if ('child' in parent && parent.child.length > 0) {
 				//初始化jsonArr。每一个ul对应的数组并迭代
 				_this.jsonArr.push(_this.generateArrData(parent.child));
@@ -187,7 +186,7 @@
 			}, false);
 			
 			on('touchstart', 'multi-picker-btn-save-' + _this.container, function () {
-				_this.callbackFuc(_this.resultArr);
+				_this.success(_this.resultArr);
 				bg.classList.remove('multi-picker-bg-up');
 				container.classList.remove('multi-picker-container-up');
 				body.classList.remove('multi-picker-locked');

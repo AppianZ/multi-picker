@@ -75,9 +75,9 @@
     <input id="date-selector-inputs" type="text" placeholder="点我~~看自定义效果" readonly/>
     <p>2.如何引用css和js文件？</p>
     <div class="block">
-        sass文件:引用productions/DateSelectorPro/DateSelectorPro.scss<br/><br/>
-        css文件:引用productions/DateSelectorPro/DateSelectorPro.css<br/><br/>
-        js文件:引用productions/DateSelectorPro/DateSelectorPro.js<br/><br/>
+        sass文件:引用DateSelectorPro/DateSelectorPro.scss<br/><br/>
+        css文件:引用DateSelectorPro/DateSelectorPro.css<br/><br/>
+        js文件:引用DateSelectorPro/DateSelectorPro.js<br/><br/>
     </div>
     <p>3.如何调用构造函数？</p>
     <div class="block">
@@ -91,7 +91,7 @@
         beginTime : {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
         endTime : {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
         recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
-        callbackfuc : function(arr){} 回调函数，可以自定义结果格式化
+        success : function(arr){} 回调函数，可以自定义结果格式化
     </div>
     <p>3.有什么优越性？</p>
     <div class="block">
@@ -148,7 +148,7 @@
         beginTime : [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime : [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime : [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        callbackFuc : function(arr){alert(arr)}//回调
+        success : function(arr){alert(arr)}//回调
     });
     //---------------------函数调用结束---------------------
     //月份从1开始
@@ -164,7 +164,7 @@
         beginTime : [2011,13,-27,102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime : [2020,10,21,20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime : [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        callbackFuc : function(arr){alert(arr)}//回调
+        success : function(arr){alert(arr)}//回调
     });
 </script>
 
