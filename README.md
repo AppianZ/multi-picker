@@ -1,4 +1,4 @@
-## MultiPicker - A  Flexible Picker for Mobile
+# MultiPicker - A  Flexible Picker for Mobile
 ## **Intro**
 MultiPicker was born for `several product requirements` in the mobile.  It’s free, cute and customized.   There are now over **30,000** users.
 
