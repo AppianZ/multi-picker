@@ -41,7 +41,7 @@ This plugin is made up of **two parts**：
 
 ---
 
-## MultiPicker -『为移动端而生』的自定义多级联动选择器
+# MultiPicker -『为移动端而生』的自定义多级联动选择器
 ## **MultiPicker - 自我介绍**
 MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有超过 **3w** 的实际用户正在使用。
 
