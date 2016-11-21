@@ -74,7 +74,7 @@
 
 > 该选择器暂不开放定位功能 >.<
 
-> 如果您需要的是时间选择器, 这时候, 请移步[日期选择器优质版 DateSelector.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
+> 如果您需要的是时间选择器, 这时候, 请移步[日期选择器 DateSelector.js](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！
 
