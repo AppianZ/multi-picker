@@ -136,7 +136,7 @@
 									break;
 								case 1:
 									_this.beginTime[j] = begin_time[_this.idxArr[j]] = (_this.beginTime[j] > 0 && _this.beginTime[j] <= 12) ? _this.beginTime[j] : 1;
-									_this.endTime[j]             = (_this.endTime[j] > 0 && _this.endTime[j] <= 12) ? _this.endTime[j] : 12;
+									_this.endTime[j] = end_time[_this.idxArr[j]] = (_this.endTime[j] > 0 && _this.endTime[j] <= 12) ? _this.endTime[j] : 12;
 									recent_time[_this.idxArr[j]] = _this.recentTime[j];
 									break;
 								case 2:
@@ -471,6 +471,9 @@
 					_this.initRangeArr(_this.recent_time[1], k, _this.idxArr[k], -1, -1);
 				});
 			}
+			loop(0, _this.ulCount, function (k) {
+				_this.recent_time[_this.idxArr[k]] = _this.resultArr[k];
+			});
 			console.log('应得到的结果' + _this.resultArr);
 		},
 		initPosition: function (dis, max, idx) {
