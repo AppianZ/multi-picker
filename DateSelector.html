@@ -563,9 +563,10 @@
            initReady: function () {
                 var _this = this;
                 var realIdx = 0;
+                var tempResult = []; 
                 loop(0, _this.ulCount, function (q) {
                     realIdx = _this.idxArr[q];
-                    _this.resultArr[q] = _this.recent_time[realIdx];
+                    tempResult[q] = _this.recent_time[realIdx];
                 });
                 loop(0, _this.ulCount, function (i) {
                     realIdx = _this.idxArr[i];
@@ -579,23 +580,23 @@
                             _this.initCommonArr(tempDomUl, tempArray, _this.beginTime[i], _this.endTime[i], '年', i);
                             break;
                         case 1:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,1)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,1)) ? _this.endTime[i] : 12;
+                            min = (_this.checkTimeArr(_this.begin_time,tempResult,1)) ? _this.beginTime[i] : 1;
+                            max = (_this.checkTimeArr(_this.end_time,tempResult,1)) ? _this.endTime[i] : 12;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '月', i);
                             break;
                         case 2:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,2)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+                            min = (_this.checkTimeArr(_this.begin_time,tempResult,2)) ? _this.beginTime[i] : 1;
+                            max = (_this.checkTimeArr(_this.end_time,tempResult,2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '日', i);
                             break;
                         case 3:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,3)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,3)) ? _this.endTime[i] : 23;
+                            min = (_this.checkTimeArr(_this.begin_time,tempResult,3)) ? _this.beginTime[i] : 0;
+                            max = (_this.checkTimeArr(_this.end_time,tempResult,3)) ? _this.endTime[i] : 23;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '时', i);
                             break;
                         case 4 :
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,4)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,4)) ? _this.endTime[i] : 59;
+                            min = (_this.checkTimeArr(_this.begin_time,tempResult,4)) ? _this.beginTime[i] : 0;
+                            max = (_this.checkTimeArr(_this.end_time,tempResult,4)) ? _this.endTime[i] : 59;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '分', i);
                             break;
                     }
@@ -741,7 +742,6 @@
             checkRange: function (ulIdx, resIdx, distance, maxHei) {
                 var _this    = this;
                 var needInit = true;
-                _this.resultArr = [];
                 if (distance == 0) {
                     loop(0, ulIdx, function (n) {
                         if (_this.distance[n] != 0)needInit = false;
