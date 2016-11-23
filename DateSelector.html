@@ -560,7 +560,7 @@
                     $id(_this.container).innerHTML = html;
                 }
             },
-            initReady: function () {
+           initReady: function () {
                 var _this = this;
                 var realIdx = 0;
                 loop(0, _this.ulCount, function (q) {
@@ -608,7 +608,53 @@
                     tempDomUl.addEventListener('touchend', function () {
                         _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
                     }, false);
-                });    
+                });
+            },
+            initBinding: function () {
+                var _this     = this;
+                var bg        = $id('date-selector-bg-' + _this.container);
+                var container = $id('date-selector-container-' + _this.container);
+                var body      = doc.body;
+                on('touchstart', _this.input, function () {
+                    bg.classList.add('date-selector-bg-up');
+                    container.classList.add('date-selector-container-up');
+                    body.classList.add('date-selector-locked');
+                }, false);
+
+                on('touchstart', 'date-selector-btn-save-' + _this.container, function () {
+                    _this.success(_this.resultArr);
+                    bg.classList.remove('date-selector-bg-up');
+                    container.classList.remove('date-selector-container-up');
+                    body.classList.remove('date-selector-locked');
+                }, false);
+
+                on('touchstart', 'date-selector-bg-' + _this.container, function () {
+                    bg.classList.remove('date-selector-bg-up');
+                    container.classList.remove('date-selector-container-up');
+                    body.classList.remove('date-selector-locked');
+                }, false);
+
+                on('touchstart', 'date-selector-btn-cancel', function () {
+                    bg.classList.remove('date-selector-bg-up');
+                    container.classList.remove('date-selector-container-up');
+                    body.classList.remove('date-selector-locked');
+                }, false);
+
+                on('touchstart', 'date-selector-tab', function (event) {
+                    var tab     = $class('date-selector-tab');
+                    var content = $class('date-selector-content');
+                    loop(0, tab.length, function (i) {
+                        tab[i].classList.remove('date-selector-tab-active');
+                    });
+                    event.target.classList.add('date-selector-tab-active');
+                    if (event.target.innerHTML == '年月日') {
+                        content[0].classList.remove('date-selector-content-left');
+                        content[1].classList.add('date-selector-content-right');
+                    } else {
+                        content[0].classList.add('date-selector-content-left');
+                        content[1].classList.remove('date-selector-content-right');
+                    }
+                }, false);
             },
             initCommonArr: function (tempDomUl, tempArr, min, max, str, idx) {
                 var _this = this;
