@@ -741,6 +741,7 @@
             checkRange: function (ulIdx, resIdx, distance, maxHei) {
                 var _this    = this;
                 var needInit = true;
+                _this.resultArr = [];
                 if (distance == 0) {
                     loop(0, ulIdx, function (n) {
                         if (_this.distance[n] != 0)needInit = false;
