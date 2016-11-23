@@ -33,6 +33,19 @@ This plugin is made up of **two parts**：
 
 > * Please make sure to read the guide and use it correctly.
 
+## **Logs**
+
+### 2016.11.24(update)
+
+> * The new style. 
+
+### 2016.11.23(update)
+
+> * Refactoring DateSelector with a new calculation.
+
+### 2016.11.6(add)
+> * New Project -- MultiPicker,  with Chinese city JSON.
+
 ## **Authors**
 >  For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
 
@@ -76,9 +89,20 @@ MultiPicker主要是由`两个部分`组成，
 
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
+## **Logs**
+
+### 2016.11.24(update)
+
+> * 新的灰白样式, 更大众, 更简洁
+
+### 2016.11.23(update)
+
+> * 重构DateSelector 的算法, 减少了50+行冗余代码
+
+### 2016.11.6(add)
+> * 新增MultiPicker, 并配套中国城市json
+
 ## **Authors**
 >  如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
-
-> 如果想了解选择器的开发过程，可以留言给我，我会找机会分享我的开发心得哦~~
 
 >  我是嘉宝Appian，一个卖萌出家的算法妹纸。
