@@ -7,7 +7,7 @@
     <meta name="screen-orientation" content="portrait">
     <title>DateSelector</title>
     <style>
-        * {
+      * {
             padding: 0;
             margin: 0;
         }
@@ -61,7 +61,7 @@
             width: 100%;
             height: 50px;
             line-height: 50px;
-            background: #40CCC0;
+            background: rgba(218, 218, 218, .7);
             z-index: 10;
         }
 
@@ -85,7 +85,7 @@
             height: 32px;
             box-sizing: border-box;
             line-height: 30px;
-            color: #40CCC0;
+            color: rgba(218, 218, 218, .7);
             background: #fff;
             border: 1px solid #fff;
         }
@@ -103,7 +103,7 @@
         .date-selector-tab-box .date-selector-tab-active {
             color: #fff;
             border-radius: 10px;
-            background: rgba(64, 204, 192, 0.5);
+            background: rgba(219, 219, 219, 1);
         }
 
         .date-selector-content-left {
@@ -191,6 +191,7 @@
         }
 
         /*# sourceMappingURL=dateController.css.map */
+
         body {
             background: #fefefe;
         }
@@ -313,7 +314,7 @@
 
 
 <script>
-    /**
+   /**
      * Created by appian on 16/8/5.
      */
     (function (wid, dcm) {
@@ -343,18 +344,18 @@
         }
 
         function DateSelector(config) {
-            this.input       = config.input;
-            this.container   = config.container;
-            this.type        = config.type;
-            this.param       = (config.type == 1) ? [1, 1, 1, 1, 1] : config.param;
-            this.beginTime   = config.beginTime;
-            this.endTime     = config.endTime;
-            this.recentTime  = config.recentTime;
-            this.success = config.success;
+            this.input      = config.input;
+            this.container  = config.container;
+            this.type       = config.type;
+            this.param      = (config.type == 1) ? [1, 1, 1, 1, 1] : config.param;
+            this.beginTime  = config.beginTime;
+            this.endTime    = config.endTime;
+            this.recentTime = config.recentTime;
+            this.success    = config.success;
 
             this.ulCount     = 0;
             this.ulDomArr    = [];
-            this.idxArr      = [];//更新后的ul的下标
+            this.idxArr      = [];
             this.liHeight    = 40;
             this.maxHeight   = [];
             this.distance    = [];
@@ -488,10 +489,10 @@
                     return false;
                 }
             },
-            checkTimeArr : function(arr1, arr2, length) {
+            checkTimeArr: function (arr1, arr2, length) {
                 var checkStatus = true;
-                loop(0, length, function(i) {
-                    if(arr1[i] != arr2[i]) checkStatus = false;
+                loop(0, length, function (i) {
+                    if (arr1[i] != arr2[i]) checkStatus = false;
                 });
                 return checkStatus;
             },
@@ -501,31 +502,31 @@
                 if (!this.checkTime())return;
                 var html = '';
                 html += '<div class="date-selector-bg" id="date-selector-bg-' + _this.container + '">' +
-                        '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
-                        '<div class="date-selector-btn-box">' +
-                        '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
+                    '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
+                    '<div class="date-selector-btn-box">' +
+                    '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
 
                 if (this.type == 1) {
                     html += '<div class="date-selector-tab-box">' +
-                            '<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
-                            '<div class="date-selector-tab">时分</div>' +
-                            '</div>';
+                        '<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
+                        '<div class="date-selector-tab">时分</div>' +
+                        '</div>';
                 }
 
                 html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">提交</div>' +
-                        '</div>' +
-                        '<div class="date-selector-content">';
+                    '</div>' +
+                    '<div class="date-selector-content">';
 
                 if (_this.type == 0) {
                     loop(0, _this.idxArr.length, function (i) {
                         html += '<div class="date-selector date-selector-left">' +
-                                '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
-                                '</div>';
+                            '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
+                            '</div>';
                     });
                     html += '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>';
+                        '<div class="date-selector-down-shadow"></div>' +
+                        '<div class="date-selector-line"></div>' +
+                        '</div>';
                     html += '</div></div>';
                     $id(_this.container).innerHTML = html;
                     loop(0, _this.ulCount, function (i) {
@@ -533,40 +534,40 @@
                     });
                 } else if (_this.type == 1) {
                     html += '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-0"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-1"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-2"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>' +
-                            '<div class="date-selector-content date-selector-content-right">' +
-                            '<div class="date-selector date-selector-right">' +
-                            '<ul id="date-selector-' + _this.container + '-3"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-right">' +
-                            '<ul id="date-selector-' + _this.container + '-4"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>';
+                        '<ul id="date-selector-' + _this.container + '-0"></ul>' +
+                        '</div>' +
+                        '<div class="date-selector date-selector-left">' +
+                        '<ul id="date-selector-' + _this.container + '-1"></ul>' +
+                        '</div>' +
+                        '<div class="date-selector date-selector-left">' +
+                        '<ul id="date-selector-' + _this.container + '-2"></ul>' +
+                        '</div>' +
+                        '<div class="date-selector-up-shadow"></div>' +
+                        '<div class="date-selector-down-shadow"></div>' +
+                        '<div class="date-selector-line"></div>' +
+                        '</div>' +
+                        '<div class="date-selector-content date-selector-content-right">' +
+                        '<div class="date-selector date-selector-right">' +
+                        '<ul id="date-selector-' + _this.container + '-3"></ul>' +
+                        '</div>' +
+                        '<div class="date-selector date-selector-right">' +
+                        '<ul id="date-selector-' + _this.container + '-4"></ul>' +
+                        '</div>' +
+                        '<div class="date-selector-up-shadow"></div>' +
+                        '<div class="date-selector-down-shadow"></div>' +
+                        '<div class="date-selector-line"></div>' +
+                        '</div>';
                     html += '</div></div>';
                     $id(_this.container).innerHTML = html;
                 }
             },
-           initReady: function () {
-                var _this = this;
+            initReady: function () {
+                var _this   = this;
                 var realIdx = 0;
                 loop(0, _this.ulCount, function (i) {
-                    realIdx = _this.idxArr[i];
-                    var min = 0;
-                    var max = 0;
+                    realIdx       = _this.idxArr[i];
+                    var min       = 0;
+                    var max       = 0;
                     var tempDomUl = $id('date-selector-' + _this.container + '-' + _this.idxArr[i]);
                     _this.ulDomArr.push(tempDomUl);
                     var tempArray = _this['array' + _this.idxArr[i]] = [];
@@ -575,23 +576,23 @@
                             _this.initCommonArr(tempDomUl, tempArray, _this.beginTime[i], _this.endTime[i], '年', i);
                             break;
                         case 1:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,1)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,1)) ? _this.endTime[i] : 12;
+                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 1)) ? _this.beginTime[i] : 1;
+                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 1)) ? _this.endTime[i] : 12;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '月', i);
                             break;
                         case 2:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,2)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 2)) ? _this.beginTime[i] : 1;
+                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '日', i);
                             break;
                         case 3:
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,3)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,3)) ? _this.endTime[i] : 23;
+                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 3)) ? _this.beginTime[i] : 0;
+                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 3)) ? _this.endTime[i] : 23;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '时', i);
                             break;
                         case 4 :
-                            min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,4)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time,_this.recent_time,4)) ? _this.endTime[i] : 59;
+                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 4)) ? _this.beginTime[i] : 0;
+                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 4)) ? _this.endTime[i] : 59;
                             _this.initCommonArr(tempDomUl, tempArray, min, max, '分', i);
                             break;
                     }
@@ -671,34 +672,12 @@
                 });
                 tempDomUl.innerHTML = Html;
             },
-            initRangeArr: function (month, ulIdx, arrIdx, min, max) {
-                var _this     = this;
-                var year      = _this.idxArr[0] == 0 ? _this.resultArr[0] : _this.begin_time[0];
-                var $selector = $id('date-selector-' + _this.container + '-' + arrIdx);
-                var str       = $selector.querySelectorAll("li")[2].innerHTML.substr(-1);
-                var dir       = (min == -1 ? 1 : 0);//0在顶部,1在底部
-                min           = (min == -1 ? (arrIdx > 2 ? 0 : 1) : min);
-                if (max == -1) {
-                    switch (arrIdx) {
-                        case 0:
-                            break;
-                        case 1:
-                            max = 12;
-                            break;
-                        case 2:
-                            max = new Date(year, month, 0).getDate();
-                            break;
-                        case 3:
-                            max = 23;
-                            break;
-                        case 4:
-                            max = 59;
-                            break;
-                    }
-                }
-                var y = 0;
-
-                var arr = [];
+            initRangeArr: function (min, max, str, checkIdx, dir) {
+                var _this      = this;
+                var realIdx    = _this.idxArr[checkIdx];
+                var arr        = [];
+                var $selector  = $id('date-selector-' + _this.container + '-' + realIdx);
+                var targetLong = 0;
                 loop(min, max + 1, function (k) {
                     arr.push(k);
                 });
@@ -708,107 +687,84 @@
                 for ( var i = 0; i < arr.length; i++ ) {
                     Html += '<li>' + arr[i] + (arr[i] === '' ? '' : str) + '</li>';
                 }
+                _this['array' + realIdx] = [];
+                _this['array' + realIdx] = arr;
+                $selector.innerHTML      = Html;
 
-                _this['array' + arrIdx] = [];
-                _this['array' + arrIdx] = arr;
-
-                $selector.innerHTML = Html;
                 if (dir == 0) {
-                    y                                     = min > this.resultArr[ulIdx] ? 0 : -arr.indexOf(this.resultArr[ulIdx]) * this.liHeight + this.liHeight * 2;
-                    this.resultArr[ulIdx]                 = this.resultArr[ulIdx] < min ? min : this.resultArr[ulIdx];
-                    this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
+                    targetLong                               = min > this.resultArr[checkIdx] ? 0 : -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2;
+                    this.resultArr[checkIdx]                 = this.resultArr[checkIdx] < min ? min : this.resultArr[checkIdx];
+                    this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
                 } else if (dir == 1) {
-                    y                                     = max > this.resultArr[ulIdx] ?
-                    -arr.indexOf(this.resultArr[ulIdx]) * this.liHeight + this.liHeight * 2 :
+                    targetLong                               = max > this.resultArr[checkIdx] ?
+                    -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2 :
                     -arr.indexOf(max) * this.liHeight + this.liHeight * 2;
-                    this.resultArr[ulIdx]                 = this.resultArr[ulIdx] > max ? max : this.resultArr[ulIdx];
-                    this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
+                    this.resultArr[checkIdx]                 = this.resultArr[checkIdx] > max ? max : this.resultArr[checkIdx];
+                    this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
                 } else {
-                    console.log('error')
+                    if (arr.indexOf(this.resultArr[checkIdx]) == -1) {
+                        targetLong = (this.maxHeight[checkIdx] > this.liHeight * (max - min)) ? -this.liHeight * (max - min) : -this.distance[checkIdx];
+                    } else {
+                        targetLong = -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + 2 * this.liHeight;
+                    }
+                    this.recent_time[realIdx] = -targetLong / this.liHeight + 1;
+                    this.resultArr[checkIdx]  = arr[-targetLong / this.liHeight + 2];
                 }
 
-                $selector.style.transform        = 'translate3d(0,' + y + 'px, 0)';
-                $selector.style.webkitTransform  = 'translate3d(0,' + y + 'px, 0)';
+                $selector.style.transform        = 'translate3d(0,' + targetLong + 'px, 0)';
+                $selector.style.webkitTransform  = 'translate3d(0,' + targetLong + 'px, 0)';
                 $selector.style.transition       = 'transform 0.15s ease-out';
                 $selector.style.webkitTransition = '-webkit-transform 0.15s ease-out';
-                this.maxHeight[ulIdx]            = this.liHeight * (max - min);
-                this.distance[ulIdx]             = Math.abs(y);
+                this.maxHeight[checkIdx]         = this.liHeight * (max - min);
+                this.distance[checkIdx]          = Math.abs(targetLong);
             },
-            checkRange: function (ulIdx, resIdx, distance, maxHei) {
-                var _this    = this;
-                var needInit = true;
-                if (distance == 0) {
-                    loop(0, ulIdx, function (n) {
-                        if (_this.distance[n] != 0)needInit = false;
-                    });
-                } else if (distance == maxHei) {
-                    if (ulIdx == 0 && _this.distance[0] == _this.maxHeight[0]) {
-                        needInit = false;
-                    } else {
-                        loop(0, ulIdx, function (n) {
-                            if (_this.distance[n] != _this.maxHeight[n])needInit = false;
-                        });
-                    }
+            checkRange: function (checkIdx) {
+                var _this = this;
+                if (checkIdx >= _this.ulCount - 1) return;
+                var min     = 0;
+                var max     = 0;
+                var str     = '';
+                var dir     = 0; //0在顶部,1在底部,-1在中间
+                var realIdx = _this.idxArr[checkIdx];
+                switch (realIdx) {
+                    case 0:
+                        min = 1;
+                        max = 12;
+                        str = '月';
+                        break;
+                    case 1:
+                        min = 1;
+                        max = new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+                        str = '日';
+                        break;
+                    case 2:
+                        min = 0;
+                        max = 23;
+                        str = '时';
+                        break;
+                    case 3:
+                        min = 0;
+                        max = 59;
+                        str = '分';
+                        break;
                 }
-                if (distance == 0 && needInit) {
-                    if (ulIdx + 1 == _this.ulCount) {
-                        _this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][2];
-                        _this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
-                    }
-                    loop(ulIdx + 1, _this.ulCount, function (k) {
-                        var tempMin = (k == ulIdx + 1 || _this.begin_time[k] == _this.recent_time[k]) ? _this.beginTime[k] : -1;
-                        if (tempMin == -1) {
-                            loop(k, _this.ulCount, function (m) {
-                                tempMin = (_this.distance[m - 1] == 0 || _this.distance[m] == 0) ? _this.beginTime[k] : -1;
-                                if (tempMin != -1) {
-                                    return true;
-                                }
-                            });
-                        }
-                        _this.initRangeArr(_this.recent_time[1], k, _this.idxArr[k], tempMin, -1);
-                        _this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][2];
-                        _this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
-                    });
-                } else if (distance == maxHei && needInit) {
-                    var tempIdx = _this['array' + _this.idxArr[ulIdx]].length - 3;
-                    if (ulIdx + 1 == _this.ulCount) {
-                        _this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][tempIdx];
-                        _this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
-                    }
-                    loop(ulIdx + 1, _this.ulCount, function (k) {
-                        var tempStatus = true;
-                        var tempMax    = (k == ulIdx + 1 || _this.end_time[k] == _this.recent_time[k]) ? _this.endTime[k] : -1;
-                        loop(0, k, function (n) {
-                            if (_this.distance[n] != _this.maxHeight[n]) {
-                                tempMax    = -1;
-                                tempStatus = false;
-                            }
-                        });
 
-                        if (tempMax == -1 && tempStatus) {
-                            loop(k, _this.ulCount, function (m) {
-                                tempMax = (_this.distance[m - 1] == _this.maxHeight[m - 1] || _this.distance[m] == _this.maxHeight[m]) ? _this.endTime[k] : -1;
-                                if (tempMax != -1) {
-                                    return true
-                                }
-                            });
-                        }
-                        _this.initRangeArr(_this.end_time[1], k, _this.idxArr[k], -1, tempMax);
-                        tempIdx                                = _this['array' + _this.idxArr[ulIdx]].length - 3;
-                        _this.resultArr[ulIdx]                 = _this['array' + _this.idxArr[ulIdx]][tempIdx];
-                        _this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
-                    });
-                } else {
-                    _this.resultArr[ulIdx]                = _this['array' + _this.idxArr[ulIdx]][resIdx];
-                    this.recent_time[_this.idxArr[ulIdx]] = _this.resultArr[ulIdx];
-                    loop(ulIdx + 1, _this.ulCount, function (k) {
-                        _this.initRangeArr(_this.recent_time[1], k, _this.idxArr[k], -1, -1);
-                    });
-                }
-                loop(0, _this.ulCount, function (k) {
-                    _this.recent_time[_this.idxArr[k]] = _this.resultArr[k];
+                loop(0, checkIdx + 1, function (p) {
+                    if (_this.beginTime[p] != _this.resultArr[p]) {
+                        dir = 1;
+                        loop(0, checkIdx + 1, function (q) {
+                            if (_this.endTime[q] != _this.resultArr[q]) dir = -1;
+                        });
+                    }
                 });
-                console.log('应得到的结果' + _this.resultArr);
+
+                if (dir == 0) {
+                    min = _this.beginTime[checkIdx + 1] >= min ? _this.beginTime[checkIdx + 1] : 0;
+                } else if (dir == 1) {
+                    max = _this.endTime[checkIdx + 1] <= max ? _this.endTime[checkIdx + 1] : 0;
+                }
+                _this.initRangeArr(min, max, str, checkIdx + 1, dir);
+                _this.checkRange(checkIdx + 1);
             },
             initPosition: function (dis, max, idx) {
                 dis     = dis < 0 ? 0 : dis;
@@ -854,17 +810,17 @@
                         that.end.Y         = event.changedTouches[0].clientY;
                         var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
                         that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] ? tempDis : that.maxHeight[idx]);
-                        // console.log(that.move.speed);
                         that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
-                        var tempRes    = that.distance[idx] / that.liHeight + 2;
-                        that.end.index = that.distance[idx] / that.liHeight + 2;
-
-                        that.checkRange(idx, tempRes, that.distance[idx], that.maxHeight[idx]);
+                        var tempRes = that.end.index = that.distance[idx] / that.liHeight + 2;
 
                         $selector.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
                         $selector.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
                         $selector.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
                         $selector.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
+
+                        that.recent_time[that.idxArr[idx]] = that.resultArr[idx] = that['array' + that.idxArr[idx]][tempRes];
+                        that.checkRange(0);
+
                         break;
                     case "touchmove":
                         event.preventDefault();
@@ -880,8 +836,8 @@
                             $selector.style.webkitTransform = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
                         }
                         if (this.distance[idx] <= -that.maxHeight[idx]) {
-                            $selector.style.transform        = 'translate3d(0, -' + (max + that.liHeight) + 'px, 0)';
-                            $selector.style.webkitTransform  = 'translate3d(0, -' + (max + that.liHeight) + 'px, 0)';
+                            $selector.style.transform        = 'translate3d(0, -' + that.liHeight + 'px, 0)';
+                            $selector.style.webkitTransform  = 'translate3d(0, -' + that.liHeight + 'px, 0)';
                             $selector.style.transition       = 'transform 0.3s ease-out';
                             $selector.style.webkitTransition = '-webkit-transform 0.3s ease-out';
                         }
@@ -909,26 +865,28 @@
         beginTime: [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime: [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success: function (arr) {
-            alert(arr)
+        success : function(arr){
+            alert(arr);
+            console.log(arr);
         }//回调
     });
     //---------------------函数调用结束---------------------
+    
     //月份从1开始
-
     new DateSelector({
         input: 'date-selector-inputs',//点击触发插件的input框的id
         container: 'targetContainers',//插件插入的容器id
         type: 0,
         //0：不需要tab切换，自定义滑动内容，建议小于三个；
         //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
-        param: [1, 1, 0, 1, 1],
+        param: [1, 1, 0, 1, 0],
         //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
-        beginTime: [2011, 13, -27, 102, 12],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
-        endTime: [2020, 10, 21, 20, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
+        beginTime: [2011, 13, -27, 102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
+        endTime: [2020, 10, 21, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success: function (arr) {
-            alert(arr)
+        success : function(arr){
+            alert(arr);
+            console.log(arr);
         }//回调
     });
 </script>
