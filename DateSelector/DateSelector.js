@@ -39,7 +39,7 @@
 		
 		this.ulCount     = 0;
 		this.ulDomArr    = [];
-		this.idxArr      = [];//更新后的ul的下标
+		this.idxArr      = [];
 		this.liHeight    = 40;
 		this.maxHeight   = [];
 		this.distance    = [];
@@ -433,10 +433,10 @@
 					break;
 			}
 			
-			loop(0, checkIdx + 1, function (p) { //比较是否到头
+			loop(0, checkIdx + 1, function (p) {
 				if (_this.beginTime[p] != _this.resultArr[p]) {
 					dir = 1;
-					loop(0, checkIdx + 1, function (q) { //是否到尾
+					loop(0, checkIdx + 1, function (q) {
 						if (_this.endTime[q] != _this.resultArr[q]) dir = -1;
 					});
 				}
