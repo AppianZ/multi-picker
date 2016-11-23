@@ -373,14 +373,14 @@
 			}
 			_this['array' + realIdx] = [];
 			_this['array' + realIdx] = arr;
-			$selector.innerHTML = Html;
+			$selector.innerHTML      = Html;
 			
 			if (dir == 0) {
-				targetLong                                   = min > this.resultArr[checkIdx] ? 0 : -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2;
+				targetLong                               = min > this.resultArr[checkIdx] ? 0 : -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2;
 				this.resultArr[checkIdx]                 = this.resultArr[checkIdx] < min ? min : this.resultArr[checkIdx];
 				this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
 			} else if (dir == 1) {
-				targetLong                                   = max > this.resultArr[checkIdx] ?
+				targetLong                               = max > this.resultArr[checkIdx] ?
 				-arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2 :
 				-arr.indexOf(max) * this.liHeight + this.liHeight * 2;
 				this.resultArr[checkIdx]                 = this.resultArr[checkIdx] > max ? max : this.resultArr[checkIdx];
@@ -389,10 +389,10 @@
 				if (arr.indexOf(this.resultArr[checkIdx]) == -1) {
 					targetLong = (this.maxHeight[checkIdx] > this.liHeight * (max - min)) ? -this.liHeight * (max - min) : -this.distance[checkIdx];
 				} else {
-					targetLong =  -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + 2 * this.liHeight;
+					targetLong = -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + 2 * this.liHeight;
 				}
 				this.recent_time[realIdx] = -targetLong / this.liHeight + 1;
-				this.resultArr[checkIdx] = arr[- targetLong / this.liHeight + 2];
+				this.resultArr[checkIdx]  = arr[-targetLong / this.liHeight + 2];
 			}
 			
 			$selector.style.transform        = 'translate3d(0,' + targetLong + 'px, 0)';
