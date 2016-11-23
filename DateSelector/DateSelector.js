@@ -173,6 +173,13 @@
 				return false;
 			}
 		},
+		checkTimeArr : function(arr1, arr2, length) {
+			var checkStatus = true;
+			loop(0, length, function(i) {
+				if(arr1[i] != arr2[i]) checkStatus = false;
+			});
+			return checkStatus;
+		},
 		initDomFuc: function () {
 			var _this = this;
 			this.checkParam();
@@ -240,25 +247,41 @@
 		},
 		initReady: function () {
 			var _this = this;
+			var realIdx = 0;
+			loop(0, _this.ulCount, function (q) {
+				realIdx = _this.idxArr[q];
+				_this.resultArr[q] = _this.recent_time[realIdx];
+			});
 			loop(0, _this.ulCount, function (i) {
+				realIdx = _this.idxArr[i];
+				var min = 0;
+				var max = 0;
 				var tempDomUl = $id('date-selector-' + _this.container + '-' + _this.idxArr[i]);
 				_this.ulDomArr.push(tempDomUl);
 				var tempArray = _this['array' + _this.idxArr[i]] = [];
-				switch (_this.idxArr[i]) {
+				switch (realIdx) {
 					case 0:
 						_this.initCommonArr(tempDomUl, tempArray, _this.beginTime[i], _this.endTime[i], '年', i);
 						break;
 					case 1:
-						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), (i == 0 ? _this.endTime[i] : 12), '月', i);
+						min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,1)) ? _this.beginTime[i] : 1;
+						max = (_this.checkTimeArr(_this.end_time,_this.recent_time,1)) ? _this.endTime[i] : 12;
+						_this.initCommonArr(tempDomUl, tempArray, min, max, '月', i);
 						break;
 					case 2:
-						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 1), new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate(), '日', i);
+						min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,2)) ? _this.beginTime[i] : 1;
+						max = (_this.checkTimeArr(_this.end_time,_this.recent_time,2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+						_this.initCommonArr(tempDomUl, tempArray, min, max, '日', i);
 						break;
 					case 3:
-						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 0), (i == 0 ? _this.endTime[i] : 23), '时', i);
+						min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,3)) ? _this.beginTime[i] : 0;
+						max = (_this.checkTimeArr(_this.end_time,_this.recent_time,3)) ? _this.endTime[i] : 23;
+						_this.initCommonArr(tempDomUl, tempArray, min, max, '时', i);
 						break;
 					case 4 :
-						_this.initCommonArr(tempDomUl, tempArray, (i == 0 ? _this.beginTime[i] : 0), (i == 0 ? _this.endTime[i] : 59), '分', i);
+						min = (_this.checkTimeArr(_this.begin_time,_this.recent_time,4)) ? _this.beginTime[i] : 0;
+						max = (_this.checkTimeArr(_this.end_time,_this.recent_time,4)) ? _this.endTime[i] : 59;
+						_this.initCommonArr(tempDomUl, tempArray, min, max, '分', i);
 						break;
 				}
 				tempDomUl.addEventListener('touchstart', function () {
