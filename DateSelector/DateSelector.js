@@ -248,10 +248,6 @@
 		initReady: function () {
 			var _this = this;
 			var realIdx = 0;
-			loop(0, _this.ulCount, function (q) {
-				realIdx = _this.idxArr[q];
-				_this.resultArr[q] = _this.recent_time[realIdx];
-			});
 			loop(0, _this.ulCount, function (i) {
 				realIdx = _this.idxArr[i];
 				var min = 0;
