@@ -36,15 +36,17 @@ This plugin is made up of **two parts**：
 ## **Logs**
 
 ### 2016.11.24(update)
-
 > * The new style. 
 
 ### 2016.11.23(update)
-
 > * Refactoring DateSelector with a new calculation.
+
+### 2016.11.19(delete)
+> * delete project DateSelectorSimple, rename project DateSelectorPro to DateSelector.
 
 ### 2016.11.6(add)
 > * New Project -- MultiPicker,  with Chinese city JSON.
+
 
 ## **Authors**
 >  For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
@@ -91,13 +93,16 @@ MultiPicker主要是由`两个部分`组成，
 
 ## **Logs**
 
-### 2016.11.24(update)
+## **Logs**
 
+### 2016.11.24(update)
 > * 新的灰白样式, 更大众, 更简洁
 
 ### 2016.11.23(update)
-
 > * 重构DateSelector 的算法, 减少了50+行冗余代码
+
+### 2016.11.19(delete)
+> * 删除DateSelectorSimple, 重命名DateSelectorPro为DateSelector
 
 ### 2016.11.6(add)
 > * 新增MultiPicker, 并配套中国城市json
