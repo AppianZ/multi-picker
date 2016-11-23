@@ -172,7 +172,6 @@
 				});
 			});
 			_this.ulCount = _this.idxArr.length;
-			console.log(_this.resultArr);
 		},
 		initBinding: function () {
 			var _this     = this;

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no"/>
     <meta name="screen-orientation" content="portrait">
-    <title>优质版DateSelector</title>
+    <title>DateSelector</title>
     <link rel="stylesheet" type="text/css" href="./DateSelector.css?rev=@@hash"/>
     <style>
         body {
@@ -62,7 +62,7 @@
 
 <body>
 
-<h3>DateSelectorPro.</h3>
+<h3>DateSelector.</h3>
 <article>
     <p>0.请在移动端下打开~~</p>
     <p>1.点击下面的输入演示样式</p>
@@ -75,9 +75,9 @@
     <input id="date-selector-inputs" type="text" placeholder="点我~~看自定义效果" readonly/>
     <p>2.如何引用css和js文件？</p>
     <div class="block">
-        sass文件:引用DateSelectorPro/DateSelectorPro.scss<br/><br/>
-        css文件:引用DateSelectorPro/DateSelectorPro.css<br/><br/>
-        js文件:引用DateSelectorPro/DateSelectorPro.js<br/><br/>
+        sass文件:引用DateSelector/DateSelector.scss<br/><br/>
+        css文件:引用DateSelector/DateSelector.css<br/><br/>
+        js文件:引用DateSelector/DateSelector.js<br/><br/>
     </div>
     <p>3.如何调用构造函数？</p>
     <div class="block">
@@ -148,7 +148,10 @@
         beginTime : [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime : [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime : [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success : function(arr){alert(arr)}//回调
+        success : function(arr){
+            alert(arr);
+            console.log(arr);
+        }//回调
     });
     //---------------------函数调用结束---------------------
     //月份从1开始
@@ -161,10 +164,13 @@
         //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
         param : [1,1,0,1,0],
         //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
-        beginTime : [2011,13,-27,102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
-        endTime : [2020,10,21,20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
+        beginTime : [2001,1,-31,19],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
+        endTime : [2020,11,25,20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime : [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success : function(arr){alert(arr)}//回调
+        success : function(arr){
+            alert(arr);
+            console.log(arr);
+        }//回调
     });
 </script>
 
