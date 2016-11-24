@@ -10,7 +10,7 @@ This plugin is made up of **two parts**：
 ![gif1.](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/MultiPicker.gif) 
 
 **And, there are two kinds of DateSelector:**
-* One kind of the DateSelector was made up by year, month, date, hour and second. And the style is fixed.
+* One kind of the DateSelector was made up by year, month, date, hour and minute. And the style is fixed.
  ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
 
 * The other kind of DateSelector was made up by free unit. And the style without *tab*.
