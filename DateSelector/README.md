@@ -48,12 +48,12 @@
 
  ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
 
-* type = 1  this type was made up by year, month, date, hour and second. And the style is fixed.
+* type = 1  this type was made up by year, month, date, hour and minute. And the style is fixed.
 
  ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg)  
 
 ## 3. Tips
-> * If you want to define the JSON by youself, you can go to see [MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
+> * If you want to define the JSON by yourself, you can go to see [MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
 > * For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
 
