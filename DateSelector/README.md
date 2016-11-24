@@ -36,7 +36,7 @@
 | Attributes |  Type  |  Value  | Details | 
 | -----| -----| -----| -----|
 |  **input**    |  {String} |*eg:'date-selector-input'* | the id of the dom you touch. |
-|  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to insert dom. |
+|  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to append dom. |
 |  **type**    | {Number} |0 OR 1 | 0: fixed style with *tab*;  1: free style without *tab*. |
 |  **param**  |  {Array} |*eg:[0, 1, 1, 1, 1]*| user-defined units, every position means ['year', 'month', 'day', 'hour', 'minute']. 1 means you need the unit，0 means you dont need it. There must be serial 1.|
 |  **beginTime**   |  {Array} |*eg:[3,27,12,12]     Mar 27(th) 12:12*  `default : [1970, 1, 1, 0, 0]`| user-defined begin time points. An empty array means default array. The equivalent of every position is  the sequent position of `1` in `param`. |
