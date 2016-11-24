@@ -1,6 +1,69 @@
+## DateSelector - A  Flexible Picker for Selecting an Interval
+### Intro
+> * User-defined units. You can set year and month or month, date, hour and minute.
+> * User-defined time ranges. You can set anytime with the precision of a minute
+> * For example, you can set begin time at  Dec -27(th), 2011 102:12 and end time at Oct 21(st), 2020 20:20
+
+<br/>
+### 0. [ Open the demo on the mobile](https://appianz.github.io/multi-picker/DateSelector.html)
+### 1. How to import
+> sass: DateSelector/DateSelector.scss
+
+> css: DateSelector/DateSelector.css
+
+> js: DateSelector/DateSelector.js
+
+### 2. How to use
+**html：**
+```html
+<link rel="stylesheet" type="text/css" href="./DateSelector.css"/>
+<body>
+    <input id="date-selector-input" type="text" readonly/>
+    <div id="targetContainer"></div>
+</body>
+```
+
+**js：**
+```html
+<script src="./DateSelector.js"></script>
+<script>
+    new DateSelector({ ... });
+</script>
+```
+
+**Parameter List：**
+
+| Attributes |  Type  |  Value  | Details | 
+| -----| -----| -----| -----|
+|  **input**    |  {String} |*eg:'date-selector-input'* | the id of the dom you touch. |
+|  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to insert dom. |
+|  **type**    | {Number} |0 OR 1 | 0: fixed style with *tab*;  1: free style without *tab*. |
+|  **param**  |  {Array} |*eg:[0, 1, 1, 1, 1]*| user-defined units, every position means ['year', 'month', 'day', 'hour', 'minute']. 1 means you need the unit，0 means you dont need it. There must be serial 1.|
+|  **beginTime**   |  {Array} |*eg:[3,27,12,12]     Mar 27(th) 12:12*  `default : [1970, 1, 1, 0, 0]`| user-defined begin time points. An empty array means default array. The equivalent of every position is  the sequent position of `1` in `param`. |
+|  **endTime** |  {Array} |the same to beginTime `default : [nextYear, 12, 31, 23, 59]`| user-defined end time points. An empty array means default array. The equivalent of every position is  the sequent position of `1` in `param`. |
+|  **recentTime**  |  {Array} |the same to beginTime| user-defined recent time points. An empty array means NOW. The equivalent of every position is  the sequent position of `1` in `param`.  |
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. |
+
+* type = 0，this type can set unit freely, and the style without *tab*.
+
+ ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
+
+* type = 1  this type was made up by year, month, date, hour and second. And the style is fixed.
+
+ ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg)  
+
+## 3. Tips
+> * If you want to define the JSON by youself, you can go to see [MultiPicker.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
+
+> * For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
+
+> * I am Appian. 
+
+---
+
 ## DateSelector - 日期选择器
 
-#### 该日期选择器的优秀主要表现在:
+### 该日期选择器的优秀主要表现在:
 > 【时间单位】自定义组合, 无论是年月日还是时分都能随心所欲的排列组合
 
 > 【时间范围】自定义设置, 自定义的时间可以精确到分钟，并尽可能的进行数据合法性校正
@@ -51,11 +114,8 @@
 
 * type = 0 自定义单位，【年月日时分】的自定义任意组合
 
- ![img2.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector5.jpeg) 
-
 * type = 1 带tab切换，固定单位【年月日时分】的固定样式
 
- ![img1.](http://7xqsim.com1.z0.glb.clouddn.com/DateSelector4.jpeg) 
 
 ### 3.有什么优越性？
 
@@ -78,7 +138,7 @@
 #### Trust Me. 
 
 ### 4.有什么局限性？
-
+ 
 > 样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<
 
 > 如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！

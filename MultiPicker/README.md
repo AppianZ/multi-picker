@@ -1,6 +1,69 @@
+## MultiPicker - A  Flexible Picker for User-Defined Json
+### Intro
+> * User-defined JSON.  For example,  [Chinese city JSON](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js).
+> * If you want a time picker, you can go to see [DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
+
+<br/>
+### 0. [ Open the demo on the mobile](https://appianz.github.io/multi-picker/MultiPicker.html)
+### 1. How to import
+> sass: MultiPicker/MultiPicker.scss
+
+> css: MultiPicker/MultiPicker.css
+
+> js: MultiPicker/MultiPicker.js
+
+> json (js) ：MultiPicker/city.js
+
+### 2. How to use
+**html：**
+```html
+<link rel="stylesheet" type="text/css" href="./MultiPicker.css"/>
+<body>
+    <input id="multiPickerInput" type="text" readonly/>
+    <div id="targetContainer"></div>
+</body>
+```
+
+**js:**
+```html
+<script src="./MultiPicker.js"></script>
+<script>
+    new MultiPicker({ ... });
+</script>
+```
+
+**Parameter List：**
+
+| Attributes |  Type  |  Value  | Details | 
+| -----| -----| -----| -----|
+|  **input**    |  {String} |*eg:'date-selector-input'* | the id of the dom you touch. |
+|  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to insert dom. |
+|  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| user-defined JSON must be legal. A obj  is made up of  three attrs, `id`, `value` and `child`. |
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. |
+
+**The JSON Object:**
+
+| Attributes | Type | Details | 
+| -----| -----|  -----|
+|  **id**    |  {String} | the identity of it |
+|  **value**    |  {String} |  the value of it  |
+|  **child**    | {Array} |  the next linkage of it. If it's the last linkage, the `child` can be an empty array or null. |
+
+[Here is an example.](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/json.js) 
+
+## 3. Tips
+> * If you want a time picker, you can go to see [DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
+
+> * For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
+
+> * I am Appian. 
+
+---
+
+---
 ## MultiPicker - 自定义多级联动
 
-#### 自定义的主要表现在:
+### 自定义的主要表现在:
 
 > `任意联动级数 `的联动 (建议 ≤ 5级) ，即一个联动弹层中可以同时存在不用级数的联动
 
