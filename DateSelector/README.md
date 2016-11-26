@@ -106,8 +106,8 @@
 |  **input**    |  {String} | *eg:'date-selector-input'* | 点击触发插件的input框的id |
 |  **container**    |  {String} |*eg:'targetContainers'*| 插件即将插入的容器id |
 |  **type**    | {Number} |0 或 1 | 0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换) |
-|  **param**  |  {Array} |*eg:[1,1,0,0,0]*| 设置单位，元素分别对应设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1 |
-|  **beginTime**   |  {Array} |*eg:[2011,3,27,12,12]      2011年3月27日12点12分*| 设置开始时间点,空数组默认设置成1970年1月1日0时0分开始，数组的值对应param参数的对应值。 |
+|  **param**  |  {Array} |*eg:[0, 1, 1, 1, 1]*| 设置单位，元素分别对应设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1 |
+|  **beginTime**   |  {Array} |*eg:[3,27,12,12]    3月27日12点12分*| 设置开始时间点,空数组默认设置成1970年1月1日0时0分开始，数组的值对应param参数的对应值。 |
 |  **endTime** |  {Array} |同beginTime| 设置结束时间点,空数组默认设置成次年12月31日23时59分结束，数组的值对应param参数的对应值。 |
 |  **recentTime**  |  {Array} |同beginTime| 设置当前时间点,空数组默认设置为系统当前时间，数组的值对应param参数的对应值。 |
 |  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
