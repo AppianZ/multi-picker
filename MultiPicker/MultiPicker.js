@@ -33,14 +33,14 @@
 		this.jsonData    = config.jsonData;
 		this.success = config.success;
 		
-		this.ulCount   = 0; //记录上一次的
-		this.ulIdx     = 0; //ul下标计数器,前一次的计数器
-		this.ulDomArr  = [];//ul的dom元素,【a】
-		this.idxArr    = [];//更新后的ul的下标 【a】
-		this.jsonArr   = [];//用来存储每个ul的li中显示的arr【a】
+		this.ulCount   = 0;
+		this.ulIdx     = 0;
+		this.ulDomArr  = [];
+		this.idxArr    = [];
+		this.jsonArr   = [];
 		this.liHeight  = 40;
-		this.maxHeight = [];//每个ul的最大高度【a】
-		this.distance  = [];//transition的移动位置【a】
+		this.maxHeight = [];
+		this.distance  = [];
 		this.start     = {
 			Y: 0,
 			time: ''
@@ -71,10 +71,9 @@
 			});
 			return tempArr;
 		},
-		checkArrDeep: function (parent) {//需要改变
+		checkArrDeep: function (parent) {
 			var _this = this;
 			if ('child' in parent && parent.child.length > 0) {
-				//初始化jsonArr。每一个ul对应的数组并迭代
 				_this.jsonArr.push(_this.generateArrData(parent.child));
 				_this.checkArrDeep(parent.child[0]);
 			}
@@ -115,8 +114,7 @@
 			this.ulIdx           = 0;
 			this.idxArr.length   = idx;
 			_this.jsonArr.length = idx + 1;
-			_this.checkArrDeep(target);//查看某【对象】的深度
-			//取到class='multi-picker-content',可以在里面插入ul
+			_this.checkArrDeep(target);
 			var parentNode = $id('multi-picker-container-' + _this.container).children[1];
 			var tempMax    = _this.ulCount <= _this.idxArr.length ? _this.ulCount : _this.idxArr.length;
 			loop(idx + 1, tempMax, function (i) {
@@ -127,7 +125,6 @@
 				$picker.style.webkitTransform = 'translate3d(0, 0, 0)';
 			});
 			if (_this.ulCount <= _this.idxArr.length) {
-				// 如果不足,则插入ul,从0开始计数
 				loop(_this.ulCount, _this.idxArr.length, function (i) {
 					var newPickerDiv = document.createElement('div');
 					newPickerDiv.setAttribute('class', 'multi-picker');
@@ -136,10 +133,8 @@
 					var tempDomUl = $id('multi-picker-' + _this.container + '-' + i);
 					_this.ulDomArr.push(tempDomUl);
 					_this.distance.push(0);
-					//插入li
 					_this.insertLiArr(tempDomUl, _this.jsonArr[i]);
 					
-					//绑定事件
 					var tempArray = _this.jsonArr[i];
 					tempDomUl.addEventListener('touchstart', function () {
 						_this.touch(event, _this, tempDomUl, tempArray, i);
@@ -151,7 +146,7 @@
 						_this.touch(event, _this, tempDomUl, tempArray, i);
 					}, false);
 				});
-			} else { // 当上一次的ulCount 比当前ul的总数来的大的时候要清除子dom
+			} else {
 				for ( var j = _this.ulCount - 1; j > _this.idxArr.length - 1; j-- ) {
 					var oldPicker = $class('multi-picker')[j];
 					oldPicker.parentNode.removeChild(oldPicker);
@@ -160,7 +155,6 @@
 				}
 			}
 			
-			//统一重新设置宽度和ul的maxHeight
 			_this.maxHeight.length = 0;
 			_this.resultArr.length = 0;
 			loop(0, _this.idxArr.length, function (i) {
@@ -225,7 +219,7 @@
 			return this;
 		},
 		initSpeed: function (arr, dir, max, idx) {
-			var variance = 0;//求方差
+			var variance = 0;
 			var sum      = 0;
 			var rate     = 0;
 			for ( var i in arr ) {
@@ -234,8 +228,8 @@
 			for ( var j in arr ) {
 				variance += (arr[j] - (sum / arr.length)) * (arr[j] - (sum / arr.length));
 			}
-			if ((variance / arr.length).toFixed(2) > .1) { //如果方差的结果大于.1 用来控制速度变化幅度
-				rate = max > this.liHeight * 15 ? dir * 2 : 0; //如果数组长度是大于15的才会有加速度出现
+			if ((variance / arr.length).toFixed(2) > .1) {
+				rate = max > this.liHeight * 15 ? dir * 2 : 0;
 				this.initPosition(this.distance[idx] + rate, max - this.liHeight * 5, idx);
 				this.move.speed[0] = .2;
 			} else {
@@ -268,7 +262,6 @@
 					$picker.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
 					$picker.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
 					$picker.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
-					//设置后续ul;
 					if (temp != that.distance[idx]) that.checkRange(idx);
 					setTimeout(function () {
 						that.end.status = true;
@@ -278,7 +271,7 @@
 					event.preventDefault();
 					that.move.Y = event.touches[0].clientY;
 					var offset  = that.start.Y - that.move.Y;
-					if (that.distance[idx] == 0 && offset < 0) { //如果滑动move在顶部
+					if (that.distance[idx] == 0 && offset < 0) {
 						$picker.style.transform        = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
 						$picker.style.webkitTransform  = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
 						$picker.style.transition       = 'transform 0.2s ease-out';
