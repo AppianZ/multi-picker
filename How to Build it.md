@@ -46,6 +46,7 @@
 
 **2.我发现，使用『自定义json选择器』有一个非常迫切、刁钻的需求：**
 >  ①：用户在自定义JSON的时候期望可以存在不同级别的联动。
+> 
 > 比如，地区选择器中可能同时存在【北京 → 朝阳】这样的二级联动，也可能存在【广东 → 深圳 → 福田区】这样的三级联动。
 
 所以要设计一种JSON的格式规范，既能够让用户更方便的表达自己想要的JSON，又能让插件能够顺利读到JSON深度，从而动态适应联动。
@@ -64,17 +65,21 @@
 
 **实现弹层的思路：【插入DOM → 初始化联动的数据  → 绑定事件 】**
 > ① 在插入DOM的部分( **initDomFuc** )，采用字符串拼接的方式插入DOM（而不是使用字符串模板）。
+> 
 > 联动的主要结构式如下图:
+> 
 > 每个联动是一个 div，div 包裹着一个 ul，ul 中的每个 li 就是联动的值
+> 
 > ![](http://7xqsim.com1.z0.glb.clouddn.com/how7.png)
 > 
 > 其中div的高度是5个 li 的高度，ul的高度是实际的所有 li 的高度。
-
-> ② 在初始化联动数据的部分( **initReady** )，在头尾分别插入两个空字符，能够起到占位符的作用，这样在计算手势的translate3d的时候更方便。
-> ![](http://7xqsim.com1.z0.glb.clouddn.com/how5.png)
-> ![](http://7xqsim.com1.z0.glb.clouddn.com/how6.png)
 > 
-
+> ② 在初始化联动数据的部分( **initReady** )，在头尾分别插入两个空字符，能够起到占位符的作用，这样在计算手势的translate3d的时候更方便。
+> 
+> ![](http://7xqsim.com1.z0.glb.clouddn.com/how22.png)
+> 
+> ![](http://7xqsim.com1.z0.glb.clouddn.com/how23.png)
+> 
 > ③ 为DOM元素绑定事件时，具体做法有两步：
 > 
 > 第一步：为每个初始化好的ul绑定touch事件( **initReady** )；
@@ -82,15 +87,17 @@
 > 第二步：为一些操作按钮绑定事件( **initBinding** )。
 > 
 > ③ -  第一步：touch事件的种类无非就是 touchstart、touchmove 和 touchend。但需要在每次滑动的时候记录一些数据。这是为了实现一个**滑动加速度**的效果，下文会说到。
-> ![](http://7xqsim.com1.z0.glb.clouddn.com/how8.png)
-
+> 
+> ![](http://7xqsim.com1.z0.glb.clouddn.com/how23-2.png)
+> 
 > ③ -  第二步：用到了自己封装的一个**简单的事件监听函数on**：
-> ![](http://7xqsim.com1.z0.glb.clouddn.com/how4.png)
+> 
+> ![](http://7xqsim.com1.z0.glb.clouddn.com/how23-3.png)
 > 
 > 这个函数主要用在【触发】【取消】和【提交】这几个重要按钮上。
 
 PS：在设计样式的过程中考虑到，完整使用`【年月日时分】`五种时间单位的场景居多，为了优化界面和用户体验，所以在日期选择器的设计中，需要设计一种`带tab切换`效果的完整版日期选择器。其他场景中不会出现。
-![](http://7xqsim.com1.z0.glb.clouddn.com/how4-2.png)
+![](http://7xqsim.com1.z0.glb.clouddn.com/how24.png)
 
 
 ##  三、加速度的实现
@@ -99,18 +106,25 @@ PS：在设计样式的过程中考虑到，完整使用`【年月日时分】`�
 **我发现，无论用户使用哪个手指，只要用户的滑动弧长在短时间内比较大的话，说明用户比较想快速向上滑或是向下滑。比如，在选择出生年份的时候，用户肯定会想快速滑到上面的部分，就会用很快速的手势向下滑动一个比较大的弧长。这时候就应该有一个滑动加速度的效果。**
 
 那么如何实现呢，如何判断用户想要快速滑动呢？
+
 很简单，只需要考虑，单位时间内的速度变化率，也就是**加速度**，就行了。
 
 之前提到过，在touchmove的过程中会有一个 【speed数组】用来存储滑动时，手势的速度。
+
 ![](http://7xqsim.com1.z0.glb.clouddn.com/how9.png)
+
 并在touchend中调用 **initSpeed** 函数，确定最后` transition-duration `的值。
 
 **initSpeed** 的主要工作是计算 speed 中的速度方差，方差和加速度是成正相关的。
+
 所以当方差大于0.1时，ul 的实际滑动距离是手势滑动距离的两倍，transition-duration的值为0.2s；
+
 而当方差小于0.1的时候，就认为基本是匀速滑动，ul 的实际滑动距等于手势滑动距离，取 speed[0] 作为 transition-duration 的值。
+
 ![](http://7xqsim.com1.z0.glb.clouddn.com/how10.png)
 
 确定好了滑动距离之后，就可以计算最后停留的位置 translate3d ( **initPosition** )。
+
 滑动加速度的效果就基本实现了。
 
 ##  四、日期选择器 和 自定义 JSON 选择器 的联动差别
@@ -146,12 +160,14 @@ PS：在设计样式的过程中考虑到，完整使用`【年月日时分】`�
 **如果把用户设置的时间点称为【虚拟时间】，而计算机能够处理的完整时间点称为【实际时间】，这个问题就简化了许多。**
 
 我做了一个小技巧，就是在我判断用户参数合法性的同时，把用户作为参数传入的`【虚拟时间】`( 如 ：beginTime、endTime、 recentTime），转变成一个代码能够快速识别的`【真实时间】`（如：begin_time、end_time、 recent_time）。
+
 另外，`idxArr`、`maxHeight`、`distance` 对应下标的值是和`【虚拟时间】`对应下标的值保持一致。
 
 
 ### 思考第7个问题：『如何计算联动数据，才能做到在多级之间反复调整？』
 
 在我最新的重构算法中，我的解决方案是:
+
 **当ul被滑动时，就从最高级的联动开始【递归调用】。被递归的函数叫做`checkRange`。**
 
 实现步骤如下：
