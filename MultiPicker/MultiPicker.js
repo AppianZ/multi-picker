@@ -28,10 +28,10 @@
 	}
 	
 	function MultiPicker(config) {
-		this.input       = config.input;
-		this.container   = config.container;
-		this.jsonData    = config.jsonData;
-		this.success = config.success;
+		this.input     = config.input;
+		this.container = config.container;
+		this.jsonData  = config.jsonData;
+		this.success   = config.success;
 		
 		this.ulCount   = 0;
 		this.ulIdx     = 0;
@@ -288,6 +288,14 @@
 			}
 		}
 	};
-	win.MultiPicker       = MultiPicker;
+	if (typeof exports == "object") {
+		module.exports = MultiPicker;
+	} else if (typeof define == "function" && define.amd) {
+		define([], function () {
+			return MultiPicker;
+		})
+	} else {
+		win.MultiPicker = MultiPicker;
+	}
 })(window, document);
   

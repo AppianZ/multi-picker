@@ -533,5 +533,13 @@
 			}
 		}
 	};
-	win.DateSelector       = DateSelector;
+	if (typeof exports == "object") {
+		module.exports = DateSelector;
+	} else if (typeof define == "function" && define.amd) {
+		define([], function () {
+			return DateSelector;
+		})
+	} else {
+		win.DateSelector = DateSelector;
+	}
 })(window, document);
