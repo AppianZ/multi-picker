@@ -7,7 +7,7 @@
     <meta name="screen-orientation" content="portrait">
     <title>DateSelector</title>
     <style>
-      * {
+        * {
             padding: 0;
             margin: 0;
         }
@@ -291,7 +291,7 @@
         是的,你可以设置任何尴尬的时间了~ 比如:【2016-11-11 11:11 ~ 2016-12-12 12:12】<br/><br/>
 
         能够任意设置时间单位的组合 (•‿•)<br/>
-        "年月日"  OR  "月日时分"  OR  "年月日时分"<br/><br/>
+        "年月日" OR "月日时分" OR "年月日时分"<br/><br/>
 
         能够切换固定样式和自定义样式,简化参数 (•‿•)<br/><br/>
 
@@ -314,7 +314,7 @@
 
 
 <script>
-   /**
+    /**
      * Created by appian on 16/8/5.
      */
     (function (wid, dcm) {
@@ -502,31 +502,31 @@
                 if (!this.checkTime())return;
                 var html = '';
                 html += '<div class="date-selector-bg" id="date-selector-bg-' + _this.container + '">' +
-                    '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
-                    '<div class="date-selector-btn-box">' +
-                    '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
+                        '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
+                        '<div class="date-selector-btn-box">' +
+                        '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
 
                 if (this.type == 1) {
                     html += '<div class="date-selector-tab-box">' +
-                        '<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
-                        '<div class="date-selector-tab">时分</div>' +
-                        '</div>';
+                            '<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
+                            '<div class="date-selector-tab">时分</div>' +
+                            '</div>';
                 }
 
                 html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">提交</div>' +
-                    '</div>' +
-                    '<div class="date-selector-content">';
+                        '</div>' +
+                        '<div class="date-selector-content">';
 
                 if (_this.type == 0) {
                     loop(0, _this.idxArr.length, function (i) {
                         html += '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
-                            '</div>';
+                                '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
+                                '</div>';
                     });
                     html += '<div class="date-selector-up-shadow"></div>' +
-                        '<div class="date-selector-down-shadow"></div>' +
-                        '<div class="date-selector-line"></div>' +
-                        '</div>';
+                            '<div class="date-selector-down-shadow"></div>' +
+                            '<div class="date-selector-line"></div>' +
+                            '</div>';
                     html += '</div></div>';
                     $id(_this.container).innerHTML = html;
                     loop(0, _this.ulCount, function (i) {
@@ -534,29 +534,29 @@
                     });
                 } else if (_this.type == 1) {
                     html += '<div class="date-selector date-selector-left">' +
-                        '<ul id="date-selector-' + _this.container + '-0"></ul>' +
-                        '</div>' +
-                        '<div class="date-selector date-selector-left">' +
-                        '<ul id="date-selector-' + _this.container + '-1"></ul>' +
-                        '</div>' +
-                        '<div class="date-selector date-selector-left">' +
-                        '<ul id="date-selector-' + _this.container + '-2"></ul>' +
-                        '</div>' +
-                        '<div class="date-selector-up-shadow"></div>' +
-                        '<div class="date-selector-down-shadow"></div>' +
-                        '<div class="date-selector-line"></div>' +
-                        '</div>' +
-                        '<div class="date-selector-content date-selector-content-right">' +
-                        '<div class="date-selector date-selector-right">' +
-                        '<ul id="date-selector-' + _this.container + '-3"></ul>' +
-                        '</div>' +
-                        '<div class="date-selector date-selector-right">' +
-                        '<ul id="date-selector-' + _this.container + '-4"></ul>' +
-                        '</div>' +
-                        '<div class="date-selector-up-shadow"></div>' +
-                        '<div class="date-selector-down-shadow"></div>' +
-                        '<div class="date-selector-line"></div>' +
-                        '</div>';
+                            '<ul id="date-selector-' + _this.container + '-0"></ul>' +
+                            '</div>' +
+                            '<div class="date-selector date-selector-left">' +
+                            '<ul id="date-selector-' + _this.container + '-1"></ul>' +
+                            '</div>' +
+                            '<div class="date-selector date-selector-left">' +
+                            '<ul id="date-selector-' + _this.container + '-2"></ul>' +
+                            '</div>' +
+                            '<div class="date-selector-up-shadow"></div>' +
+                            '<div class="date-selector-down-shadow"></div>' +
+                            '<div class="date-selector-line"></div>' +
+                            '</div>' +
+                            '<div class="date-selector-content date-selector-content-right">' +
+                            '<div class="date-selector date-selector-right">' +
+                            '<ul id="date-selector-' + _this.container + '-3"></ul>' +
+                            '</div>' +
+                            '<div class="date-selector date-selector-right">' +
+                            '<ul id="date-selector-' + _this.container + '-4"></ul>' +
+                            '</div>' +
+                            '<div class="date-selector-up-shadow"></div>' +
+                            '<div class="date-selector-down-shadow"></div>' +
+                            '<div class="date-selector-line"></div>' +
+                            '</div>';
                     html += '</div></div>';
                     $id(_this.container).innerHTML = html;
                 }
@@ -849,7 +849,15 @@
                 }
             }
         };
-        win.DateSelector       = DateSelector;
+        if (typeof exports == "object") {
+            module.exports = DateSelector;
+        } else if (typeof define == "function" && define.amd) {
+            define([], function () {
+                return DateSelector
+            })
+        } else {
+            win.DateSelector = DateSelector;
+        }
     })(window, document);
 
 
@@ -865,13 +873,13 @@
         beginTime: [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime: [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success : function(arr){
+        success: function (arr) {
             alert(arr);
             console.log(arr);
         }//回调
     });
     //---------------------函数调用结束---------------------
-    
+
     //月份从1开始
     new DateSelector({
         input: 'date-selector-inputs',//点击触发插件的input框的id
@@ -884,7 +892,7 @@
         beginTime: [2011, 13, -27, 102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
         endTime: [2020, 10, 21, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
         recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success : function(arr){
+        success: function (arr) {
             alert(arr);
             console.log(arr);
         }//回调

@@ -33,6 +33,14 @@ This plugin is made up of **two parts**：
 
 > * Please make sure to read the guide and use it correctly.
 
+
+## **Todo Lists**
+
+> * write some articles to introduce how to build it .
+
+> * npm publish
+
+
 ## **Logs**
 
 ### 2016.11.24(update)
@@ -91,7 +99,14 @@ MultiPicker主要是由`两个部分`组成，
 
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
-## **Logs**
+
+## **Todo Lists**
+
+> * 写一系列文章介绍如何构造这个小插件
+
+> * 发布 npm 版本
+
+
 
 ## **Logs**
 

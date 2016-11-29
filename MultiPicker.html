@@ -7,7 +7,7 @@
     <meta name="screen-orientation" content="portrait">
     <title>MultiPicker</title>
     <style>
-       * {
+        * {
             padding: 0;
             margin: 0;
             font-weight: 400;
@@ -153,7 +153,6 @@
 
         /*# sourceMappingURL=index.css.map */
 
-
         body {
             background: #fefefe;
         }
@@ -237,7 +236,8 @@
     <p>4.有什么局限性？</p>
     <div class="block">
         该选择器暂不开放定位功能 >.<<br/><br/>
-        如果您需要的是时间选择器, 这时候, 请移步<a href="https://github.com/AppianZ/multi-picker/tree/master/DateSelector">日期选择器 DateSelector.js</a><br/><br/>
+        如果您需要的是时间选择器, 这时候, 请移步<a href="https://github.com/AppianZ/multi-picker/tree/master/DateSelector">日期选择器
+        DateSelector.js</a><br/><br/>
         如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！<br/><br/>
         我是嘉宝Appian，一个卖萌出家的算法妹纸。<br/><br/>
         Trust Me Again.<br/><br/>
@@ -524,10 +524,10 @@
         }
 
         function MultiPicker(config) {
-            this.input       = config.input;
-            this.container   = config.container;
-            this.jsonData    = config.jsonData;
-            this.success = config.success;
+            this.input     = config.input;
+            this.container = config.container;
+            this.jsonData  = config.jsonData;
+            this.success   = config.success;
 
             this.ulCount   = 0; //记录上一次的
             this.ulIdx     = 0; //ul下标计数器,前一次的计数器
@@ -786,7 +786,15 @@
                 }
             }
         };
-        win.MultiPicker       = MultiPicker;
+        if (typeof exports == "object") {
+            module.exports = MultiPicker;
+        } else if (typeof define == "function" && define.amd) {
+            define([], function () {
+                return MultiPicker
+            })
+        } else {
+            win.MultiPicker = MultiPicker;
+        }
     })(window, document);
 
 
