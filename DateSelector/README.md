@@ -1,12 +1,57 @@
-## DateSelector - A  Flexible Picker for Selecting an Interval
-### Intro
+# DateSelector - A  Flexible Picker for Selecting an Interval
+## Intro
 > * User-defined units. You can set year and month or month, date, hour and minute.
 > * User-defined time ranges. You can set anytime with the precision of a minute
 > * For example, you can set begin time at  Dec -27(th), 2011 102:12 and end time at Oct 21(st), 2020 20:20
-
+> * You also can use [ NPM. ](https://www.npmjs.com/package/mob-date-selector)
+> * [ Open the demo on the mobile](https://appianz.github.io/multi-picker/DateSelector.html)
 <br/>
-### 0. [ Open the demo on the mobile](https://appianz.github.io/multi-picker/DateSelector.html)
+
+
+## Use NPM
+
+### 1. How to use
+> npm i mob-date-selector --save-dev
+
+### 2. How to import
+**webpack.config.js:**
+```javascript
+var path = require('path');
+module.exports = {
+entry : {...},
+output : {...},
+module : {
+	loaders :[{
+		test: /\.css$/,
+		loader: 'style!css'
+	}, {
+		test: /\.js$/,
+		exclude: path.resolve('./node_modules'),
+		loader: 'babel',
+	}]
+}
+}
+```
+
+**html：**
+```html
+<body>
+	<input id="date-selector-input" type="text" readonly/>
+	<div id="targetContainer"></div>
+</body>
+```
+
+**js：**
+```javascript
+import DateSelector from 'mob-date-selector';
+new DateSelector({ ... });
+```
+
+
+## Use JS
+
 ### 1. How to import
+
 > sass: DateSelector/DateSelector.scss
 
 > css: DateSelector/DateSelector.css
@@ -70,8 +115,53 @@
 
 > 例如可以设置【2011年13月(-27)日 102时12分 ~ 2020年10月21日 20时20分】的效果
 
+> 你也可以使用 [ NPM. ](https://www.npmjs.com/package/mob-date-selector)
+
+> [点击, 在移动端查看DEMO](https://appianz.github.io/multi-picker/DateSelector.html)
+
+
 <br/>
-### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/DateSelector.html)
+
+## 使用NPM
+### 1. 如何安装
+> npm i mob-date-selector --save-dev
+
+### 2. 如何引用
+**webpack.config.js:**
+```javascript
+var path = require('path');
+module.exports = {
+entry : {...},
+output : {...},
+module : {
+	loaders :[{
+		test: /\.css$/,
+		loader: 'style!css'
+	}, {
+		test: /\.js$/,
+		exclude: path.resolve('./node_modules'),
+		loader: 'babel',
+	}]
+}
+}
+```
+
+**html：**
+```html
+<body>
+	<input id="date-selector-input" type="text" readonly/>
+	<div id="targetContainer"></div>
+</body>
+```
+
+**js：**
+```javascript
+import DateSelector from 'mob-date-selector';
+new DateSelector({ ... });
+```
+
+
+## 使用传统js
 ### 1.如何引用
 
 > sass文件:引用DateSelector/DateSelector.scss

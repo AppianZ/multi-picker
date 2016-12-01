@@ -1,10 +1,50 @@
-## MultiPicker - A  Flexible Picker for User-Defined Json
-### Intro
+# MultiPicker - A  Flexible Picker for User-Defined Json
+## Intro
 > * User-defined JSON.  For example,  [Chinese city JSON](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js).
 > * If you want a time picker, you can go to see [DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
-
+> * You also can use [ NPM. ](https://www.npmjs.com/package/mob-multi-picker)
+> * [ Open the demo on the mobile](https://appianz.github.io/multi-picker/MultiPicker.html)
 <br/>
-### 0. [ Open the demo on the mobile](https://appianz.github.io/multi-picker/MultiPicker.html)
+
+## Use NPM
+### 1. How to use
+> npm i mob-multi-picker --save-dev
+
+### 2. How to import
+**webpack.config.js:**
+```javascript
+var path = require('path');
+module.exports = {
+entry : {...},
+output : {...},
+module : {
+	loaders :[{
+		test: /\.css$/,
+		loader: 'style!css'
+	}, {
+		test: /\.js$/,
+		exclude: path.resolve('./node_modules'),
+		loader: 'babel',
+	}]
+}
+}
+```
+
+**html：**
+```html
+<body>
+	<input id="targetInput" type="text" readonly/>
+	<div id="targetContainer"></div>
+</body>
+```
+
+**js：**
+```javascript
+import MultiPicker from 'mob-multi-picker';
+new MultiPicker({ ... });
+```
+
+## Use JS
 ### 1. How to import
 > sass: MultiPicker/MultiPicker.scss
 
@@ -61,9 +101,9 @@
 ---
 
 ---
-## MultiPicker - 自定义多级联动
+# MultiPicker - 自定义多级联动
 
-### 自定义的主要表现在:
+## 自定义的主要表现在:
 
 > `任意联动级数 `的联动 (建议 ≤ 5级) ，即一个联动弹层中可以同时存在不用级数的联动
 
@@ -71,7 +111,52 @@
 
 > 适合自定义json的自定义联动，如需要时间联动请使用 [日期选择器 DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector) 的多级联动
 
-### 0.[在移动端下打开demo](https://appianz.github.io/multi-picker/MultiPicker.html) 
+> 你也可以使用 [ NPM. ](https://www.npmjs.com/package/mob-multi-picker)
+
+> [点击, 在移动端查看DEMO](https://appianz.github.io/multi-picker/MultiPicker.html)
+
+<br/>
+
+
+## 使用 NPM
+### 1. 如何安装
+> npm i mob-multi-picker --save-dev
+
+### 2. 如何引用
+**webpack.config.js:**
+```javascript
+var path = require('path');
+module.exports = {
+entry : {...},
+output : {...},
+module : {
+	loaders :[{
+		test: /\.css$/,
+		loader: 'style!css'
+	}, {
+		test: /\.js$/,
+		exclude: path.resolve('./node_modules'),
+		loader: 'babel',
+	}]
+}
+}
+```
+
+**html：**
+```html
+<body>
+	<input id="targetInput" type="text" readonly/>
+	<div id="targetContainer"></div>
+</body>
+```
+
+**js：**
+```javascript
+import MultiPicker from 'mob-multi-picker';
+new MultiPicker({ ... });
+```
+
+## 使用传统JS
 
 ### 1.如何引用 
 

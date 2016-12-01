@@ -1,6 +1,6 @@
 # MultiPicker - A  Flexible Picker for Mobile
 ## **Intro**
-MultiPicker was born for `several product requirements` in the mobile.  It’s free, cute and customized.   There are now over **30,000** users.
+MultiPicker was born for `several product requirements` in the mobile.  It’s free, cute and customized.   There are now over **Hundreds of thousands of users**.
 
 This plugin is made up of **two parts**：
 * One part of  the MultiPicker is  [DateSelector - A  Picker for Selecting an Interval ](https://github.com/AppianZ/multi-picker/tree/master/DateSelector) 
@@ -20,10 +20,14 @@ This plugin is made up of **two parts**：
 ### DateSelector - A  Flexible Picker for Selecting an Interval
 * [DateSelector - Demo.](https://appianz.github.io/multi-picker/DateSelector.html)
 
+* [DateSelector - NPM.](https://www.npmjs.com/package/mob-date-selector)
+
 * [DateSelector - How to Use.](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
 
 ###  MultiPicker - A  Flexible Picker for User-Defined Json
 * [MultiPicker - Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
+
+* [MultiPicker - NPM.](https://www.npmjs.com/package/mob-multi-picker)
 
 * [MultiPicker - How to Use.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
@@ -66,7 +70,7 @@ This plugin is made up of **two parts**：
 
 # MultiPicker -『为移动端而生』的自定义多级联动选择器
 ## **MultiPicker - 自我介绍**
-MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有超过 **3w** 的实际用户正在使用。
+MultiPicker是为了满足移动端对`各种选择器`的需求而生的，兼容性强，灵活度高。目前已有 **几十万** 的实际用户正在使用。
 
 MultiPicker主要是由`两个部分`组成，
 * 一个部分是 [日期选择器 - DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector) 
@@ -84,10 +88,14 @@ MultiPicker主要是由`两个部分`组成，
 ### 日期选择器 - DateSelector
 * [日期选择器-DateSelector.Demo.](https://appianz.github.io/multi-picker/DateSelector.html)
 
+* [日期选择器-DateSelector. NPM.](https://www.npmjs.com/package/mob-date-selector)
+
 * [日期选择器说明书-DateSelector. How to Use.](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)
 
 ### 自定义json选择器 - MultiPicker
 * [自定义json选择器-MultiPicker.Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
+
+* [自定义json选择器-MultiPicker. NPM.](https://www.npmjs.com/package/mob-multi-picker)
 
 * [自定义json选择器说明书-MultiPicker. How to Use.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
@@ -123,5 +131,7 @@ MultiPicker主要是由`两个部分`组成，
 
 ## **Authors**
 >  如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
+
+>  如果想了解选择器的开发过程，可以参考[ 如何造一个『为移动端而生』的联动选择器 ](https://segmentfault.com/a/1190000007658156)
 
 >  我是嘉宝Appian，一个卖萌出家的算法妹纸。
