@@ -655,7 +655,7 @@
                 _this.maxHeight.length = 0;
                 _this.resultArr.length = 0;
                 loop(0, _this.idxArr.length, function (i) {
-                    $class('multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
+                    $id(_this.container).querySelectorAll('.multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
                     _this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).offsetHeight);
                     _this.resultArr.push({
                         "id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
