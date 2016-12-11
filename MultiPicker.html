@@ -645,7 +645,7 @@
                     });
                 } else {
                     for ( var j = _this.ulCount - 1; j > _this.idxArr.length - 1; j-- ) {
-                        var oldPicker = $class('multi-picker')[j];
+	    				var oldPicker = $id(_this.container).querySelectorAll('.multi-picker')[j];
                         oldPicker.parentNode.removeChild(oldPicker);
                         _this.ulDomArr.pop();
                         _this.distance.pop();
