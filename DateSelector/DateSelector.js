@@ -163,7 +163,7 @@
 				var rt = new Date(recent_time[0], recent_time[1], recent_time[2], recent_time[3], recent_time[4]).getTime();
 				rt < bt ? alert('当前时间小于开始时间') : "";
 				rt > et ? alert('当前时间超过结束时间') : "";
-				return (bt <= rt && rt < et);
+				return (bt <= rt && rt <= et);
 			} else {
 				alert('error,please open the console to see the errmsg');
 				console.warn('type为1时,时间数组长度为0或5');
@@ -253,7 +253,6 @@
 				var min       = 0;
 				var max       = 0;
 				var tempDomUl = $id('date-selector-' + _this.container + '-' + _this.idxArr[i]);
-				_this.ulDomArr.push(tempDomUl);
 				var tempArray = _this['array' + _this.idxArr[i]] = [];
 				switch (realIdx) {
 					case 0:
