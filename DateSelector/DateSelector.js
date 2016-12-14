@@ -154,7 +154,7 @@
 								_this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 59) ? _this.endTime[_idxArrIndex] : 59;
 								recent_time[i] = _this.recentTime[_idxArrIndex];
 								break;
-						}
+							}
 						_idxArrIndex++;
 					}
 				});
