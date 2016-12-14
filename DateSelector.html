@@ -418,6 +418,7 @@
                     });
                 }
                 if (_this.idxArr.length == _this.beginTime.length && _this.beginTime.length == _this.endTime.length && _this.endTime.length == _this.recentTime.length) {
+                    var _idxArrIndex = 0;
                     loop(0, _this.param.length, function (i) {
                         if (_this.param[i] == 0) {
                             switch (i) {
@@ -443,35 +444,34 @@
                                     break;
                             }
                         } else {
-                            loop(0, _this.idxArr.length, function (j) {
-                                switch (_this.idxArr[j]) {
-                                    case 0:
-                                        _this.beginTime[j] = begin_time[_this.idxArr[j]] = _this.beginTime[j] >= 1900 ? _this.beginTime[j] : new Date().getFullYear();
-                                        _this.endTime[j] = end_time[_this.idxArr[j]] = _this.endTime[j] >= 1900 ? _this.endTime[j] : new Date().getFullYear() + 1;
-                                        recent_time[_this.idxArr[j]] = _this.recentTime[j];
-                                        break;
-                                    case 1:
-                                        _this.beginTime[j] = begin_time[_this.idxArr[j]] = (_this.beginTime[j] > 0 && _this.beginTime[j] <= 12) ? _this.beginTime[j] : 1;
-                                        _this.endTime[j] = end_time[_this.idxArr[j]] = (_this.endTime[j] > 0 && _this.endTime[j] <= 12) ? _this.endTime[j] : 12;
-                                        recent_time[_this.idxArr[j]] = _this.recentTime[j];
-                                        break;
-                                    case 2:
-                                        _this.beginTime[j] = begin_time[_this.idxArr[j]] = (_this.beginTime[j] > 0 && _this.beginTime[j] <= new Date(begin_time[0], begin_time[1], 0).getDate()) ? _this.beginTime[j] : 1;
-                                        _this.endTime[j] = end_time[_this.idxArr[j]] = (_this.endTime[j] > 0 && _this.endTime[j] <= new Date(end_time[0], end_time[1], 0).getDate()) ? _this.endTime[j] : new Date(end_time[0], end_time[1], 0).getDate();
-                                        recent_time[_this.idxArr[j]] = _this.recentTime[j];
-                                        break;
-                                    case 3:
-                                        _this.beginTime[j] = begin_time[_this.idxArr[j]] = (_this.beginTime[j] >= 0 && _this.beginTime[j] <= 23) ? _this.beginTime[j] : 0;
-                                        _this.endTime[j] = end_time[_this.idxArr[j]] = (_this.endTime[j] >= 0 && _this.endTime[j] <= 23) ? _this.endTime[j] : 23;
-                                        recent_time[_this.idxArr[j]] = _this.recentTime[j];
-                                        break;
-                                    case 4 :
-                                        _this.beginTime[j] = begin_time[_this.idxArr[j]] = (_this.beginTime[j] >= 0 && _this.beginTime[j] <= 59) ? _this.beginTime[j] : 0;
-                                        _this.endTime[j] = end_time[_this.idxArr[j]] = (_this.endTime[j] >= 0 && _this.endTime[j] <= 59) ? _this.endTime[j] : 59;
-                                        recent_time[_this.idxArr[j]] = _this.recentTime[j];
-                                        break;
-                                }
-                            });
+                            switch (i) {
+                                case 0:
+                                    _this.beginTime[_idxArrIndex] = begin_time[i] = _this.beginTime[_idxArrIndex] >= 1900 ? _this.beginTime[_idxArrIndex] : new Date().getFullYear();
+                                    _this.endTime[_idxArrIndex] = end_time[i] = _this.endTime[_idxArrIndex] >= 1900 ? _this.endTime[_idxArrIndex] : new Date().getFullYear() + 1;
+                                    recent_time[i] = _this.recentTime[_idxArrIndex];
+                                    break;
+                                case 1:
+                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= 12) ? _this.beginTime[_idxArrIndex] : 1;
+                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= 12) ? _this.endTime[_idxArrIndex] : 12;
+                                    recent_time[i] = _this.recentTime[_idxArrIndex];
+                                    break;
+                                case 2:
+                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= new Date(begin_time[0], begin_time[1], 0).getDate()) ? _this.beginTime[_idxArrIndex] : 1;
+                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= new Date(end_time[0], end_time[1], 0).getDate()) ? _this.endTime[_idxArrIndex] : new Date(end_time[0], end_time[1], 0).getDate();
+                                    recent_time[i] = _this.recentTime[_idxArrIndex];
+                                    break;
+                                case 3:
+                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 23) ? _this.beginTime[_idxArrIndex] : 0;
+                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 23) ? _this.endTime[_idxArrIndex] : 23;
+                                    recent_time[i] = _this.recentTime[_idxArrIndex];
+                                    break;
+                                case 4 :
+                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 59) ? _this.beginTime[_idxArrIndex] : 0;
+                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 59) ? _this.endTime[_idxArrIndex] : 59;
+                                    recent_time[i] = _this.recentTime[_idxArrIndex];
+                                    break;
+                            }
+                            _idxArrIndex++;
                         }
                     });
                     var bt = new Date(begin_time[0], begin_time[1], begin_time[2], begin_time[3], begin_time[4]).getTime();
