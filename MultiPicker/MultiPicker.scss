@@ -91,6 +91,7 @@ $styleColor : rgba(218, 218, 218, .7);
     z-index: -1;
     transition: width .3s ease;
     vertical-align: top;
+    top: 0;
   }
 
   & ul::-webkit-scrollbar {

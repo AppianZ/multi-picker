@@ -124,6 +124,8 @@ $styleColorOpacity : rgba(219, 219, 219, 1);
     overflow: hidden;
     position: relative;
     z-index: -1;
+    top: 0;
+    vertical-align: top;
   }
 
   & .date-selector-left {
