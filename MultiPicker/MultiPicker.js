@@ -144,7 +144,7 @@
 					}, false);
 					tempDomUl.addEventListener('touchend', function () {
 						_this.touch(event, _this, tempDomUl, tempArray, i);
-					}, false);
+					}, true);
 				});
 			} else {
 				for ( var j = _this.ulCount - 1; j > _this.idxArr.length - 1; j-- ) {
