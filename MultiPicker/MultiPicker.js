@@ -159,7 +159,7 @@
 			_this.resultArr.length = 0;
 			loop(0, _this.idxArr.length, function (i) {
 				$id(_this.container).querySelectorAll('.multi-picker')[i].style.width = 100 / _this.idxArr.length + '%';
-				_this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).offsetHeight);
+				_this.maxHeight.push($id('multi-picker-' + _this.container + '-' + i).childNodes.length * _this.liHeight);
 				_this.resultArr.push({
 					"id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
 					"value": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].value,
