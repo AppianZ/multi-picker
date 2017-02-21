@@ -1,4 +1,11 @@
 # MultiPicker - A  Flexible Picker for Mobile
+
+DateSelector : ![mob-date-selector-npm](https://img.shields.io/npm/dt/mob-date-selector.svg)
+
+
+MultiPicker : ![mob-multi-picker-npm](https://img.shields.io/npm/dt/mob-multi-picker.svg)
+
+
 ## **Intro**
 MultiPicker was born for `several product requirements` in the mobile.  It’s free, cute and customized.   There are now over **Hundreds of thousands of users**.
 
