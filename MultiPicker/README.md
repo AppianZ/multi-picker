@@ -1,4 +1,7 @@
 # MultiPicker - A  Flexible Picker for User-Defined Json
+
+![mob-multi-picker-version](https://img.shields.io/npm/v/mob-multi-picker.svg)   ![mob-multi-picker-npm](https://img.shields.io/npm/dt/mob-multi-picker.svg)
+
 ## Intro
 > * User-defined JSON.  For example,  [Chinese city JSON](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js).
 > * If you want a time picker, you can go to see [DateSelector](https://github.com/AppianZ/multi-picker/tree/master/DateSelector)

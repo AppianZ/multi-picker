@@ -1,4 +1,7 @@
 # DateSelector - A  Flexible Picker for Selecting an Interval
+
+![mob-date-selector-version](https://img.shields.io/npm/v/mob-date-selector.svg)   ![mob-date-selector-npm](https://img.shields.io/npm/dt/mob-date-selector.svg)
+
 ## Intro
 > * User-defined units. You can set year and month or month, date, hour and minute.
 > * User-defined time ranges. You can set anytime with the precision of a minute
