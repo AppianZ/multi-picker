@@ -86,7 +86,7 @@ new MultiPicker({ ... });
 |  **input**    |  {String} |*eg:'date-selector-input'* | the id of the dom you touch. |
 |  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to append dom. |
 |  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| user-defined JSON must be legal. A obj  is made up of  three attrs, `id`, `value` and `child`. |
-|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. And you'll see other prop "index" which means the obj's index depends on the child prop of the straight parent.|
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. And you'll see other prop "index" which means the obj's index depends on the child prop of the straight parent(after v1.2.0).|
 
 **The JSON Object:**
 
