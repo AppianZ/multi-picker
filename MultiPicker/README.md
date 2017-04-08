@@ -36,7 +36,9 @@ module : {
 **html：**
 ```html
 <body>
+	<!-- the #multiPickerInput can be any other dom for your convenient-->
 	<input id="targetInput" type="text" readonly/>
+	<!-- the #targetContainer must be the outermost dom below body -->
 	<div id="targetContainer"></div>
 </body>
 ```
@@ -62,7 +64,9 @@ new MultiPicker({ ... });
 ```html
 <link rel="stylesheet" type="text/css" href="./MultiPicker.css"/>
 <body>
+	<!-- the #multiPickerInput can be any other dom for your convenient-->
     <input id="multiPickerInput" type="text" readonly/>
+	<!-- the #targetContainer must be the outermost dom below body -->
     <div id="targetContainer"></div>
 </body>
 ```
@@ -82,7 +86,7 @@ new MultiPicker({ ... });
 |  **input**    |  {String} |*eg:'date-selector-input'* | the id of the dom you touch. |
 |  **container**    |  {String} |*eg:'targetContainers'*| the id of the container you ready to append dom. |
 |  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| user-defined JSON must be legal. A obj  is made up of  three attrs, `id`, `value` and `child`. |
-|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. |
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. And you'll see other prop "index" which means the obj's index depends on the child prop of the straight parent.|
 
 **The JSON Object:**
 
@@ -148,7 +152,9 @@ module : {
 **html：**
 ```html
 <body>
+	<!-- #targetInput 可以是任意的dom, 只要你方便展示 -->
 	<input id="targetInput" type="text" readonly/>
+	<!-- #targetContainer 最好是位于body下的最外层的dom -->
 	<div id="targetContainer"></div>
 </body>
 ```
@@ -177,7 +183,9 @@ new MultiPicker({ ... });
 ```html
 <link rel="stylesheet" type="text/css" href="./MultiPicker.css"/>
 <body>
+	<!-- #targetInput 可以是任意的dom, 只要你方便展示 -->
     <input id="multiPickerInput" type="text" readonly/>
+	<!-- #targetContainer 最好是位于body下的最外层的dom -->
     <div id="targetContainer"></div>
 </body>
 ```
@@ -197,7 +205,7 @@ new MultiPicker({ ... });
 |  **input**    |  {String} | *eg:'multiPickerInput'* | 点击触发插件的input框的id |
 |  **container**    |  {String} |*eg:'targetContainers'*| 插件即将插入的容器id |
 |  **jsonData**    | {Array} |*eg:'[{'id':001,'value':'北京市'，'child':[{'id':00101,'value':'朝阳区'}，{'id':00102,'value':'海淀区'}]}]'*| 传入的json必须要是符合规范的格式，。'id'：为该联动标签的id，'value'为联动上显示的值，如果有下一级则传入一个'child'数组，如果没有继续联动，则不需要'child'这个属性 |
-|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
+|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化。数组中多出的index属性,是指该对象相对于他的直接父元素的child数组中的下标。|
 
 **联动json的属性规范:**
 

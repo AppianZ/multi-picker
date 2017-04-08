@@ -39,7 +39,9 @@ module : {
 **html：**
 ```html
 <body>
+	<!-- the #date-selector-input can be any other dom for your convenient-->
 	<input id="date-selector-input" type="text" readonly/>
+	<!-- the #targetContainer must be the outermost dom below body -->
 	<div id="targetContainer"></div>
 </body>
 ```
@@ -66,7 +68,9 @@ new DateSelector({ ... });
 ```html
 <link rel="stylesheet" type="text/css" href="./DateSelector.css"/>
 <body>
-    <input id="date-selector-input" type="text" readonly/>
+    <!-- the #date-selector-input can be any other dom for your convenient-->
+	<input id="date-selector-input" type="text" readonly/>
+	<!-- the #targetContainer must be the outermost dom below body -->
     <div id="targetContainer"></div>
 </body>
 ```
@@ -152,7 +156,9 @@ module : {
 **html：**
 ```html
 <body>
+	<!-- #date-selector-input 可以是任意的dom, 只要你方便展示 -->
 	<input id="date-selector-input" type="text" readonly/>
+	<!-- #targetContainer 最好是位于body下的最外层的dom -->
 	<div id="targetContainer"></div>
 </body>
 ```
@@ -179,7 +185,9 @@ new DateSelector({ ... });
 ```html
 <link rel="stylesheet" type="text/css" href="./DateSelector.css"/>
 <body>
-    <input id="date-selector-input" type="text" readonly/>
+	<!-- #date-selector-input 可以是任意的dom, 只要你方便展示 -->
+	<input id="date-selector-input" type="text" readonly/>
+	<!-- #targetContainer 最好是位于body下的最外层的dom -->
     <div id="targetContainer"></div>
 </body>
 ```
