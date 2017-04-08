@@ -44,6 +44,8 @@ This plugin is made up of **two parts**：
 
 
 ## **Logs**
+### 2017.4.8(update)
+> * Add an new prop in  MultiPicker.
 
 ### 2016.11.24(update)
 > * The new style. 
@@ -93,7 +95,8 @@ MultiPicker主要是由`两个部分`组成，
 ### 自定义json选择器 - MultiPicker
 * [自定义json选择器-MultiPicker.Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
 
-* [自定义json选择器-MultiPicker. NPM.](https://www.npmjs.com/package/mob-multi-picker)
+* [### 2017.4.8(update)
+   > * Add an new prop in  MultiPicker.-MultiPicker. NPM.](https://www.npmjs.com/package/mob-multi-picker)
 
 * [自定义json选择器说明书-MultiPicker. How to Use.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
@@ -107,6 +110,8 @@ MultiPicker主要是由`两个部分`组成，
 
 
 ## **Logs**
+### 2017.4.8(update)
+> * 给自定义json选择器的返回值添加了一个index新参数。
 
 ### 2016.11.24(update)
 > * 新的灰白样式, 更大众, 更简洁

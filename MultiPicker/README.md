@@ -36,7 +36,7 @@ module : {
 **html：**
 ```html
 <body>
-	<!-- the #multiPickerInput can be any other dom for your convenient-->
+	<!-- the #targetInput can be any other dom for your convenient-->
 	<input id="targetInput" type="text" readonly/>
 	<!-- the #targetContainer must be the outermost dom below body -->
 	<div id="targetContainer"></div>
@@ -64,8 +64,8 @@ new MultiPicker({ ... });
 ```html
 <link rel="stylesheet" type="text/css" href="./MultiPicker.css"/>
 <body>
-	<!-- the #multiPickerInput can be any other dom for your convenient-->
-    <input id="multiPickerInput" type="text" readonly/>
+	<!-- the #targetInput can be any other dom for your convenient-->
+    <input id="targetInput" type="text" readonly/>
 	<!-- the #targetContainer must be the outermost dom below body -->
     <div id="targetContainer"></div>
 </body>
@@ -184,7 +184,7 @@ new MultiPicker({ ... });
 <link rel="stylesheet" type="text/css" href="./MultiPicker.css"/>
 <body>
 	<!-- #targetInput 可以是任意的dom, 只要你方便展示 -->
-    <input id="multiPickerInput" type="text" readonly/>
+    <input id="targetInput" type="text" readonly/>
 	<!-- #targetContainer 最好是位于body下的最外层的dom -->
     <div id="targetContainer"></div>
 </body>
