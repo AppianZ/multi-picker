@@ -192,8 +192,8 @@
 			
 			if (this.type == 1) {
 				html += '<div class="date-selector-tab-box">' +
-					'<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
-					'<div class="date-selector-tab">时分</div>' +
+					'<div class="date-selector-tab date-selector-' + _this.container + '-tab date-selector-tab-active">年月日</div>' +
+					'<div class="date-selector-tab date-selector-' + _this.container + '-tab">时分</div>' +
 					'</div>';
 			}
 			
@@ -320,9 +320,9 @@
 				body.classList.remove('date-selector-locked');
 			}, false);
 			
-			on('touchstart', 'date-selector-tab', function (event) {
-				var tab     = $class('date-selector-tab');
-				var content = $class('date-selector-content');
+			on('touchstart', 'date-selector-tab date-selector-' + _this.container + '-tab', function (event) {
+				var tab     = container.getElementsByClassName('date-selector-tab');
+				var content = container.getElementsByClassName('date-selector-content');
 				loop(0, tab.length, function (i) {
 					tab[i].classList.remove('date-selector-tab-active');
 				});
