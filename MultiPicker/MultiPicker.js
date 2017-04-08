@@ -163,6 +163,7 @@
 				_this.resultArr.push({
 					"id": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].id,
 					"value": _this.jsonArr[i][_this.distance[i] / _this.liHeight + 2].value,
+					"index": _this.distance[i] / _this.liHeight
 				});
 			});
 			_this.ulCount = _this.idxArr.length;
