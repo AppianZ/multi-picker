@@ -431,7 +431,6 @@
 					str = '分';
 					break;
 			}
-			
 			loop(0, checkIdx + 1, function (p) {
 				if (_this.beginTime[p] != _this.resultArr[p]) {
 					dir = 1;
@@ -443,7 +442,9 @@
 			
 			if (dir == 0) {
 				min = _this.beginTime[checkIdx + 1] >= min ? _this.beginTime[checkIdx + 1] : 0;
+				max = _this.endTime[checkIdx] == _this.resultArr[checkIdx] ? _this.endTime[checkIdx + 1] : max;
 			} else if (dir == 1) {
+				min = _this.beginTime[checkIdx] == _this.resultArr[checkIdx] ? _this.beginTime[checkIdx + 1] : min;
 				max = _this.endTime[checkIdx + 1] <= max ? _this.endTime[checkIdx + 1] : 0;
 			}
 			_this.initRangeArr(min, max, str, checkIdx + 1, dir);
