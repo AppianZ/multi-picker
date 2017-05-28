@@ -307,7 +307,7 @@
 				container.classList.remove('date-selector-container-up');
 				setTimeout(function () {
 					bg.classList.remove('date-selector-bg-delay');
-				}, 300);
+				}, 350);
 				body.classList.remove('date-selector-locked');
 			}, false);
 			
@@ -316,7 +316,7 @@
 				container.classList.remove('date-selector-container-up');
 				setTimeout(function () {
 					bg.classList.remove('date-selector-bg-delay');
-				}, 300);
+				}, 350);
 				body.classList.remove('date-selector-locked');
 			}, false);
 			

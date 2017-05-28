@@ -18,7 +18,7 @@ $styleColorOpacity : rgba(219, 219, 219, 1);
 }
 
 .date-selector-bg-delay {
-  z-index: 0;
+  z-index: 999!important;
 }
 
 .date-selector-bg {
