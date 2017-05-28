@@ -40,7 +40,7 @@
 		this.ulCount     = 0;
 		this.ulDomArr    = [];
 		this.idxArr      = [];
-		this.liHeight    = 40;
+		this.liHeight    = wid.lib ? parseInt(doc.getElementsByTagName('HTML')[0].style.fontSize) * 1 : 40;
 		this.maxHeight   = [];
 		this.distance    = [];
 		this.start       = {
@@ -296,7 +296,7 @@
 			var container = $id('date-selector-container-' + _this.container);
 			var body      = doc.body;
 			on('touchstart', _this.input, function () {
-				bg.classList.add('date-selector-bg-up');
+				bg.classList.add('date-selector-bg-up', 'date-selector-bg-delay');
 				container.classList.add('date-selector-container-up');
 				body.classList.add('date-selector-locked');
 			}, false);
@@ -305,12 +305,18 @@
 				_this.success(_this.resultArr);
 				bg.classList.remove('date-selector-bg-up');
 				container.classList.remove('date-selector-container-up');
+				setTimeout(function () {
+					bg.classList.remove('date-selector-bg-delay');
+				}, 300);
 				body.classList.remove('date-selector-locked');
 			}, false);
 			
 			on('touchstart', 'date-selector-bg-' + _this.container, function () {
 				bg.classList.remove('date-selector-bg-up');
 				container.classList.remove('date-selector-container-up');
+				setTimeout(function () {
+					bg.classList.remove('date-selector-bg-delay');
+				}, 300);
 				body.classList.remove('date-selector-locked');
 			}, false);
 			

@@ -8,6 +8,10 @@
     overflow: hidden !important;
 }
 
+.date-selector-bg-delay {
+    z-index: 0;
+}
+
 .date-selector-bg {
     position: fixed;
     top: 0;
@@ -31,8 +35,8 @@
     height: 250px;
     position: absolute;
     bottom: 0;
-    transform: translate3d(0, 250px, 0);
-    -webkit-transform: translate3d(0, 250px, 0);
+    transform: translate3d(0, 101%, 0);
+    -webkit-transform: translate3d(0, 101%, 0);
     left: 0;
     background-color: #FFF;
     transition: transform .3s ease;
