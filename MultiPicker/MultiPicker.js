@@ -38,7 +38,7 @@
 		this.ulDomArr  = [];
 		this.idxArr    = [];
 		this.jsonArr   = [];
-		this.liHeight  = 40;
+		this.liHeight  = wid.lib ? parseInt(doc.getElementsByTagName('HTML')[0].style.fontSize) * 1 : 40;
 		this.maxHeight = [];
 		this.distance  = [];
 		this.start     = {
@@ -99,7 +99,7 @@
 				+ '<div  class="multi-picker-container" id="multi-picker-container-' + _this.container + '">'
 				+ '<div class="multi-picker-btn-box">'
 				+ '<div class="multi-picker-btn" id="multi-picker-btn-cancel">返回</div>'
-				+ '<div class="multi-picker-btn" id="multi-picker-btn-save-' + _this.container + '">提交</div>'
+				+ '<div class="multi-picker-btn" id="multi-picker-btn-save-' + _this.container + '">确定</div>'
 				+ '</div>'
 				+ '<div class="multi-picker-content">'
 				+ '<div class="multi-picker-up-shadow"></div>'
@@ -174,7 +174,7 @@
 			var container = $id('multi-picker-container-' + _this.container);
 			var body      = doc.body;
 			on('touchstart', _this.input, function () {
-				bg.classList.add('multi-picker-bg-up');
+				bg.classList.add('multi-picker-bg-up', 'multi-picker-bg-delay');
 				container.classList.add('multi-picker-container-up');
 				body.classList.add('multi-picker-locked');
 			}, false);
@@ -183,18 +183,27 @@
 				_this.success(_this.resultArr);
 				bg.classList.remove('multi-picker-bg-up');
 				container.classList.remove('multi-picker-container-up');
+				setTimeout(function () {
+					bg.classList.remove('multi-picker-bg-delay');
+				}, 350);
 				body.classList.remove('multi-picker-locked');
 			}, false);
 			
 			on('touchstart', 'multi-picker-bg-' + _this.container, function () {
 				bg.classList.remove('multi-picker-bg-up');
 				container.classList.remove('multi-picker-container-up');
+				setTimeout(function () {
+					bg.classList.remove('multi-picker-bg-delay');
+				}, 350);
 				body.classList.remove('multi-picker-locked');
 			}, false);
 			
 			on('touchstart', 'multi-picker-btn-cancel', function () {
 				bg.classList.remove('multi-picker-bg-up');
 				container.classList.remove('multi-picker-container-up');
+				setTimeout(function () {
+					bg.classList.remove('multi-picker-bg-delay');
+				}, 350);
 				body.classList.remove('multi-picker-locked');
 			}, false);
 		},

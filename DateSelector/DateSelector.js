@@ -197,7 +197,7 @@
 					'</div>';
 			}
 			
-			html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">提交</div>' +
+			html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">确定</div>' +
 				'</div>' +
 				'<div class="date-selector-content">';
 			
@@ -323,6 +323,9 @@
 			on('touchstart', 'date-selector-btn-cancel', function () {
 				bg.classList.remove('date-selector-bg-up');
 				container.classList.remove('date-selector-container-up');
+				setTimeout(function () {
+					bg.classList.remove('date-selector-bg-delay');
+				}, 350);
 				body.classList.remove('date-selector-locked');
 			}, false);
 			
