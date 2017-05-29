@@ -44,6 +44,9 @@ This plugin is made up of **two parts**：
 
 
 ## **Logs**
+### 2017.5.28(update)
+> * Use with flexible.
+
 ### 2017.4.8(update)
 > * Add an new prop in  MultiPicker.
 
@@ -109,9 +112,32 @@ MultiPicker主要是由`两个部分`组成，
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
 
+## **常见问题**
+1. 配色可以改吗?样式可以修改吗?
+    > 这个插件主要实现的是逻辑方便的功能，所以在样式上是很开放的，甚至你可以审查元素到你想修改的dom上，直接覆盖样式。样式问题根据你的需要，实时修改即可。
+    
+    > 如果你使用的是rem或flexible，可以用sass版本的样式。如果你使用的是px，可以使用css版本的样式。
+
+2. 这个插件能配合Vue，React，Angluar 或者 jQuery 吗？
+    > 这是一个原生插件，能够配合任何框架使用。同时，插件支持多个实例，可放心使用。
+    
+3. 触发弹窗的dom一定要是input吗？
+    > 在文档中明确指出，触发弹层的dom可以是任意的dom。并建议弹层的容器，是body的第一级子元素。
+
+4. 在使用[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)的过程中，城市数据哪里来？
+    > 我提供一份我用过的[三级联动城市数据](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js)，这份数据来自一位我认识的海大小伙伴，如果使用者想要其他格式的城市数据，建议也找你们的后台小伙伴爬一份。
+
+5. 在使用[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)的过程中，支持默认定位、设置初始数据吗？
+    > 暂时不支持在[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)中使用默认定位、设置初始数据。
+
+
+
 ## **Logs**
+### 2017.5.28(update)
+> * 配合flexible使用
+
 ### 2017.4.8(update)
-> * 给自定义json选择器的返回值添加了一个index新参数。
+> * 给自定义json选择器的返回值添加了一个index新参数
 
 ### 2016.11.24(update)
 > * 新的灰白样式, 更大众, 更简洁
@@ -124,10 +150,17 @@ MultiPicker主要是由`两个部分`组成，
 
 ### 2016.11.6(add)
 > * 新增MultiPicker, 并配套中国城市json
+        
     
+## **常见问题** 
+>* 配色可以改吗?样式可以修改吗?
+
+
 
 ## **Authors**
 >  如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
+
+>  发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)时，请注明 1.使用的是哪个级联选择器？ 2.附上实例化的数据 3.用简单易懂的语言描述问题，能配上截图最好了。
 
 >  如果想了解选择器的开发过程，可以参考[ 如何造一个『为移动端而生』的联动选择器 ](https://segmentfault.com/a/1190000007658156)
 
