@@ -96,8 +96,7 @@ MultiPicker主要是由`两个部分`组成，
 ### 自定义json选择器 - MultiPicker
 * [自定义json选择器-MultiPicker.Demo.](https://appianz.github.io/multi-picker/MultiPicker.html)
 
-* [### 2017.4.8(update)
-   > * Add an new prop in  MultiPicker.-MultiPicker. NPM.](https://www.npmjs.com/package/mob-multi-picker)
+* [自定义json选择器-MultiPicker - NPM.](https://www.npmjs.com/package/mob-multi-picker)
 
 * [自定义json选择器说明书-MultiPicker. How to Use.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
@@ -153,7 +152,7 @@ MultiPicker主要是由`两个部分`组成，
 
 
 ## **Authors**
->  如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
->  发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)时，请注明 1.使用的是哪个级联选择器？ 2.附上实例化的数据 3.用简单易懂的语言描述问题，能配上截图最好了。
->  如果想了解选择器的开发过程，可以参考[ 如何造一个『为移动端而生』的联动选择器 ](https://segmentfault.com/a/1190000007658156)
->  我是嘉宝Appian，一个卖萌出家的算法妹纸。
+> *   如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
+> *   发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)时，请注明 1.使用的是哪个级联选择器？ 2.附上实例化的数据 3.用简单易懂的语言描述问题，能配上截图最好了。
+> *   如果想了解选择器的开发过程，可以参考[ 如何造一个『为移动端而生』的联动选择器 ](https://segmentfault.com/a/1190000007658156)
+> *   我是嘉宝Appian，一个卖萌出家的算法妹纸。
