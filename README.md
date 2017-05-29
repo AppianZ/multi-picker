@@ -39,7 +39,6 @@ This plugin is made up of **two parts**：
 ## **Tips**
 
 > * You can make full use of callback to do anything.
-
 > * Please make sure to read the guide and use it correctly.
 
 
@@ -65,7 +64,6 @@ This plugin is made up of **two parts**：
 
 ## **Authors**
 >  For questions and issues please use  [THIS WAY](https://github.com/AppianZ/multi-picker/issues/new)
-
 >  I am Appian. 
 
 
@@ -106,16 +104,13 @@ MultiPicker主要是由`两个部分`组成，
 ## **Tips**
 
 > * 可以充分利用callback，对返回的结果执行相应操作，比如：拼接出期望的字符串，或构造后台期望的存储对象。
-
 > * 在日期选择器DateSelector中，用正确的数组表示你要设置的时间点。
-
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
 
 ## **常见问题**
 1. 配色可以改吗?样式可以修改吗?
     > 这个插件主要实现的是逻辑方便的功能，所以在样式上是很开放的，甚至你可以审查元素到你想修改的dom上，直接覆盖样式。样式问题根据你的需要，实时修改即可。
-    
     > 如果你使用的是rem或flexible，可以用sass版本的样式。如果你使用的是px，可以使用css版本的样式。
 
 2. 这个插件能配合Vue，React，Angluar 或者 jQuery 吗？
@@ -159,9 +154,6 @@ MultiPicker主要是由`两个部分`组成，
 
 ## **Authors**
 >  如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
-
 >  发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)时，请注明 1.使用的是哪个级联选择器？ 2.附上实例化的数据 3.用简单易懂的语言描述问题，能配上截图最好了。
-
 >  如果想了解选择器的开发过程，可以参考[ 如何造一个『为移动端而生』的联动选择器 ](https://segmentfault.com/a/1190000007658156)
-
 >  我是嘉宝Appian，一个卖萌出家的算法妹纸。
