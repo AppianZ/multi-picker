@@ -103,7 +103,9 @@ MultiPicker主要是由`两个部分`组成，
 ## **Tips**
 
 > * 可以充分利用callback，对返回的结果执行相应操作，比如：拼接出期望的字符串，或构造后台期望的存储对象。
+>
 > * 在日期选择器DateSelector中，用正确的数组表示你要设置的时间点。
+>
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
 
@@ -117,6 +119,10 @@ MultiPicker主要是由`两个部分`组成，
     
 3. 触发弹窗的dom一定要是input吗？
     > 在文档中明确指出，触发弹层的dom可以是任意的dom。并建议弹层的容器，是body的第一级子元素。
+    >
+ 	> demo中使用了input disabled只是为了返回值可以通过设置value返回，演示方便。**input readonly可能存在一些兼容问题**.
+ 	>
+    > 开发者可以使用任意dom，将回调的返回值innerHTML或者双向绑定等。这里不再赘述。
 
 4. 在使用[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)的过程中，城市数据哪里来？
     > 我提供一份我用过的[三级联动城市数据](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js)，这份数据来自一位我认识的海大小伙伴，如果使用者想要其他格式的城市数据，建议也找你们的后台小伙伴爬一份。
