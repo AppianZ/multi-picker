@@ -114,11 +114,29 @@ MultiPicker主要是由`两个部分`组成，
 
 > * 在自定义json选择器MultiPicker中，构造符合规范的json数据。
 
-## **Todo Lists**
 
-> * 写一系列文章介绍如何构造这个小插件
+## **常见问题**
+1. 配色可以改吗?样式可以修改吗?
+    > 这个插件主要实现的是逻辑方便的功能，所以在样式上是很开放的，甚至你可以审查元素到你想修改的dom上，直接覆盖样式。样式问题根据你的需要，实时修改即可。
+    >
+    > 如果你使用的是rem或flexible，可以用sass版本的样式。如果你使用的是px，可以使用css版本的样式。
 
-> * 发布 npm 版本
+2. 这个插件能配合Vue，React，Angluar 或者 jQuery 吗？
+    > 这是一个原生插件，能够配合任何框架使用。同时，插件支持多个实例，可放心使用。
+    
+3. 触发弹窗的dom一定要是input吗？
+    > 在文档中明确指出，触发弹层的dom可以是任意的dom。并建议弹层的容器，是body的第一级子元素。
+    >
+    > dom中使用了input disabled只是为了返回值可以通过设置value返回，比较方便。input readonly可能存在一些兼容问题.
+    >
+    > 开发者可以使用任意dom，将回调的返回值innerHTML或者双向绑定等。这里不再赘述。
+    >
+
+4. 在使用[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)的过程中，城市数据哪里来？
+    > 我提供一份我用过的[三级联动城市数据](https://github.com/AppianZ/multi-picker/blob/master/MultiPicker/city.js)，这份数据来自一位我认识的海大小伙伴，如果使用者想要其他格式的城市数据，建议也找你们的后台小伙伴爬一份。
+
+5. 在使用[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)的过程中，支持默认定位、设置初始数据吗？
+    > 暂时不支持在[自定义json选择器说明书-MultiPicker](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)中使用默认定位、设置初始数据。
 
 
 ## **Logs**
