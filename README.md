@@ -127,7 +127,7 @@ MultiPicker主要是由`两个部分`组成，
 3. 触发弹窗的dom一定要是input吗？
     > 在文档中明确指出，触发弹层的dom可以是任意的dom。并建议弹层的容器，是body的第一级子元素。
     >
-    > dom中使用了input disabled只是为了返回值可以通过设置value返回，比较方便。input readonly可能存在一些兼容问题.
+    > demo中使用了input disabled只是为了返回值可以通过设置value返回，演示方便。**input readonly可能存在一些兼容问题**.
     >
     > 开发者可以使用任意dom，将回调的返回值innerHTML或者双向绑定等。这里不再赘述。
     >
