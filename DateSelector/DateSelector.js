@@ -451,9 +451,7 @@
 			
 			if (dir == 0) {
 				min = _this.beginTime[checkIdx + 1] >= min ? _this.beginTime[checkIdx + 1] : 0;
-				max = _this.endTime[checkIdx] == _this.resultArr[checkIdx] ? _this.endTime[checkIdx + 1] : max;
 			} else if (dir == 1) {
-				min = _this.beginTime[checkIdx] == _this.resultArr[checkIdx] ? _this.beginTime[checkIdx + 1] : min;
 				max = _this.endTime[checkIdx + 1] <= max ? _this.endTime[checkIdx + 1] : 0;
 			}
 			_this.initRangeArr(min, max, str, checkIdx + 1, dir);
