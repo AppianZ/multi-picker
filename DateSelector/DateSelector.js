@@ -32,9 +32,9 @@
     this.container  = config.container;
     this.type       = config.type;
     this.param      = (config.type == 1) ? [1, 1, 1, 1, 1] : config.param;
-    this.beginTime  = config.beginTime;
-    this.endTime    = config.endTime;
-    this.recentTime = config.recentTime;
+    this.beginTime  = config.beginTime.map(function(t) {return Number(t)});
+    this.endTime    = config.endTime.map(function(t) {return Number(t)});
+    this.recentTime = config.recentTime.map(function(t) {return Number(t)});
     this.success    = config.success;
 
     this.ulCount     = 0;

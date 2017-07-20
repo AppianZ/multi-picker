@@ -37,12 +37,17 @@ This plugin is made up of **two parts**：
 * [MultiPicker - How to Use.](https://github.com/AppianZ/multi-picker/tree/master/MultiPicker)
 
 ## **Tips**
-
 > * You can make full use of callback to do anything.
+> 
 > * Please make sure to read the guide and use it correctly.
 
 
 ## **Logs**
+### 2017.5.28(update)
+> * Update the params of the success cb of DateSelector.
+>
+> * Format the params of DateSelector Instances.
+
 ### 2017.5.28(update)
 > * Use with flexible.
 
@@ -138,6 +143,8 @@ MultiPicker主要是由`两个部分`组成，
 ## **Logs**
 ### 2017.7.20(update)
 > * data-picker的success回调返回值增加一个格式化字符串格式
+> 
+> * data-picker的参数格式化为Number
 
 ### 2017.5.28(update)
 > * 配合flexible使用
