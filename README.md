@@ -45,7 +45,7 @@ This plugin is made up of **two parts**：
 
 
 ## **Logs**
-### 2017.5.28(update)
+### 2017.7.20(update)
 > * Update the params of the success cb of DateSelector.
 >
 > * Format the params of DateSelector Instances.
