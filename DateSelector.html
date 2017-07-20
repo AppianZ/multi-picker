@@ -1,252 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="screen-orientation" content="portrait">
-    <title>DateSelector</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="screen-orientation" content="portrait">
+  <title>DateSelector</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
-        .date-selector-locked {
-            height: 100% !important;
-            overflow: hidden !important;
-        }
+    .date-selector-locked {
+      height: 100% !important;
+      overflow: hidden !important;
+    }
 
-        .date-selector-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            background: rgba(75, 75, 75, 0);
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            transition: all .3s ease;
-            -webkit-transition: all .3s ease;
-            z-index: -1;
-        }
+    .date-selector-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(75, 75, 75, 0);
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      transition: all .3s ease;
+      -webkit-transition: all .3s ease;
+      z-index: -1;
+    }
 
-        .date-selector-bg-up {
-            z-index: 999 !important;
-            background: rgba(75, 75, 75, 0.65) !important;
-        }
+    .date-selector-bg-up {
+      z-index: 999 !important;
+      background: rgba(75, 75, 75, 0.65) !important;
+    }
 
-        .date-selector-container {
-            width: 100%;
-            height: 250px;
-            position: absolute;
-            bottom: 0;
-            transform: translate3d(0, 250px, 0);
-            -webkit-transform: translate3d(0, 250px, 0);
-            left: 0;
-            background-color: #FFF;
-            transition: transform .3s ease;
-            -webkit-transition: -webkit-transform .3s ease;
-            z-index: -1;
-        }
+    .date-selector-container {
+      width: 100%;
+      height: 250px;
+      position: absolute;
+      bottom: 0;
+      transform: translate3d(0, 250px, 0);
+      -webkit-transform: translate3d(0, 250px, 0);
+      left: 0;
+      background-color: #FFF;
+      transition: transform .3s ease;
+      -webkit-transition: -webkit-transform .3s ease;
+      z-index: -1;
+    }
 
-        .date-selector-container-up {
-            transform: translate3d(0, 0, 0) !important;
-            -webkit-transform: translate3d(0, 0, 0) !important;
-        }
+    .date-selector-container-up {
+      transform: translate3d(0, 0, 0) !important;
+      -webkit-transform: translate3d(0, 0, 0) !important;
+    }
 
-        .date-selector-btn-box {
-            display: block;
-            position: absolute;
-            text-align: center;
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            background: rgba(218, 218, 218, .7);
-            z-index: 10;
-        }
+    .date-selector-btn-box {
+      display: block;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background: rgba(218, 218, 218, .7);
+      z-index: 10;
+    }
 
-        .date-selector-btn-box .date-selector-btn {
-            position: absolute;
-            display: inline-block;
-            margin: 0 20px;
-            color: #fff;
-            right: 0;
-        }
+    .date-selector-btn-box .date-selector-btn {
+      position: absolute;
+      display: inline-block;
+      margin: 0 20px;
+      color: #fff;
+      right: 0;
+    }
 
-        .date-selector-btn-box .date-selector-btn:nth-child(1) {
-            left: 0;
-            right: initial;
-        }
+    .date-selector-btn-box .date-selector-btn:nth-child(1) {
+      left: 0;
+      right: initial;
+    }
 
-        .date-selector-tab-box {
-            display: inline-block;
-            border-radius: 10px;
-            margin: 9px 0;
-            height: 32px;
-            box-sizing: border-box;
-            line-height: 30px;
-            color: rgba(218, 218, 218, .7);
-            background: #fff;
-            border: 1px solid #fff;
-        }
+    .date-selector-tab-box {
+      display: inline-block;
+      border-radius: 10px;
+      margin: 9px 0;
+      height: 32px;
+      box-sizing: border-box;
+      line-height: 30px;
+      color: rgba(218, 218, 218, .7);
+      background: #fff;
+      border: 1px solid #fff;
+    }
 
-        .date-selector-tab-box .date-selector-tab {
-            display: inline-block;
-            padding: 0 10px;
-            transition: all .3s ease;
-        }
+    .date-selector-tab-box .date-selector-tab {
+      display: inline-block;
+      padding: 0 10px;
+      transition: all .3s ease;
+    }
 
-        .date-selector-tab-box .date-selector-tab:first-child {
-            border-right: 1px solid #fff;
-        }
+    .date-selector-tab-box .date-selector-tab:first-child {
+      border-right: 1px solid #fff;
+    }
 
-        .date-selector-tab-box .date-selector-tab-active {
-            color: #fff;
-            border-radius: 10px;
-            background: rgba(219, 219, 219, 1);
-        }
+    .date-selector-tab-box .date-selector-tab-active {
+      color: #fff;
+      border-radius: 10px;
+      background: rgba(219, 219, 219, 1);
+    }
 
-        .date-selector-content-left {
-            transform: translate3d(-100%, 0, 0) !important;
-            -webkit-transform: translate3d(-100%, 0, 0) !important;
-        }
+    .date-selector-content-left {
+      transform: translate3d(-100%, 0, 0) !important;
+      -webkit-transform: translate3d(-100%, 0, 0) !important;
+    }
 
-        .date-selector-content-right {
-            transform: translate3d(100%, 0, 0) !important;
-            -webkit-transform: translate3d(100%, 0, 0) !important;
-        }
+    .date-selector-content-right {
+      transform: translate3d(100%, 0, 0) !important;
+      -webkit-transform: translate3d(100%, 0, 0) !important;
+    }
 
-        .date-selector-content {
-            position: absolute;
-            width: 100%;
-            background: #fff;
-            font-size: 0;
-            top: 50px;
-            z-index: 10;
-            transform: translate3d(0, 0, 0);
-            -webkit-transform: translate3d(0, 0, 0);
-            transition: transform .3s ease;
-            -webkit-transition: -webkit-transform .3s ease;
-        }
+    .date-selector-content {
+      position: absolute;
+      width: 100%;
+      background: #fff;
+      font-size: 0;
+      top: 50px;
+      z-index: 10;
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      transition: transform .3s ease;
+      -webkit-transition: -webkit-transform .3s ease;
+    }
 
-        .date-selector-content .date-selector {
-            display: inline-block;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-            z-index: -1;
-        }
+    .date-selector-content .date-selector {
+      display: inline-block;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      z-index: -1;
+    }
 
-        .date-selector-content .date-selector-left {
-            width: 33.33%;
-        }
+    .date-selector-content .date-selector-left {
+      width: 33.33%;
+    }
 
-        .date-selector-content .date-selector-right {
-            width: 50%;
-        }
+    .date-selector-content .date-selector-right {
+      width: 50%;
+    }
 
-        .date-selector-content ul::-webkit-scrollbar {
-            display: none;
-        }
+    .date-selector-content ul::-webkit-scrollbar {
+      display: none;
+    }
 
-        .date-selector-content li {
-            height: 40px;
-            text-align: center;
-            font-size: 16px;
-            line-height: 40px;
-            list-style: none;
-        }
+    .date-selector-content li {
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 40px;
+      list-style: none;
+    }
 
-        .date-selector-content .date-selector-up-shadow, .date-selector-content .date-selector-down-shadow {
-            width: 100%;
-            height: 80px;
-            position: absolute;
-            pointer-events: none;
-            background-image: linear-gradient(to bottom, #FFF, rgba(255, 255, 255, 0));
-            z-index: 50;
-        }
+    .date-selector-content .date-selector-up-shadow, .date-selector-content .date-selector-down-shadow {
+      width: 100%;
+      height: 80px;
+      position: absolute;
+      pointer-events: none;
+      background-image: linear-gradient(to bottom, #FFF, rgba(255, 255, 255, 0));
+      z-index: 50;
+    }
 
-        .date-selector-content .date-selector-up-shadow {
-            top: 0;
-        }
+    .date-selector-content .date-selector-up-shadow {
+      top: 0;
+    }
 
-        .date-selector-content .date-selector-down-shadow {
-            bottom: 0;
-            z-index: 50;
-            background-image: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0));
-        }
+    .date-selector-content .date-selector-down-shadow {
+      bottom: 0;
+      z-index: 50;
+      background-image: linear-gradient(to top, #FFF, rgba(255, 255, 255, 0));
+    }
 
-        .date-selector-content .date-selector-line {
-            width: 95%;
-            height: 40px;
-            position: absolute;
-            top: 80px;
-            left: 50%;
-            pointer-events: none;
-            box-sizing: border-box;
-            border-top: 1px solid #DCDCDC;
-            border-bottom: 1px solid #DCDCDC;
-            transform: translate3d(-50%, 0, 0);
-            -webkit-transform: translate3d(-50%, 0, 0);
-        }
+    .date-selector-content .date-selector-line {
+      width: 95%;
+      height: 40px;
+      position: absolute;
+      top: 80px;
+      left: 50%;
+      pointer-events: none;
+      box-sizing: border-box;
+      border-top: 1px solid #DCDCDC;
+      border-bottom: 1px solid #DCDCDC;
+      transform: translate3d(-50%, 0, 0);
+      -webkit-transform: translate3d(-50%, 0, 0);
+    }
 
-        /*# sourceMappingURL=dateController.css.map */
+    /*# sourceMappingURL=dateController.css.map */
 
-        body {
-            background: #fefefe;
-        }
+    body {
+      background: #fefefe;
+    }
 
-        h3 {
-            position: relative;
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            color: #555;
-        }
+    h3 {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      color: #555;
+    }
 
-        h3:after {
-            content: '';
-            position: absolute;
-            width: 100px;
-            height: 5px;
-            left: 50%;
-            bottom: 0;
-            margin: 0 -50px;
-            background: #ddd;
-            border-radius: 10px;
-        }
+    h3:after {
+      content: '';
+      position: absolute;
+      width: 100px;
+      height: 5px;
+      left: 50%;
+      bottom: 0;
+      margin: 0 -50px;
+      background: #ddd;
+      border-radius: 10px;
+    }
 
-        article {
-            color: #333;
-            line-height: 1.3;
-            padding: 0 30px;
-            margin: 20px 0;
-        }
+    article {
+      color: #333;
+      line-height: 1.3;
+      padding: 0 30px;
+      margin: 20px 0;
+    }
 
-        p {
-            color: #777;
-            font-size: 14px;
-            margin: 5px 0 0 0;
-        }
+    p {
+      color: #777;
+      font-size: 14px;
+      margin: 5px 0 0 0;
+    }
 
-        .block {
-            background: rgb(241, 241, 241);
-            border-left: 8px solid #D6DBDF;
-            padding: 10px 12px;
-            margin: 0 0 15px 0;
-            overflow: auto;
-        }
+    .block {
+      background: rgb(241, 241, 241);
+      border-left: 8px solid #D6DBDF;
+      padding: 10px 12px;
+      margin: 0 0 15px 0;
+      overflow: auto;
+    }
 
-        input {
-            display: block;
-            width: 200px;
-            margin: 5px auto 10px;
-            padding: 5px 20px;
-            border: 1px solid #cbcbcb;
-            border-radius: 8px;
-        }
-    </style>
+    input {
+      display: block;
+      width: 200px;
+      margin: 5px auto 10px;
+      padding: 5px 20px;
+      border: 1px solid #cbcbcb;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 
 
@@ -254,59 +254,59 @@
 
 <h3>DateSelector.</h3>
 <article>
-    <p>0.请在移动端下打开~~</p>
-    <p>1.点击下面的输入演示样式</p>
-    <input id="date-selector-input" type="text" placeholder="点我~~看固定效果" disabled/>
-    <div class="block">
-        优化版的自定义功能不仅是【单位】自定义<br/><br/>
-        【时间范围】也可以自定义,并且尽可能的进行数据校正<br/><br/>
-        下面的input会展现【2011年13月-27日 102时12分 ~ 2020年10月21日 20时20分】的效果<br/><br/>
-    </div>
-    <input id="date-selector-inputs" type="text" placeholder="点我~~看自定义效果" disabled/>
-    <p>2.如何引用css和js文件？</p>
-    <div class="block">
-        sass文件:引用DateSelector/DateSelector.scss<br/><br/>
-        css文件:引用DateSelector/DateSelector.css<br/><br/>
-        js文件:引用DateSelector/DateSelector.js<br/><br/>
-    </div>
-    <p>3.如何调用构造函数？</p>
-    <div class="block">
-        基本格式：new DateSelector({ ... });<br/><br/>
-        参数配置:<br/>
-        input : {String}，点击触发插件的input框的id<br/><br/>
-        container ： {String}，插件即将插入的容器id<br/><br/>
-        type ：{0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)<br/><br/>
-        param : {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1
-        <br/><br/>
-        beginTime : {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
-        endTime : {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
-        recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
-        success : function(arr){} 回调函数，可以自定义结果格式化
-    </div>
-    <p>4.有什么优越性？</p>
-    <div class="block">
-        带有加速度的滑动 (•‿•)<br/><br/>
+  <p>0.请在移动端下打开~~</p>
+  <p>1.点击下面的输入演示样式</p>
+  <input id="date-selector-input" type="text" placeholder="点我~~看固定效果" disabled/>
+  <div class="block">
+    优化版的自定义功能不仅是【单位】自定义<br/><br/>
+    【时间范围】也可以自定义,并且尽可能的进行数据校正<br/><br/>
+    下面的input会展现【2011年13月-27日 102时12分 ~ 2020年10月21日 20时20分】的效果<br/><br/>
+  </div>
+  <input id="date-selector-inputs" type="text" placeholder="点我~~看自定义效果" disabled/>
+  <p>2.如何引用css和js文件？</p>
+  <div class="block">
+    sass文件:引用DateSelector/DateSelector.scss<br/><br/>
+    css文件:引用DateSelector/DateSelector.css<br/><br/>
+    js文件:引用DateSelector/DateSelector.js<br/><br/>
+  </div>
+  <p>3.如何调用构造函数？</p>
+  <div class="block">
+    基本格式：new DateSelector({ ... });<br/><br/>
+    参数配置:<br/>
+    input : {String}，点击触发插件的input框的id<br/><br/>
+    container ： {String}，插件即将插入的容器id<br/><br/>
+    type ：{0或1}，0为自定义插件的日期单位(不带tab切换)，1为固定插件的日期单位为【年月日】【时分】(带tab切换)<br/><br/>
+    param : {Array},例如 [1,1,0,0,0]，分别设置['year','month','day','hour','minute'],1为需要，0为不需要,需要为连续的1
+    <br/><br/>
+    beginTime : {Array},空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点如[2011,13,-27,102,12]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
+    endTime : {Array},空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点如[2020,10,21,20,20]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
+    recentTime : {Array},空数组默认设置为当前时间，如需要设置当前的时间点如[2016,8,5,12,0]，数组的值对应param参数的对应值,带有自动校正。<br/><br/>
+    success : function(arr){} 回调函数，可以自定义结果格式化
+  </div>
+  <p>4.有什么优越性？</p>
+  <div class="block">
+    带有加速度的滑动 (•‿•)<br/><br/>
 
-        能够动态设置任意开始和结束【时!间!点!】 (•‿•)<br/>
-        是的,你可以设置任何尴尬的时间了~ 比如:【2016-11-11 11:11 ~ 2016-12-12 12:12】<br/><br/>
+    能够动态设置任意开始和结束【时!间!点!】 (•‿•)<br/>
+    是的,你可以设置任何尴尬的时间了~ 比如:【2016-11-11 11:11 ~ 2016-12-12 12:12】<br/><br/>
 
-        能够任意设置时间单位的组合 (•‿•)<br/>
-        "年月日" OR "月日时分" OR "年月日时分"<br/><br/>
+    能够任意设置时间单位的组合 (•‿•)<br/>
+    "年月日" OR "月日时分" OR "年月日时分"<br/><br/>
 
-        能够切换固定样式和自定义样式,简化参数 (•‿•)<br/><br/>
+    能够切换固定样式和自定义样式,简化参数 (•‿•)<br/><br/>
 
-        能利用我的模型处理更多、更自由的联动 (•‿•) <br/>
-        比如城市多级联动，请移步<a href="https://github.com/AppianZ/multi-picker/tree/master/MultiPicker">比如城市多级联动，请移步</a><br/><br/>
+    能利用我的模型处理更多、更自由的联动 (•‿•) <br/>
+    比如城市多级联动，请移步<a href="https://github.com/AppianZ/multi-picker/tree/master/MultiPicker">比如城市多级联动，请移步</a><br/><br/>
 
-        Trust Me.
-    </div>
-    <p>5.有什么局限性？</p>
-    <div class="block">
-        样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<<br/><br/>
-        如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！<br/><br/>
-        我是嘉宝Appian，一个卖萌出家的算法妹纸。<br/><br/>
-        Trust Me Again.
-    </div>
+    Trust Me.
+  </div>
+  <p>5.有什么局限性？</p>
+  <div class="block">
+    样式主题可能和你的产品风格不符，可以通过更改sass中的全局变量来解决问题 >.<<br/><br/>
+    如果遇到什么神bug,不要着急。这时候,请对我发起issue~ 一定让您满意！<br/><br/>
+    我是嘉宝Appian，一个卖萌出家的算法妹纸。<br/><br/>
+    Trust Me Again.
+  </div>
 </article>
 
 <div id="targetContainer"></div>
@@ -314,589 +314,610 @@
 
 
 <script>
-    /**
-     * Created by appian on 16/8/5.
-     */
-    (function (wid, dcm) {
-        var win = wid;
-        var doc = dcm;
+  /**
+   * Created by appian on 16/8/5.
+   */
+  (function (wid, dcm) {
+    var win = wid;
+    var doc = dcm;
 
-        function $id(id) {
-            return doc.getElementById(id);
+    function $id(id) {
+      return doc.getElementById(id);
+    }
+
+    function $class(name) {
+      return doc.getElementsByClassName(name);
+    }
+
+    function loop(begin, length, fuc) {
+      for ( var i = begin; i < length; i++ ) {
+        if (fuc(i)) break;
+      }
+    }
+
+    function on(action, selector, callback) {
+      doc.addEventListener(action, function (e) {
+        if (selector == e.target.tagName.toLowerCase() || selector == e.target.className || selector == e.target.id) {
+          callback(e);
         }
+      })
+    }
 
-        function $class(name) {
-            return doc.getElementsByClassName(name);
+    function DateSelector(config) {
+      this.input      = config.input;
+      this.container  = config.container;
+      this.type       = config.type;
+      this.param      = (config.type == 1) ? [1, 1, 1, 1, 1] : config.param;
+      this.beginTime  = config.beginTime.map(function (t) {
+        return Number(t)
+      });
+      this.endTime    = config.endTime.map(function (t) {
+        return Number(t)
+      });
+      this.recentTime = config.recentTime.map(function (t) {
+        return Number(t)
+      });
+      this.success    = config.success;
+
+      this.ulCount     = 0;
+      this.ulDomArr    = [];
+      this.idxArr      = [];
+      this.liHeight    = wid.lib ? parseInt(doc.getElementsByTagName('HTML')[0].style.fontSize) * 1 : 40;
+      this.maxHeight   = [];
+      this.distance    = [];
+      this.start       = {
+        Y: 0,
+        time: ''
+      };
+      this.move        = {
+        Y: 0,
+        speed: []
+      };
+      this.end         = {
+        Y: 0,
+        index: 0
+      };
+      this.resultArr   = [];
+      this.begin_time  = [1970, 1, 1, 0, 0];
+      this.end_time    = [new Date().getFullYear() + 1, 12, 31, 23, 59];
+      this.recent_time = [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate(), new Date().getHours(), new Date().getMinutes()];
+
+      this.initDomFuc();
+      this.initReady();
+      this.initBinding();
+    }
+
+    DateSelector.prototype = {
+      constructor: DateSelector,
+      checkParam: function () {
+        var idxArr = [];
+        var _this  = this;
+        loop(0, _this.param.length, function (i) {
+          if (_this.param[i] > 0) {
+            idxArr.push(i);
+          }
+        });
+        this.ulCount = idxArr[idxArr.length - 1] - idxArr[0] + 1;
+        loop(idxArr[0], idxArr[idxArr.length - 1] + 1, function (i) {
+          _this.param[i] = 1;
+          _this.idxArr.push(i);
+        });
+      },
+      checkTime: function () {
+        var _this       = this;
+        var begin_time  = this.begin_time;
+        var end_time    = this.end_time;
+        var recent_time = this.recent_time;
+        if (_this.beginTime.length == 0) {
+          loop(0, _this.idxArr.length, function (i) {
+            _this.beginTime.push(begin_time[_this.idxArr[i]]);
+          });
         }
-
-        function loop(begin, length, fuc) {
-            for ( var i = begin; i < length; i++ ) {
-                if (fuc(i)) break;
+        if (_this.endTime.length == 0) {
+          loop(0, _this.idxArr.length, function (i) {
+            _this.endTime.push(end_time[_this.idxArr[i]]);
+          });
+        }
+        if (_this.recentTime.length == 0) {
+          loop(0, _this.idxArr.length, function (i) {
+            _this.recentTime.push(recent_time[_this.idxArr[i]]);
+          });
+        }
+        if (_this.idxArr.length == _this.beginTime.length && _this.beginTime.length == _this.endTime.length && _this.endTime.length == _this.recentTime.length) {
+          var _idxArrIndex = 0;
+          loop(0, _this.param.length, function (i) {
+            if (_this.param[i] == 0) {
+              switch (i) {
+                case 0:
+                  begin_time[i] = new Date().getFullYear();
+                  end_time[i]   = new Date().getFullYear();
+                  break;
+                case 1:
+                  begin_time[i] = new Date().getMonth() + 1;
+                  end_time[i]   = new Date().getMonth() + 1;
+                  break;
+                case 2:
+                  begin_time[i] = new Date().getDate();
+                  end_time[i]   = new Date().getDate();
+                  break;
+                case 3:
+                  begin_time[i] = new Date().getHours();
+                  end_time[i]   = new Date().getHours();
+                  break;
+                case 4:
+                  begin_time[i] = new Date().getMinutes();
+                  end_time[i]   = new Date().getMinutes();
+                  break;
+              }
+            } else {
+              switch (i) {
+                case 0:
+                  _this.beginTime[_idxArrIndex] = begin_time[i] = _this.beginTime[_idxArrIndex] >= 1900 ? _this.beginTime[_idxArrIndex] : new Date().getFullYear();
+                  _this.endTime[_idxArrIndex] = end_time[i] = _this.endTime[_idxArrIndex] >= 1900 ? _this.endTime[_idxArrIndex] : new Date().getFullYear() + 1;
+                  recent_time[i] = _this.recentTime[_idxArrIndex];
+                  break;
+                case 1:
+                  _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= 12) ? _this.beginTime[_idxArrIndex] : 1;
+                  _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= 12) ? _this.endTime[_idxArrIndex] : 12;
+                  recent_time[i] = _this.recentTime[_idxArrIndex];
+                  break;
+                case 2:
+                  _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= new Date(begin_time[0], begin_time[1], 0).getDate()) ? _this.beginTime[_idxArrIndex] : 1;
+                  _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= new Date(end_time[0], end_time[1], 0).getDate()) ? _this.endTime[_idxArrIndex] : new Date(end_time[0], end_time[1], 0).getDate();
+                  recent_time[i] = _this.recentTime[_idxArrIndex];
+                  break;
+                case 3:
+                  _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 23) ? _this.beginTime[_idxArrIndex] : 0;
+                  _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 23) ? _this.endTime[_idxArrIndex] : 23;
+                  recent_time[i] = _this.recentTime[_idxArrIndex];
+                  break;
+                case 4 :
+                  _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 59) ? _this.beginTime[_idxArrIndex] : 0;
+                  _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 59) ? _this.endTime[_idxArrIndex] : 59;
+                  recent_time[i] = _this.recentTime[_idxArrIndex];
+                  break;
+              }
+              _idxArrIndex++;
             }
-        }
-
-        function on(action, selector, callback) {
-            doc.addEventListener(action, function (e) {
-                if (selector == e.target.tagName.toLowerCase() || selector == e.target.className || selector == e.target.id) {
-                    callback(e);
-                }
-            })
-        }
-
-        function DateSelector(config) {
-            this.input      = config.input;
-            this.container  = config.container;
-            this.type       = config.type;
-            this.param      = (config.type == 1) ? [1, 1, 1, 1, 1] : config.param;
-            this.beginTime  = config.beginTime;
-            this.endTime    = config.endTime;
-            this.recentTime = config.recentTime;
-            this.success    = config.success;
-
-            this.ulCount     = 0;
-            this.ulDomArr    = [];
-            this.idxArr      = [];
-            this.liHeight    = 40;
-            this.maxHeight   = [];
-            this.distance    = [];
-            this.start       = {
-                Y: 0,
-                time: ''
-            };
-            this.move        = {
-                Y: 0,
-                speed: []
-            };
-            this.end         = {
-                Y: 0,
-                index: 0
-            };
-            this.resultArr   = [];
-            this.begin_time  = [1970, 1, 1, 0, 0];
-            this.end_time    = [new Date().getFullYear() + 1, 12, 31, 23, 59];
-            this.recent_time = [new Date().getFullYear(), new Date().getMonth() + 1, new Date().getDate(), new Date().getHours(), new Date().getMinutes()];
-
-            this.initDomFuc();
-            this.initReady();
-            this.initBinding();
-        }
-
-        DateSelector.prototype = {
-            constructor: DateSelector,
-            checkParam: function () {
-                var idxArr = [];
-                var _this  = this;
-                loop(0, _this.param.length, function (i) {
-                    if (_this.param[i] > 0) {
-                        idxArr.push(i);
-                    }
-                });
-                this.ulCount = idxArr[idxArr.length - 1] - idxArr[0] + 1;
-                loop(idxArr[0], idxArr[idxArr.length - 1] + 1, function (i) {
-                    _this.param[i] = 1;
-                    _this.idxArr.push(i);
-                });
-            },
-            checkTime: function () {
-                var _this       = this;
-                var begin_time  = this.begin_time;
-                var end_time    = this.end_time;
-                var recent_time = this.recent_time;
-                if (_this.beginTime.length == 0) {
-                    loop(0, _this.idxArr.length, function (i) {
-                        _this.beginTime.push(begin_time[_this.idxArr[i]]);
-                    });
-                }
-                if (_this.endTime.length == 0) {
-                    loop(0, _this.idxArr.length, function (i) {
-                        _this.endTime.push(end_time[_this.idxArr[i]]);
-                    });
-                }
-                if (_this.recentTime.length == 0) {
-                    loop(0, _this.idxArr.length, function (i) {
-                        _this.recentTime.push(recent_time[_this.idxArr[i]]);
-                    });
-                }
-                if (_this.idxArr.length == _this.beginTime.length && _this.beginTime.length == _this.endTime.length && _this.endTime.length == _this.recentTime.length) {
-                    var _idxArrIndex = 0;
-                    loop(0, _this.param.length, function (i) {
-                        if (_this.param[i] == 0) {
-                            switch (i) {
-                                case 0:
-                                    begin_time[i] = new Date().getFullYear();
-                                    end_time[i]   = new Date().getFullYear();
-                                    break;
-                                case 1:
-                                    begin_time[i] = new Date().getMonth() + 1;
-                                    end_time[i]   = new Date().getMonth() + 1;
-                                    break;
-                                case 2:
-                                    begin_time[i] = new Date().getDate();
-                                    end_time[i]   = new Date().getDate();
-                                    break;
-                                case 3:
-                                    begin_time[i] = new Date().getHours();
-                                    end_time[i]   = new Date().getHours();
-                                    break;
-                                case 4:
-                                    begin_time[i] = new Date().getMinutes();
-                                    end_time[i]   = new Date().getMinutes();
-                                    break;
-                            }
-                        } else {
-                            switch (i) {
-                                case 0:
-                                    _this.beginTime[_idxArrIndex] = begin_time[i] = _this.beginTime[_idxArrIndex] >= 1900 ? _this.beginTime[_idxArrIndex] : new Date().getFullYear();
-                                    _this.endTime[_idxArrIndex] = end_time[i] = _this.endTime[_idxArrIndex] >= 1900 ? _this.endTime[_idxArrIndex] : new Date().getFullYear() + 1;
-                                    recent_time[i] = _this.recentTime[_idxArrIndex];
-                                    break;
-                                case 1:
-                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= 12) ? _this.beginTime[_idxArrIndex] : 1;
-                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= 12) ? _this.endTime[_idxArrIndex] : 12;
-                                    recent_time[i] = _this.recentTime[_idxArrIndex];
-                                    break;
-                                case 2:
-                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] > 0 && _this.beginTime[_idxArrIndex] <= new Date(begin_time[0], begin_time[1], 0).getDate()) ? _this.beginTime[_idxArrIndex] : 1;
-                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] > 0 && _this.endTime[_idxArrIndex] <= new Date(end_time[0], end_time[1], 0).getDate()) ? _this.endTime[_idxArrIndex] : new Date(end_time[0], end_time[1], 0).getDate();
-                                    recent_time[i] = _this.recentTime[_idxArrIndex];
-                                    break;
-                                case 3:
-                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 23) ? _this.beginTime[_idxArrIndex] : 0;
-                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 23) ? _this.endTime[_idxArrIndex] : 23;
-                                    recent_time[i] = _this.recentTime[_idxArrIndex];
-                                    break;
-                                case 4 :
-                                    _this.beginTime[_idxArrIndex] = begin_time[i] = (_this.beginTime[_idxArrIndex] >= 0 && _this.beginTime[_idxArrIndex] <= 59) ? _this.beginTime[_idxArrIndex] : 0;
-                                    _this.endTime[_idxArrIndex] = end_time[i] = (_this.endTime[_idxArrIndex] >= 0 && _this.endTime[_idxArrIndex] <= 59) ? _this.endTime[_idxArrIndex] : 59;
-                                    recent_time[i] = _this.recentTime[_idxArrIndex];
-                                    break;
-                            }
-                            _idxArrIndex++;
-                        }
-                    });
-                    var bt = new Date(begin_time[0], begin_time[1], begin_time[2], begin_time[3], begin_time[4]).getTime();
-                    var et = new Date(end_time[0], end_time[1], end_time[2], end_time[3], end_time[4]).getTime();
-                    var rt = new Date(recent_time[0], recent_time[1], recent_time[2], recent_time[3], recent_time[4]).getTime();
-                    rt < bt ? alert('当前时间小于开始时间') : "";
-                    rt > et ? alert('当前时间超过结束时间') : "";
-                    return (bt <= rt && rt <= et);
-                } else {
-                    alert('error,please open the console to see the errmsg');
-                    console.warn('type为1时,时间数组长度为0或5');
-                    console.warn('构造函数的参数param或recentTime设置有误');
-                    console.warn('param必须是连续的1，recentTime的值必须与param中的值对应');
-                    console.warn('构造函数调用失败，请重新设置参数');
-                    return false;
-                }
-            },
-            checkTimeArr: function (arr1, arr2, length) {
-                var checkStatus = true;
-                loop(0, length, function (i) {
-                    if (arr1[i] != arr2[i]) checkStatus = false;
-                });
-                return checkStatus;
-            },
-            initDomFuc: function () {
-                var _this = this;
-                this.checkParam();
-                if (!this.checkTime())return;
-                var html = '';
-                html += '<div class="date-selector-bg" id="date-selector-bg-' + _this.container + '">' +
-                        '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
-                        '<div class="date-selector-btn-box">' +
-                        '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
-
-                if (this.type == 1) {
-                    html += '<div class="date-selector-tab-box">' +
-                            '<div class="date-selector-tab date-selector-tab-active">年月日</div>' +
-                            '<div class="date-selector-tab">时分</div>' +
-                            '</div>';
-                }
-
-                html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">提交</div>' +
-                        '</div>' +
-                        '<div class="date-selector-content">';
-
-                if (_this.type == 0) {
-                    loop(0, _this.idxArr.length, function (i) {
-                        html += '<div class="date-selector date-selector-left">' +
-                                '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
-                                '</div>';
-                    });
-                    html += '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>';
-                    html += '</div></div>';
-                    $id(_this.container).innerHTML = html;
-                    loop(0, _this.ulCount, function (i) {
-                        $id('date-selector-container-' + _this.container).querySelectorAll(".date-selector")[i].style.width = (100 / _this.ulCount).toFixed(2) + '%';
-                    });
-                } else if (_this.type == 1) {
-                    html += '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-0"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-1"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-left">' +
-                            '<ul id="date-selector-' + _this.container + '-2"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>' +
-                            '<div class="date-selector-content date-selector-content-right">' +
-                            '<div class="date-selector date-selector-right">' +
-                            '<ul id="date-selector-' + _this.container + '-3"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector date-selector-right">' +
-                            '<ul id="date-selector-' + _this.container + '-4"></ul>' +
-                            '</div>' +
-                            '<div class="date-selector-up-shadow"></div>' +
-                            '<div class="date-selector-down-shadow"></div>' +
-                            '<div class="date-selector-line"></div>' +
-                            '</div>';
-                    html += '</div></div>';
-                    $id(_this.container).innerHTML = html;
-                }
-            },
-            initReady: function () {
-                var _this   = this;
-                var realIdx = 0;
-                loop(0, _this.ulCount, function (i) {
-                    realIdx       = _this.idxArr[i];
-                    var min       = 0;
-                    var max       = 0;
-                    var tempDomUl = $id('date-selector-' + _this.container + '-' + _this.idxArr[i]);
-                    _this.ulDomArr.push(tempDomUl);
-                    var tempArray = _this['array' + _this.idxArr[i]] = [];
-                    switch (realIdx) {
-                        case 0:
-                            _this.initCommonArr(tempDomUl, tempArray, _this.beginTime[i], _this.endTime[i], '年', i);
-                            break;
-                        case 1:
-                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 1)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 1)) ? _this.endTime[i] : 12;
-                            _this.initCommonArr(tempDomUl, tempArray, min, max, '月', i);
-                            break;
-                        case 2:
-                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 2)) ? _this.beginTime[i] : 1;
-                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
-                            _this.initCommonArr(tempDomUl, tempArray, min, max, '日', i);
-                            break;
-                        case 3:
-                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 3)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 3)) ? _this.endTime[i] : 23;
-                            _this.initCommonArr(tempDomUl, tempArray, min, max, '时', i);
-                            break;
-                        case 4 :
-                            min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 4)) ? _this.beginTime[i] : 0;
-                            max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 4)) ? _this.endTime[i] : 59;
-                            _this.initCommonArr(tempDomUl, tempArray, min, max, '分', i);
-                            break;
-                    }
-                    tempDomUl.addEventListener('touchstart', function () {
-                        _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
-                    }, false);
-                    tempDomUl.addEventListener('touchmove', function () {
-                        _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
-                    }, false);
-                    tempDomUl.addEventListener('touchend', function () {
-                        _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
-                    }, true);
-                });
-            },
-            initBinding: function () {
-                var _this     = this;
-                var bg        = $id('date-selector-bg-' + _this.container);
-                var container = $id('date-selector-container-' + _this.container);
-                var body      = doc.body;
-                on('touchstart', _this.input, function () {
-                    bg.classList.add('date-selector-bg-up');
-                    container.classList.add('date-selector-container-up');
-                    body.classList.add('date-selector-locked');
-                }, false);
-
-                on('touchstart', 'date-selector-btn-save-' + _this.container, function () {
-                    _this.success(_this.resultArr);
-                    bg.classList.remove('date-selector-bg-up');
-                    container.classList.remove('date-selector-container-up');
-                    body.classList.remove('date-selector-locked');
-                }, false);
-
-                on('touchstart', 'date-selector-bg-' + _this.container, function () {
-                    bg.classList.remove('date-selector-bg-up');
-                    container.classList.remove('date-selector-container-up');
-                    body.classList.remove('date-selector-locked');
-                }, false);
-
-                on('touchstart', 'date-selector-btn-cancel', function () {
-                    bg.classList.remove('date-selector-bg-up');
-                    container.classList.remove('date-selector-container-up');
-                    body.classList.remove('date-selector-locked');
-                }, false);
-
-                on('touchstart', 'date-selector-tab', function (event) {
-                    var tab     = $class('date-selector-tab');
-                    var content = $class('date-selector-content');
-                    loop(0, tab.length, function (i) {
-                        tab[i].classList.remove('date-selector-tab-active');
-                    });
-                    event.target.classList.add('date-selector-tab-active');
-                    if (event.target.innerHTML == '年月日') {
-                        content[0].classList.remove('date-selector-content-left');
-                        content[1].classList.add('date-selector-content-right');
-                    } else {
-                        content[0].classList.add('date-selector-content-left');
-                        content[1].classList.remove('date-selector-content-right');
-                    }
-                }, false);
-            },
-            initCommonArr: function (tempDomUl, tempArr, min, max, str, idx) {
-                var _this = this;
-                var Html  = '';
-                loop(min, max + 1, function (i) {
-                    tempArr.push(i);
-                });
-                _this.maxHeight.push(_this.liHeight * (max - min));
-                var res = _this.recentTime[idx];
-                _this.resultArr.push(res);
-                tempArr.unshift('', '');
-                tempArr.push('', '');
-                tempDomUl.style.transform       = 'translate3d(0,-' + this.liHeight * (tempArr.indexOf(res) - 2) + 'px, 0)';
-                tempDomUl.style.webkitTransform = 'translate3d(0,-' + this.liHeight * (tempArr.indexOf(res) - 2) + 'px, 0)';
-                _this.distance.push(this.liHeight * (tempArr.indexOf(res) - 2));
-                loop(0, tempArr.length, function (j) {
-                    Html += '<li>' + tempArr[j] + (tempArr[j] === '' ? '' : str) + '</li>';
-                });
-                tempDomUl.innerHTML = Html;
-            },
-            initRangeArr: function (min, max, str, checkIdx, dir) {
-                var _this      = this;
-                var realIdx    = _this.idxArr[checkIdx];
-                var arr        = [];
-                var $selector  = $id('date-selector-' + _this.container + '-' + realIdx);
-                var targetLong = 0;
-                loop(min, max + 1, function (k) {
-                    arr.push(k);
-                });
-                var Html = '';
-                arr.unshift('', '');
-                arr.push('', '');
-                for ( var i = 0; i < arr.length; i++ ) {
-                    Html += '<li>' + arr[i] + (arr[i] === '' ? '' : str) + '</li>';
-                }
-                _this['array' + realIdx] = [];
-                _this['array' + realIdx] = arr;
-                $selector.innerHTML      = Html;
-
-                if (dir == 0) {
-                    targetLong                               = min > this.resultArr[checkIdx] ? 0 : -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2;
-                    this.resultArr[checkIdx]                 = this.resultArr[checkIdx] < min ? min : this.resultArr[checkIdx];
-                    this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
-                } else if (dir == 1) {
-                    targetLong                               = max > this.resultArr[checkIdx] ?
-                    -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2 :
-                    -arr.indexOf(max) * this.liHeight + this.liHeight * 2;
-                    this.resultArr[checkIdx]                 = this.resultArr[checkIdx] > max ? max : this.resultArr[checkIdx];
-                    this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
-                } else {
-                    if (arr.indexOf(this.resultArr[checkIdx]) == -1) {
-                        targetLong = (this.maxHeight[checkIdx] > this.liHeight * (max - min)) ? -this.liHeight * (max - min) : -this.distance[checkIdx];
-                    } else {
-                        targetLong = -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + 2 * this.liHeight;
-                    }
-                    this.recent_time[realIdx] = -targetLong / this.liHeight + 1;
-                    this.resultArr[checkIdx]  = arr[-targetLong / this.liHeight + 2];
-                }
-
-                $selector.style.transform        = 'translate3d(0,' + targetLong + 'px, 0)';
-                $selector.style.webkitTransform  = 'translate3d(0,' + targetLong + 'px, 0)';
-                $selector.style.transition       = 'transform 0.15s ease-out';
-                $selector.style.webkitTransition = '-webkit-transform 0.15s ease-out';
-                this.maxHeight[checkIdx]         = this.liHeight * (max - min);
-                this.distance[checkIdx]          = Math.abs(targetLong);
-            },
-            checkRange: function (checkIdx) {
-                var _this = this;
-                if (checkIdx >= _this.ulCount - 1) return;
-                var min     = 0;
-                var max     = 0;
-                var str     = '';
-                var dir     = 0; //0在顶部,1在底部,-1在中间
-                var realIdx = _this.idxArr[checkIdx];
-                switch (realIdx) {
-                    case 0:
-                        min = 1;
-                        max = 12;
-                        str = '月';
-                        break;
-                    case 1:
-                        min = 1;
-                        max = new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
-                        str = '日';
-                        break;
-                    case 2:
-                        min = 0;
-                        max = 23;
-                        str = '时';
-                        break;
-                    case 3:
-                        min = 0;
-                        max = 59;
-                        str = '分';
-                        break;
-                }
-
-                loop(0, checkIdx + 1, function (p) {
-                    if (_this.beginTime[p] != _this.resultArr[p]) {
-                        dir = 1;
-                        loop(0, checkIdx + 1, function (q) {
-                            if (_this.endTime[q] != _this.resultArr[q]) dir = -1;
-                        });
-                    }
-                });
-
-                if (dir == 0) {
-                    min = _this.beginTime[checkIdx + 1] >= min ? _this.beginTime[checkIdx + 1] : 0;
-                } else if (dir == 1) {
-                    max = _this.endTime[checkIdx + 1] <= max ? _this.endTime[checkIdx + 1] : 0;
-                }
-                _this.initRangeArr(min, max, str, checkIdx + 1, dir);
-                _this.checkRange(checkIdx + 1);
-            },
-            initPosition: function (dis, max, idx) {
-                dis     = dis < 0 ? 0 : dis;
-                dis     = dis > max ? max : dis;
-                var sub = dis % this.liHeight;
-                if (sub < this.liHeight / 2) {
-                    this.distance[idx] = dis - sub;
-                } else {
-                    this.distance[idx] = dis + (this.liHeight - sub);
-                }
-                return this;
-            },
-            initSpeed: function (arr, dir, max, idx) {
-                var variance = 0;
-                var sum      = 0;
-                for ( var i in arr ) {
-                    sum += arr[i] - 0;
-                }
-                for ( var j in arr ) {
-                    variance += (arr[j] - (sum / arr.length)) * (arr[j] - (sum / arr.length));
-                }
-                var rate = 0;
-                if ((variance / arr.length).toFixed(2) > .1) {
-                    rate = max > this.liHeight * 15 ? dir * 2 : 0;
-                    this.initPosition(this.distance[idx] + rate, max, idx);
-                    this.move.speed[0] = .2;
-                } else {
-                    this.initPosition(this.distance[idx], max, idx);
-                    this.move.speed[0] = this.move.speed[0] > 0.2 ? .2 : this.move.speed[0];
-                }
-                return this;
-            },
-            touch: function (event, that, $selector, array, idx) {
-                event = event || window.event;
-                event.preventDefault();
-                switch (event.type) {
-                    case "touchstart":
-                        that.move.speed = [];
-                        that.start.Y    = event.touches[0].clientY;
-                        that.start.time = Date.now();
-                        break;
-                    case "touchend":
-                        that.end.Y         = event.changedTouches[0].clientY;
-                        var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
-                        that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] ? tempDis : that.maxHeight[idx]);
-                        that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
-                        var tempRes = that.end.index = that.distance[idx] / that.liHeight + 2;
-
-                        $selector.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
-                        $selector.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
-                        $selector.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
-                        $selector.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
-
-                        that.recent_time[that.idxArr[idx]] = that.resultArr[idx] = that['array' + that.idxArr[idx]][tempRes];
-                        that.checkRange(0);
-
-                        break;
-                    case "touchmove":
-                        event.preventDefault();
-                        that.move.Y = event.touches[0].clientY;
-                        var offset  = that.start.Y - that.move.Y;
-                        if (that.distance[idx] == 0 && offset < 0) {
-                            $selector.style.transform        = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
-                            $selector.style.webkitTransform  = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
-                            $selector.style.transition       = 'transform 0.3s ease-out';
-                            $selector.style.webkitTransition = '-webkit-transform 0.3s ease-out';
-                        } else {
-                            $selector.style.transform       = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
-                            $selector.style.webkitTransform = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
-                        }
-                        if (this.distance[idx] <= -that.maxHeight[idx]) {
-                            $selector.style.transform        = 'translate3d(0, -' + that.liHeight + 'px, 0)';
-                            $selector.style.webkitTransform  = 'translate3d(0, -' + that.liHeight + 'px, 0)';
-                            $selector.style.transition       = 'transform 0.3s ease-out';
-                            $selector.style.webkitTransition = '-webkit-transform 0.3s ease-out';
-                        }
-                        if (Math.abs(offset).toFixed(0) % 5 === 0) {
-                            var time = Date.now();
-                            that.move.speed.push((Math.abs(offset) / (time - that.start.time)).toFixed(2));
-                        }
-                        break;
-                }
-            }
-        };
-        if (typeof exports == "object") {
-            module.exports = DateSelector;
-        } else if (typeof define == "function" && define.amd) {
-            define([], function () {
-                return DateSelector
-            })
+          });
+          var bt = new Date(begin_time[0], begin_time[1], begin_time[2], begin_time[3], begin_time[4]).getTime();
+          var et = new Date(end_time[0], end_time[1], end_time[2], end_time[3], end_time[4]).getTime();
+          var rt = new Date(recent_time[0], recent_time[1], recent_time[2], recent_time[3], recent_time[4]).getTime();
+          rt < bt ? alert('当前时间小于开始时间') : "";
+          rt > et ? alert('当前时间超过结束时间') : "";
+          return (bt <= rt && rt <= et);
         } else {
-            win.DateSelector = DateSelector;
+          alert('error,please open the console to see the errmsg');
+          console.warn('type为1时,时间数组长度为0或5');
+          console.warn('构造函数的参数param或recentTime设置有误');
+          console.warn('param必须是连续的1，recentTime的值必须与param中的值对应');
+          console.warn('构造函数调用失败，请重新设置参数');
+          return false;
         }
-    })(window, document);
+      },
+      checkTimeArr: function (arr1, arr2, length) {
+        var checkStatus = true;
+        loop(0, length, function (i) {
+          if (arr1[i] != arr2[i]) checkStatus = false;
+        });
+        return checkStatus;
+      },
+      initDomFuc: function () {
+        var _this = this;
+        this.checkParam();
+        if (!this.checkTime())return;
+        var html = '';
+        html += '<div class="date-selector-bg" id="date-selector-bg-' + _this.container + '">' +
+          '<div  class="date-selector-container" id="date-selector-container-' + _this.container + '">' +
+          '<div class="date-selector-btn-box">' +
+          '<div class="date-selector-btn" id="date-selector-btn-cancel">返回</div>';
+
+        if (this.type == 1) {
+          html += '<div class="date-selector-tab-box">' +
+            '<div class="date-selector-tab date-selector-' + _this.container + '-tab date-selector-tab-active">年月日</div>' +
+            '<div class="date-selector-tab date-selector-' + _this.container + '-tab">时分</div>' +
+            '</div>';
+        }
+
+        html += '<div class="date-selector-btn" id="date-selector-btn-save-' + _this.container + '">确定</div>' +
+          '</div>' +
+          '<div class="date-selector-content">';
+
+        if (_this.type == 0) {
+          loop(0, _this.idxArr.length, function (i) {
+            html += '<div class="date-selector date-selector-left">' +
+              '<ul id="date-selector-' + _this.container + '-' + _this.idxArr[i] + '"></ul>' +
+              '</div>';
+          });
+          html += '<div class="date-selector-up-shadow"></div>' +
+            '<div class="date-selector-down-shadow"></div>' +
+            '<div class="date-selector-line"></div>' +
+            '</div>';
+          html += '</div></div>';
+          $id(_this.container).innerHTML = html;
+          loop(0, _this.ulCount, function (i) {
+            $id('date-selector-container-' + _this.container).querySelectorAll(".date-selector")[i].style.width = (100 / _this.ulCount).toFixed(2) + '%';
+          });
+        } else if (_this.type == 1) {
+          html += '<div class="date-selector date-selector-left">' +
+            '<ul id="date-selector-' + _this.container + '-0"></ul>' +
+            '</div>' +
+            '<div class="date-selector date-selector-left">' +
+            '<ul id="date-selector-' + _this.container + '-1"></ul>' +
+            '</div>' +
+            '<div class="date-selector date-selector-left">' +
+            '<ul id="date-selector-' + _this.container + '-2"></ul>' +
+            '</div>' +
+            '<div class="date-selector-up-shadow"></div>' +
+            '<div class="date-selector-down-shadow"></div>' +
+            '<div class="date-selector-line"></div>' +
+            '</div>' +
+            '<div class="date-selector-content date-selector-content-right">' +
+            '<div class="date-selector date-selector-right">' +
+            '<ul id="date-selector-' + _this.container + '-3"></ul>' +
+            '</div>' +
+            '<div class="date-selector date-selector-right">' +
+            '<ul id="date-selector-' + _this.container + '-4"></ul>' +
+            '</div>' +
+            '<div class="date-selector-up-shadow"></div>' +
+            '<div class="date-selector-down-shadow"></div>' +
+            '<div class="date-selector-line"></div>' +
+            '</div>';
+          html += '</div></div>';
+          $id(_this.container).innerHTML = html;
+        }
+      },
+      initReady: function () {
+        var _this   = this;
+        var realIdx = 0;
+        loop(0, _this.ulCount, function (i) {
+          realIdx       = _this.idxArr[i];
+          var min       = 0;
+          var max       = 0;
+          var tempDomUl = $id('date-selector-' + _this.container + '-' + _this.idxArr[i]);
+          var tempArray = _this['array' + _this.idxArr[i]] = [];
+          switch (realIdx) {
+            case 0:
+              _this.initCommonArr(tempDomUl, tempArray, _this.beginTime[i], _this.endTime[i], '年', i);
+              break;
+            case 1:
+              min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 1)) ? _this.beginTime[i] : 1;
+              max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 1)) ? _this.endTime[i] : 12;
+              _this.initCommonArr(tempDomUl, tempArray, min, max, '月', i);
+              break;
+            case 2:
+              min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 2)) ? _this.beginTime[i] : 1;
+              max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 2)) ? _this.endTime[i] : new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+              _this.initCommonArr(tempDomUl, tempArray, min, max, '日', i);
+              break;
+            case 3:
+              min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 3)) ? _this.beginTime[i] : 0;
+              max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 3)) ? _this.endTime[i] : 23;
+              _this.initCommonArr(tempDomUl, tempArray, min, max, '时', i);
+              break;
+            case 4 :
+              min = (_this.checkTimeArr(_this.begin_time, _this.recent_time, 4)) ? _this.beginTime[i] : 0;
+              max = (_this.checkTimeArr(_this.end_time, _this.recent_time, 4)) ? _this.endTime[i] : 59;
+              _this.initCommonArr(tempDomUl, tempArray, min, max, '分', i);
+              break;
+          }
+          tempDomUl.addEventListener('touchstart', function () {
+            _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
+          }, false);
+          tempDomUl.addEventListener('touchmove', function () {
+            _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
+          }, false);
+          tempDomUl.addEventListener('touchend', function () {
+            _this.touch(event, _this, tempDomUl, _this['array' + _this.idxArr[i]], i);
+          }, true);
+        });
+      },
+      initBinding: function () {
+        var _this     = this;
+        var bg        = $id('date-selector-bg-' + _this.container);
+        var container = $id('date-selector-container-' + _this.container);
+        var body      = doc.body;
+        on('touchstart', _this.input, function () {
+          bg.classList.add('date-selector-bg-up', 'date-selector-bg-delay');
+          container.classList.add('date-selector-container-up');
+          body.classList.add('date-selector-locked');
+        }, false);
+
+        on('touchstart', 'date-selector-btn-save-' + _this.container, function () {
+          var temp = _this.resultArr.map(function (it) {
+            if (it < 10) it = ('0' + it);
+            return it + '';
+          });
+          _this.success(_this.resultArr, temp);
+          bg.classList.remove('date-selector-bg-up');
+          container.classList.remove('date-selector-container-up');
+          setTimeout(function () {
+            bg.classList.remove('date-selector-bg-delay');
+          }, 350);
+          body.classList.remove('date-selector-locked');
+        }, false);
+
+        on('touchstart', 'date-selector-bg-' + _this.container, function () {
+          bg.classList.remove('date-selector-bg-up');
+          container.classList.remove('date-selector-container-up');
+          setTimeout(function () {
+            bg.classList.remove('date-selector-bg-delay');
+          }, 350);
+          body.classList.remove('date-selector-locked');
+        }, false);
+
+        on('touchstart', 'date-selector-btn-cancel', function () {
+          bg.classList.remove('date-selector-bg-up');
+          container.classList.remove('date-selector-container-up');
+          setTimeout(function () {
+            bg.classList.remove('date-selector-bg-delay');
+          }, 350);
+          body.classList.remove('date-selector-locked');
+        }, false);
+
+        on('touchstart', 'date-selector-tab date-selector-' + _this.container + '-tab', function (event) {
+          var tab     = container.getElementsByClassName('date-selector-tab');
+          var content = container.getElementsByClassName('date-selector-content');
+          loop(0, tab.length, function (i) {
+            tab[i].classList.remove('date-selector-tab-active');
+          });
+          event.target.classList.add('date-selector-tab-active');
+          if (event.target.innerHTML == '年月日') {
+            content[0].classList.remove('date-selector-content-left');
+            content[1].classList.add('date-selector-content-right');
+          } else {
+            content[0].classList.add('date-selector-content-left');
+            content[1].classList.remove('date-selector-content-right');
+          }
+        }, false);
+      },
+      initCommonArr: function (tempDomUl, tempArr, min, max, str, idx) {
+        var _this = this;
+        var Html  = '';
+        loop(min, max + 1, function (i) {
+          tempArr.push(i);
+        });
+        _this.maxHeight.push(_this.liHeight * (max - min));
+        var res = _this.recentTime[idx];
+        _this.resultArr.push(res);
+        tempArr.unshift('', '');
+        tempArr.push('', '');
+        tempDomUl.style.transform       = 'translate3d(0,-' + this.liHeight * (tempArr.indexOf(res) - 2) + 'px, 0)';
+        tempDomUl.style.webkitTransform = 'translate3d(0,-' + this.liHeight * (tempArr.indexOf(res) - 2) + 'px, 0)';
+        _this.distance.push(this.liHeight * (tempArr.indexOf(res) - 2));
+        loop(0, tempArr.length, function (j) {
+          Html += '<li>' + tempArr[j] + (tempArr[j] === '' ? '' : str) + '</li>';
+        });
+        tempDomUl.innerHTML = Html;
+      },
+      initRangeArr: function (min, max, str, checkIdx, dir) {
+        var _this      = this;
+        var realIdx    = _this.idxArr[checkIdx];
+        var arr        = [];
+        var $selector  = $id('date-selector-' + _this.container + '-' + realIdx);
+        var targetLong = 0;
+        loop(min, max + 1, function (k) {
+          arr.push(k);
+        });
+        var Html = '';
+        arr.unshift('', '');
+        arr.push('', '');
+        for ( var i = 0; i < arr.length; i++ ) {
+          Html += '<li>' + arr[i] + (arr[i] === '' ? '' : str) + '</li>';
+        }
+        _this['array' + realIdx] = [];
+        _this['array' + realIdx] = arr;
+        $selector.innerHTML      = Html;
+
+        if (dir == 0) {
+          targetLong                               = min > this.resultArr[checkIdx] ? 0 : -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2;
+          this.resultArr[checkIdx]                 = this.resultArr[checkIdx] < min ? min : this.resultArr[checkIdx];
+          this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
+        } else if (dir == 1) {
+          targetLong                               = max > this.resultArr[checkIdx] ?
+          -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + this.liHeight * 2 :
+          -arr.indexOf(max) * this.liHeight + this.liHeight * 2;
+          this.resultArr[checkIdx]                 = this.resultArr[checkIdx] > max ? max : this.resultArr[checkIdx];
+          this.recent_time[_this.idxArr[checkIdx]] = _this.resultArr[checkIdx];
+        } else {
+          if (arr.indexOf(this.resultArr[checkIdx]) == -1) {
+            targetLong = (this.maxHeight[checkIdx] > this.liHeight * (max - min)) ? -this.liHeight * (max - min) : -this.distance[checkIdx];
+          } else {
+            targetLong = -arr.indexOf(this.resultArr[checkIdx]) * this.liHeight + 2 * this.liHeight;
+          }
+          this.recent_time[realIdx] = -targetLong / this.liHeight + 1;
+          this.resultArr[checkIdx]  = arr[-targetLong / this.liHeight + 2];
+        }
+
+        $selector.style.transform        = 'translate3d(0,' + targetLong + 'px, 0)';
+        $selector.style.webkitTransform  = 'translate3d(0,' + targetLong + 'px, 0)';
+        $selector.style.transition       = 'transform 0.15s ease-out';
+        $selector.style.webkitTransition = '-webkit-transform 0.15s ease-out';
+        this.maxHeight[checkIdx]         = this.liHeight * (max - min);
+        this.distance[checkIdx]          = Math.abs(targetLong);
+      },
+      checkRange: function (checkIdx, sta) {
+        var _this = this;
+        if (checkIdx >= _this.ulCount - 1) return;
+        var status = null;
+        if (sta) status = _this.checkTimeArr(_this.begin_time, _this.resultArr, checkIdx + 1);
+        else status = _this.checkTimeArr(_this.end_time, _this.resultArr, checkIdx + 1);
+        if (!status) {
+          var min     = 0;
+          var max     = 0;
+          var str     = '';
+          var dir     = 0; //0在顶部,1在底部,-1在中间
+          var realIdx = _this.idxArr[checkIdx];
+          switch (realIdx) {
+            case 0:
+              min = 1;
+              max = 12;
+              str = '月';
+              break;
+            case 1:
+              min = 1;
+              max = new Date(_this.recent_time[0], _this.recent_time[1], 0).getDate();
+              str = '日';
+              break;
+            case 2:
+              min = 0;
+              max = 23;
+              str = '时';
+              break;
+            case 3:
+              min = 0;
+              max = 59;
+              str = '分';
+              break;
+          }
+          loop(0, checkIdx + 1, function (p) {
+            if (_this.beginTime[p] != _this.resultArr[p]) {
+              dir = 1;
+              loop(0, checkIdx + 1, function (q) {
+                if (_this.endTime[q] != _this.resultArr[q]) dir = -1;
+              });
+            }
+          });
+
+          if (dir == 0) {
+            min = _this.beginTime[checkIdx + 1] >= min ? _this.beginTime[checkIdx + 1] : 0;
+          } else if (dir == 1) {
+            max = _this.endTime[checkIdx + 1] <= max ? _this.endTime[checkIdx + 1] : 0;
+          }
+          _this.initRangeArr(min, max, str, checkIdx + 1, dir);
+        }
+        _this.checkRange(checkIdx + 1, sta);
+      },
+      initPosition: function (dis, max, idx) {
+        dis     = dis < 0 ? 0 : dis;
+        dis     = dis > max ? max : dis;
+        var sub = dis % this.liHeight;
+        if (sub < this.liHeight / 2) {
+          this.distance[idx] = dis - sub;
+        } else {
+          this.distance[idx] = dis + (this.liHeight - sub);
+        }
+        return this;
+      },
+      initSpeed: function (arr, dir, max, idx) {
+        var variance = 0;
+        var sum      = 0;
+        for ( var i in arr ) {
+          sum += arr[i] - 0;
+        }
+        for ( var j in arr ) {
+          variance += (arr[j] - (sum / arr.length)) * (arr[j] - (sum / arr.length));
+        }
+        var rate = 0;
+        if ((variance / arr.length).toFixed(2) > .1) {
+          rate = max > this.liHeight * 15 ? dir * 2 : 0;
+          this.initPosition(this.distance[idx] + rate, max, idx);
+          this.move.speed[0] = .2;
+        } else {
+          this.initPosition(this.distance[idx], max, idx);
+          this.move.speed[0] = this.move.speed[0] > 0.2 ? .2 : this.move.speed[0];
+        }
+        return this;
+      },
+      touch: function (event, that, $selector, array, idx) {
+        event = event || window.event;
+        event.preventDefault();
+        switch (event.type) {
+          case "touchstart":
+            that.move.speed = [];
+            that.start.Y    = event.touches[0].clientY;
+            that.start.time = Date.now();
+            break;
+          case "touchend":
+            that.end.Y         = event.changedTouches[0].clientY;
+            var tempDis        = that.distance[idx] + (that.start.Y - that.end.Y);
+            that.distance[idx] = tempDis < 0 ? 0 : (tempDis < that.maxHeight[idx] ? tempDis : that.maxHeight[idx]);
+            that.initSpeed(that.move.speed, that.start.Y - that.end.Y, that.maxHeight[idx], idx);
+            var tempRes = that.end.index = that.distance[idx] / that.liHeight + 2;
+
+            $selector.style.transform        = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
+            $selector.style.webkitTransform  = 'translate3d(0,-' + that.distance[idx] + 'px, 0)';
+            $selector.style.transition       = 'transform ' + that.move.speed[0] + 's ease-out';
+            $selector.style.webkitTransition = '-webkit-transform ' + that.move.speed[0] + 's ease-out';
+
+            that.recent_time[that.idxArr[idx]] = that.resultArr[idx] = that['array' + that.idxArr[idx]][tempRes];
+            that.checkRange(0, (that.start.Y - that.end.Y) > 0);
+            break;
+          case "touchmove":
+            event.preventDefault();
+            that.move.Y = event.touches[0].clientY;
+            var offset  = that.start.Y - that.move.Y;
+            if (that.distance[idx] == 0 && offset < 0) {
+              $selector.style.transform        = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
+              $selector.style.webkitTransform  = 'translate3d(0,' + 1.5 * that.liHeight + 'px, 0)';
+              $selector.style.transition       = 'transform 0.3s ease-out';
+              $selector.style.webkitTransition = '-webkit-transform 0.3s ease-out';
+            } else {
+              $selector.style.transform       = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
+              $selector.style.webkitTransform = 'translate3d(0,-' + (offset + that.distance[idx]) + 'px, 0)';
+            }
+            if (this.distance[idx] <= -that.maxHeight[idx]) {
+              $selector.style.transform        = 'translate3d(0, -' + that.liHeight + 'px, 0)';
+              $selector.style.webkitTransform  = 'translate3d(0, -' + that.liHeight + 'px, 0)';
+              $selector.style.transition       = 'transform 0.3s ease-out';
+              $selector.style.webkitTransition = '-webkit-transform 0.3s ease-out';
+            }
+            if (Math.abs(offset).toFixed(0) % 5 === 0) {
+              var time = Date.now();
+              that.move.speed.push((Math.abs(offset) / (time - that.start.time)).toFixed(2));
+            }
+            break;
+        }
+      }
+    };
+    if (typeof exports == "object") {
+      module.exports = DateSelector;
+    } else if (typeof define == "function" && define.amd) {
+      define([], function () {
+        return DateSelector;
+      })
+    } else {
+      win.DateSelector = DateSelector;
+    }
+  })(window, document);
 
 
-    //---------------------函数调用开始---------------------
-    new DateSelector({
-        input: 'date-selector-input',//点击触发插件的input框的id
-        container: 'targetContainer',//插件插入的容器id
-        type: 1,
-        //0：不需要tab切换，自定义滑动内容，建议小于三个；
-        //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
-        param: [1, 1, 1, 0, 0],
-        //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
-        beginTime: [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
-        endTime: [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
-        recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success: function (arr) {
-            alert(arr);
-            console.log(arr);
-        }//回调
-    });
-    //---------------------函数调用结束---------------------
+  //---------------------函数调用开始---------------------
+  new DateSelector({
+    input: 'date-selector-input',//点击触发插件的input框的id
+    container: 'targetContainer',//插件插入的容器id
+    type: 1,
+    //0：不需要tab切换，自定义滑动内容，建议小于三个；
+    //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
+    param: [1, 1, 1, 0, 0],
+    //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
+    beginTime: [],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
+    endTime: [],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
+    recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
+    success: function (arr) {
+      alert(arr);
+      console.log(arr);
+    }//回调
+  });
+  //---------------------函数调用结束---------------------
 
-    //月份从1开始
-    new DateSelector({
-        input: 'date-selector-inputs',//点击触发插件的input框的id
-        container: 'targetContainers',//插件插入的容器id
-        type: 0,
-        //0：不需要tab切换，自定义滑动内容，建议小于三个；
-        //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
-        param: [1, 1, 0, 1, 0],
-        //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
-        beginTime: [2011, 13, -27, 102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
-        endTime: [2020, 10, 21, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
-        recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
-        success: function (arr) {
-            alert(arr);
-            console.log(arr);
-        }//回调
-    });
+  //月份从1开始
+  new DateSelector({
+    input: 'date-selector-inputs',//点击触发插件的input框的id
+    container: 'targetContainers',//插件插入的容器id
+    type: 0,
+    //0：不需要tab切换，自定义滑动内容，建议小于三个；
+    //1：需要tab切换，【年月日】【时分】完全展示，固定死，可设置开始年份和结束年份
+    param: [1, 1, 0, 1, 0],
+    //设置['year','month','day','hour','minute'],1为需要，0为不需要,需要连续的1
+    beginTime: [2011, 13, -27, 102],//如空数组默认设置成1970年1月1日0时0分开始，如需要设置开始时间点，数组的值对应param参数的对应值。
+    endTime: [2020, 10, 21, 20],//如空数组默认设置成次年12月31日23时59分结束，如需要设置结束时间点，数组的值对应param参数的对应值。
+    recentTime: [],//如不需要设置当前时间，被为空数组，如需要设置的开始的时间点，数组的值对应param参数的对应值。
+    success: function (arr) {
+      alert(arr);
+      console.log(arr);
+    }//回调
+  });
 </script>
 
 </body>
