@@ -94,7 +94,7 @@ new DateSelector({ ... });
 |  **beginTime**   |  {Array} |*eg:[3,27,12,12]     Mar 27(th) 12:12*  `default : [1970, 1, 1, 0, 0]`| user-defined begin time points. An empty array means default array. The equivalent of every position is  the sequent position of `1` in `param`. |
 |  **endTime** |  {Array} |the same to beginTime `default : [nextYear, 12, 31, 23, 59]`| user-defined end time points. An empty array means default array. The equivalent of every position is  the sequent position of `1` in `param`. |
 |  **recentTime**  |  {Array} |the same to beginTime| user-defined recent time points. An empty array means NOW. The equivalent of every position is  the sequent position of `1` in `param`.  |
-|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} User-defined callback. The first param is the result. |
+|  **success**   |  {function} |*function(arr1, arr2){alert(arr1)}*| function(arr){} User-defined callback. The first param is the result. The arr1 is an array of Number, and the other is an array of String. |
 
 * type = 0，this type can set unit freely, and the style without *tab*.
 
@@ -211,7 +211,7 @@ new DateSelector({ ... });
 |  **beginTime**   |  {Array} |*eg:[3,27,12,12]    3月27日12点12分*| 设置开始时间点,空数组默认设置成1970年1月1日0时0分开始，数组的值对应param参数的对应值。 |
 |  **endTime** |  {Array} |同beginTime| 设置结束时间点,空数组默认设置成次年12月31日23时59分结束，数组的值对应param参数的对应值。 |
 |  **recentTime**  |  {Array} |同beginTime| 设置当前时间点,空数组默认设置为系统当前时间，数组的值对应param参数的对应值。 |
-|  **success**   |  {function} |*function(arr){alert(arr)}*| function(arr){} 回调函数，可以自定义结果格式化|
+|  **success**   |  {function} |*function(arr1, arr2){alert(arr2)}*| function(arr){} 回调函数，可以自定义结果格式化, arr1为数字结果, arr2为字符串结果|
 
 * type = 0 自定义单位，【年月日时分】的自定义任意组合
 

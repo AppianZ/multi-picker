@@ -136,6 +136,9 @@ MultiPicker主要是由`两个部分`组成，
 
 
 ## **Logs**
+### 2017.7.20(update)
+> * data-picker的success回调返回值增加一个格式化字符串格式
+
 ### 2017.5.28(update)
 > * 配合flexible使用
 
@@ -154,11 +157,6 @@ MultiPicker主要是由`两个部分`组成，
 ### 2016.11.6(add)
 > * 新增MultiPicker, 并配套中国城市json
         
-    
-## **常见问题** 
->* 配色可以改吗?样式可以修改吗?
-
-
 
 ## **Authors**
 > *   如果你遇到了什么神bug，请发起[ISSUE](https://github.com/AppianZ/multi-picker/issues/new)联系我 ~
