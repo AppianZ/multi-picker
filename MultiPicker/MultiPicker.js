@@ -38,7 +38,7 @@
 		this.ulDomArr  = [];
 		this.idxArr    = [];
 		this.jsonArr   = [];
-		this.liHeight  = wid.lib ? parseInt(doc.getElementsByTagName('HTML')[0].style.fontSize) * 1 : 40;
+		this.liHeight  = wid.lib ? Number(doc.getElementsByTagName('HTML')[0].style.fontSize.replace('px', '')) * 1 : 40;
 		this.maxHeight = [];
 		this.distance  = [];
 		this.start     = {
