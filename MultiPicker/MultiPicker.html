@@ -109,7 +109,11 @@
     new MultiPicker({
         input: 'multiPickerInput2',//点击触发插件的input框的id
         container: 'targetContainer2',//插件插入的容器id
-        jsonData: $city,
+        jsonData: [{
+          value: 'test1',
+        }, {
+          value: 'test2',
+        }],
         success: function (arr) {
             alert('页面会显示最终结果');
             document.getElementById('showBlock2').innerHTML = JSON.stringify(arr);
